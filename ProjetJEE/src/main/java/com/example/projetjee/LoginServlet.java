@@ -44,16 +44,16 @@ public class LoginServlet extends HttpServlet {
             String hql;
             switch (role) {
                 case "etudiant":
-                    // Charger uniquement les champs nécessaires pour l'authentification
-                    hql = "SELECT e.email FROM Etudiant e WHERE e.email = :email AND e.mdp = :password";
+                    hql = "FROM Etudiant WHERE email = :email AND mdp = :password";
                     break;
                 case "enseignant":
-                    hql = "SELECT e.email FROM Enseignant e WHERE e.email = :email AND e.mdp = :password";
+                    hql = "FROM Enseignant WHERE email = :email AND mdp = :password";
                     break;
                 case "admin":
-                    hql = "SELECT a.email FROM Admin a WHERE a.email = :email AND a.mdp = :password";
+                    hql = "FROM Admin WHERE email = :email AND mdp = :password";
                     break;
                 default:
+                    System.out.println("Rôle non valide : " + role);
                     return false;
             }
 

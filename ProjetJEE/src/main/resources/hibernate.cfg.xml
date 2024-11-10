@@ -7,16 +7,9 @@
 
         <!-- JDBC Database connection settings -->
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/gestion_scolarite</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/gestion_scolarite?useSSL=false</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">cytech0001</property>
-
-        <property name="hibernate.c3p0.min_size">5</property>
-        <property name="hibernate.c3p0.max_size">20</property>
-        <property name="hibernate.c3p0.timeout">300</property>
-        <property name="hibernate.c3p0.max_statements">50</property>
-        <property name="hibernate.c3p0.idle_test_period">3000</property>
-
 
         <!-- SQL dialect -->
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
@@ -32,6 +25,8 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
 
         <mapping class="com.example.projetjee.Etudiant"/>
+        <mapping class="com.example.projetjee.Enseignant"/>
+        <mapping class="com.example.projetjee.Admin"/>
 
 
     </session-factory>
