@@ -14,9 +14,6 @@ public class Etudiant {
     @Column(name = "email", nullable = false, unique = true)
     private String email;
 
-    @Column(name = "numeroEtudiant", nullable = false, unique = true)
-    private String numeroEtudiant;
-
     @Column(name = "nom", nullable = false)
     private String nom;
 
@@ -33,9 +30,8 @@ public class Etudiant {
 
     public Etudiant() {}
 
-    public Etudiant(String email, String numeroEtudiant, String nom, String prenom, Date dateNaissance, String mdp) {
+    public Etudiant(String email, String nom, String prenom, Date dateNaissance, String mdp) {
         this.email = email;
-        this.numeroEtudiant = numeroEtudiant;
         this.nom = nom;
         this.prenom = prenom;
         this.dateNaissance = dateNaissance;
@@ -50,14 +46,6 @@ public class Etudiant {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getNumeroEtudiant() {
-        return numeroEtudiant;
-    }
-
-    public void setNumeroEtudiant(String numeroEtudiant) {
-        this.numeroEtudiant = numeroEtudiant;
     }
 
     public String getNom() {
