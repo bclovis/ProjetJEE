@@ -102,4 +102,8 @@ public class Cours {
     public void setSemestre(Semestre semestre) {
         this.semestre = semestre;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 9e403db (Implementation de VoirNote dans etudiant.)

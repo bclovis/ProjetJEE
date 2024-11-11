@@ -99,4 +99,8 @@ public class Note {
             observateur.mettreAJour(message);
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 9e403db (Implementation de VoirNote dans etudiant.)

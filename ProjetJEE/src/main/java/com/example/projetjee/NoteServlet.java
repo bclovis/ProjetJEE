@@ -22,6 +22,7 @@ public class NoteServlet extends HttpServlet {
         }
 
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+<<<<<<< HEAD
             String hql = "FROM Note WHERE etudiant.email = :etudiant_email";
             Query<Note> query = session.createQuery(hql, Note.class);
             query.setParameter("etudiant_email", email);
@@ -30,9 +31,23 @@ public class NoteServlet extends HttpServlet {
             // Passer les notes à la JSP pour affichage
             request.setAttribute("note", notes);
             request.getRequestDispatcher("/etudiant/voirNote.jsp").forward(request, response);
+=======
+            String hql = "FROM Note WHERE etudiant.email = :email";
+            Query<Note> query = session.createQuery(hql, Note.class);
+            query.setParameter("email", email);
+            List<Note> notes = query.list();
+
+            // Passer les notes à la JSP pour affichage
+            request.setAttribute("notes", notes);
+            request.getRequestDispatcher("voirNote.jsp").forward(request, response);
+>>>>>>> 9e403db (Implementation de VoirNote dans etudiant.)
         } catch (Exception e) {
             e.printStackTrace();
             response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Erreur lors de la récupération des notes");
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 9e403db (Implementation de VoirNote dans etudiant.)

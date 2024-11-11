@@ -59,4 +59,8 @@
   <a href="etudiant.jsp">Retour à l'accueil étudiant</a>
 </div>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 9e403db (Implementation de VoirNote dans etudiant.)
