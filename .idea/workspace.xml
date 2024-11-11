@@ -9,22 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f677304-b5bb-4844-85fe-bbc98ff33a22" name="Changes" comment=".">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/Cours.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/Inscription.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/Matiere.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/Note.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/NoteServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/Observable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/Observateur.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/Semestre.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/etudiant/voirNote.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="0f677304-b5bb-4844-85fe-bbc98ff33a22" name="Changes" comment="Implementation de VoirNote dans etudiant 2.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/ProjetJEE.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/ProjetJEE.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/etudiant.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/etudiant.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,8 +157,23 @@
       <option name="presentableId" value="Default" />
       <updated>1731270924668</updated>
       <workItem from="1731270926290" duration="641000" />
-      <workItem from="1731328745295" duration="2841000" />
+      <workItem from="1731328745295" duration="3209000" />
     </task>
+    <task id="LOCAL-00001" summary="Implementation de VoirNote dans etudiant.">
+      <created>1731331817554</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1731331817554</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Implementation de VoirNote dans etudiant 2.">
+      <created>1731331998436</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1731331998436</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,6 +204,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="Implementation de VoirNote dans etudiant." />
+    <MESSAGE value="Implementation de VoirNote dans etudiant 2." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementation de VoirNote dans etudiant 2." />
   </component>
 </project>
