@@ -1,14 +1,21 @@
 package com.example.projetjee;
 
 import java.util.Date;
+import jakarta.persistence.*;
 
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nom;
     private String prenom;
     private Date dateNaissance;
     private String mail;
     private String mdp;
+
+    public User(){}
 
     public User(int id, String nom, String prenom, Date dateNaissance, String mail, String mdp) {
         this.id = id;

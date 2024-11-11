@@ -57,6 +57,13 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+        <!-- Dépendance pour JPA via Jakarta Persistence (pour Hibernate 6) -->
+        <dependency>
+            <groupId>jakarta.persistence</groupId>
+            <artifactId>jakarta.persistence-api</artifactId>
+            <version>3.1.0</version> <!-- Utilise la version compatible avec Hibernate 6 -->
+        </dependency>
+
     </dependencies>
 
     <build>
