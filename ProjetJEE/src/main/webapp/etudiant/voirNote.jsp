@@ -1,4 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -46,17 +48,21 @@
     </tr>
     </thead>
     <tbody>
+    <!-- Boucle pour afficher les notes -->
     <c:forEach items="${notes}" var="note">
       <tr>
+        <!-- Affichage de la matière -->
         <td>${note.cours.matiere}</td>
+        <!-- Affichage de la note -->
         <td>${note.note}</td>
-        <td>${note.date}</td>
+        <!-- Affichage de la date formatée -->
+        <td><fmt:formatDate value="${note.date}" pattern="dd/MM/yyyy" /></td>
       </tr>
     </c:forEach>
     </tbody>
   </table>
 
-  <a href="etudiant.jsp">Retour à l'accueil étudiant</a>
+  <a href="../etudiant.jsp">Retour à l'accueil étudiant</a>
 </div>
 </body>
 </html>
