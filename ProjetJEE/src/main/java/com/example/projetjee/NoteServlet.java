@@ -6,6 +6,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import java.io.IOException;
@@ -13,29 +14,45 @@ import java.util.List;
 
 @WebServlet("/voirNotes")
 public class NoteServlet extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String email = (String) request.getSession().getAttribute("email"); // Récupérer l'email de l'étudiant connecté
+        // Récupération de l'email de l'étudiant connecté depuis la session
+        String email = (String) request.getSession().getAttribute("email");
 
+        // Vérification que l'étudiant est bien connecté
         if (email == null) {
             response.sendRedirect("login.jsp");
             return;
         }
 
+        // Ouverture de la session Hibernate et démarrage d'une transaction
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            // Requête pour récupérer les notes de l'étudiant avec la matière et la date
-            String hql = "SELECT n FROM Note n JOIN FETCH n.cours c WHERE n.etudiant.email = :etudiant_email";
-            Query<Note> query = session.createQuery(hql, Note.class);
-            query.setParameter("etudiant_email", email); // Passer l'email de l'étudiant comme paramètre
-            List<Note> notes = query.list(); // Récupérer les notes avec les informations associées
-            System.out.println("Notes récupérées : " + notes);
+            Transaction transaction = session.beginTransaction();
 
-            // Passer la liste des notes à la JSP
+            // Création de la requête pour récupérer les notes de l'étudiant
+            String hql = "FROM Note n WHERE n.etudiant.email = :email";
+            Query<Note> query = session.createQuery(hql, Note.class);
+            query.setParameter("email", email);
+
+            // Exécution de la requête et récupération de la liste des notes
+            List<Note> notes = query.list();
+            transaction.commit();
+
+            // Vérification que des notes ont été récupérées
+            if (notes.isEmpty()) {
+                System.out.println("Aucune note trouvée pour l'étudiant avec l'email : " + email);
+            } else {
+                System.out.println("Notes récupérées : " + notes);
+            }
+
+            // Envoi des notes à la JSP
             request.setAttribute("notes", notes);
             request.getRequestDispatcher("/etudiant/voirNote.jsp").forward(request, response);
+
         } catch (Exception e) {
             e.printStackTrace();
-            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Erreur lors de la récupération des notes");
+            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Erreur lors de la récupération des notes.");
         }
     }
 }

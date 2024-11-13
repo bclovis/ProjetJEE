@@ -17,9 +17,6 @@ public class Note {
     @Column(name = "note", nullable = false)
     private Float note;
 
-    @Temporal(TemporalType.DATE)
-    @Column(name = "date", nullable = false)
-    private Date date;
 
     @ManyToOne
     @JoinColumn(name = "etudiant_email", nullable = false)
@@ -28,6 +25,9 @@ public class Note {
     @ManyToOne
     @JoinColumn(name = "cours_id", nullable = false)
     private Cours cours;
+    @Temporal(TemporalType.DATE)
+    @Column(name = "date", nullable = false)
+    private Date date;
 
     @Transient
     private List<Observateur> observateurs = new ArrayList<>();
