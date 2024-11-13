@@ -69,6 +69,27 @@
         <servlet-name>ModifierEnseignantServlet</servlet-name>
         <url-pattern>/modifierEnseignant</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>SupprimerEtudiantServlet</servlet-name>
+        <servlet-class>com.example.projetjee.SupprimerEtudiantServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SupprimerEtudiantServlet</servlet-name>
+        <url-pattern>/supprimerEtudiant</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SupprimerEnseignantServlet</servlet-name>
+        <servlet-class>com.example.projetjee.SupprimerEnseignantServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SupprimerEnseignantServlet</servlet-name>
+        <url-pattern>/supprimerEnseignant</url-pattern>
+    </servlet-mapping>
+
+
+
+
 
 
 
