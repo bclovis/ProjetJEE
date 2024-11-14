@@ -25,6 +25,26 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>SendNoteServlet</servlet-name>
+        <servlet-class>com.example.projetjee.SendNoteServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SendNoteServlet</servlet-name>
+        <url-pattern>/envoyerNotes</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SendInscriptionServlet</servlet-name>
+        <servlet-class>com.example.projetjee.SendInscriptionServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SendInscriptionServlet</servlet-name>
+        <url-pattern>/envoyerModifInscription</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>LogoutServlet</servlet-name>
         <servlet-class>com.example.projetjee.LogoutServlet</servlet-class>
     </servlet>

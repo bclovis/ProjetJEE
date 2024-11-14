@@ -65,7 +65,7 @@
     </c:otherwise>
   </c:choose>
 
-  <a href="../etudiant.jsp">Retour à l'accueil étudiant</a>
+  <a href="etudiant.jsp">Retour à l'accueil étudiant</a>
 </div>
 </body>
 </html>
