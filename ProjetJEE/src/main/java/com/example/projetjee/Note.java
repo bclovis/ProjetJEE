@@ -17,10 +17,6 @@ public class Note {
     @Column(name = "note", nullable = false)
     private Float note;
 
-    @Temporal(TemporalType.DATE)
-    @Column(name = "date", nullable = false)
-    private Date date;
-
     @ManyToOne
     @JoinColumn(name = "etudiant_email", nullable = false)
     private Etudiant etudiant;
@@ -29,18 +25,26 @@ public class Note {
     @JoinColumn(name = "cours_id", nullable = false)
     private Cours cours;
 
+    @Temporal(TemporalType.DATE)
+    @Column(name = "date", nullable = false)
+    private Date date;
+
     @Transient
     private List<Observateur> observateurs = new ArrayList<>();
 
+
+
     // Constructeurs
-    public Note() {
-    }
 
     public Note(Float note, Date date, Etudiant etudiant, Cours cours) {
         this.note = note;
         this.date = date;
         this.etudiant = etudiant;
         this.cours = cours;
+    }
+
+    public Note() {
+
     }
 
     // Getters et Setters
@@ -99,8 +103,4 @@ public class Note {
             observateur.mettreAJour(message);
         }
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 9e403db (Implementation de VoirNote dans etudiant.)

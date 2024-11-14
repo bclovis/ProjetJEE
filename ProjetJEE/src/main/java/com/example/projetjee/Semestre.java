@@ -1,10 +1,6 @@
 package com.example.projetjee;
 
 public enum Semestre {
-    SEMESTRE1,
-    SEMESTRE2
-<<<<<<< HEAD
+    S1,
+    S2
 }
-=======
-}
->>>>>>> 9e403db (Implementation de VoirNote dans etudiant.)

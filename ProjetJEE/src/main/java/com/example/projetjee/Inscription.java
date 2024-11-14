@@ -1,11 +1,10 @@
 package com.example.projetjee;
 
 import jakarta.persistence.*;
-
 import java.util.Date;
 
 @Entity
-@Table(name = "Inscription")
+@Table(name = "inscription")  // Notez que le nom est en minuscule pour correspondre au schéma de la base de données
 public class Inscription {
 
     @Id
@@ -24,6 +23,8 @@ public class Inscription {
     @Column(name = "date", nullable = false)
     @Temporal(TemporalType.DATE)
     private Date date;
+
+
 
     // Constructeurs
     public Inscription() {}

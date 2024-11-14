@@ -11,7 +11,7 @@ public class Cours {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+    @Column(name = "cours_id", nullable = false)
     private Long id;
 
     @Enumerated(EnumType.STRING)
@@ -36,7 +36,8 @@ public class Cours {
     private Semestre semestre;
 
     // Constructeurs
-    public Cours() {}
+    public Cours() {
+    }
 
     public Cours(Matiere matiere, Enseignant enseignant, LocalDateTime debut, LocalDateTime fin, Semestre semestre) {
         this.matiere = matiere;
@@ -102,8 +103,4 @@ public class Cours {
     public void setSemestre(Semestre semestre) {
         this.semestre = semestre;
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 9e403db (Implementation de VoirNote dans etudiant.)

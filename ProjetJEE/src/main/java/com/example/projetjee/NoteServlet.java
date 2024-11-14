@@ -11,7 +11,6 @@ import org.hibernate.query.Query;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/voirNotes")
 public class NoteServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -22,7 +21,7 @@ public class NoteServlet extends HttpServlet {
         }
 
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            String hql = "FROM Note WHERE etudiant.email = :email";
+            String hql = "SELECT note FROM Note WHERE etudiant.email = :etudiant_email";
             Query<Note> query = session.createQuery(hql, Note.class);
             query.setParameter("email", email);
             List<Note> notes = query.list();
