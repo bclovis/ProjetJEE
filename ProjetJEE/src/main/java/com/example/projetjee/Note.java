@@ -15,16 +15,13 @@ public class Note {
     private Long id;
 
     @Column(name = "note", nullable = false)
-    private Float note;
+    private float note;
 
-
-    @ManyToOne
     @JoinColumn(name = "etudiant_email", nullable = false)
-    private Etudiant etudiant;
+    private String etudiant;
 
-    @ManyToOne
     @JoinColumn(name = "cours_id", nullable = false)
-    private Cours cours;
+    private int cours;
     @Temporal(TemporalType.DATE)
     @Column(name = "date", nullable = false)
     private Date date;
@@ -36,7 +33,7 @@ public class Note {
     public Note() {
     }
 
-    public Note(Float note, Date date, Etudiant etudiant, Cours cours) {
+    public Note(float note, Date date, String etudiant, int cours) {
         this.note = note;
         this.date = date;
         this.etudiant = etudiant;
@@ -52,11 +49,11 @@ public class Note {
         this.id = id;
     }
 
-    public Float getNote() {
+    public float getNote() {
         return note;
     }
 
-    public void setNote(Float note) {
+    public void setNote(float note) {
         this.note = note;
         notifierObservateurs("Note modifiée : " + note);
     }
@@ -69,19 +66,19 @@ public class Note {
         this.date = date;
     }
 
-    public Etudiant getEtudiant() {
+    public String getEtudiant() {
         return etudiant;
     }
 
-    public void setEtudiant(Etudiant etudiant) {
+    public void setEtudiant(String etudiant) {
         this.etudiant = etudiant;
     }
 
-    public Cours getCours() {
+    public int getCours() {
         return cours;
     }
 
-    public void setCours(Cours cours) {
+    public void setCours(int cours) {
         this.cours = cours;
     }
 

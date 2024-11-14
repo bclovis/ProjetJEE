@@ -27,6 +27,9 @@
         <mapping class="com.example.projetjee.Etudiant"/>
         <mapping class="com.example.projetjee.Enseignant"/>
         <mapping class="com.example.projetjee.Admin"/>
+        <mapping class="com.example.projetjee.Note"/>
+        <mapping class="com.example.projetjee.Inscription"/>
+        <mapping class="com.example.projetjee.Cours"/>
 
 
     </session-factory>

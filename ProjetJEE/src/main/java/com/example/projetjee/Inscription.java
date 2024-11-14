@@ -9,17 +9,12 @@ import java.util.Date;
 public class Inscription {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private Long id;
-
-    @ManyToOne
     @JoinColumn(name = "etudiant_email", nullable = false)
-    private Etudiant etudiant;
+    private String etudiant;
 
-    @ManyToOne
+    @Id
     @JoinColumn(name = "cours_id", nullable = false)
-    private Cours cours;
+    private int cours;
 
     @Column(name = "date", nullable = false)
     @Temporal(TemporalType.DATE)
@@ -28,34 +23,27 @@ public class Inscription {
     // Constructeurs
     public Inscription() {}
 
-    public Inscription(Etudiant etudiant, Cours cours, Date date) {
+    public Inscription(String etudiant, int cours, Date date) {
         this.etudiant = etudiant;
         this.cours = cours;
         this.date = date;
     }
 
     // Getters et Setters
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Etudiant getEtudiant() {
+    public String getEtudiant() {
         return etudiant;
     }
 
-    public void setEtudiant(Etudiant etudiant) {
+    public void setEtudiant(String etudiant) {
         this.etudiant = etudiant;
     }
 
-    public Cours getCours() {
+    public int getCours() {
         return cours;
     }
 
-    public void setCours(Cours cours) {
+    public void setCours(int cours) {
         this.cours = cours;
     }
 

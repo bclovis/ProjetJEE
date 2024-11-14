@@ -21,14 +21,13 @@ public class Cours {
     @OneToMany(mappedBy = "cours", cascade = CascadeType.ALL)
     private List<Inscription> inscriptions = new ArrayList<>();
 
-    @ManyToOne
     @JoinColumn(name = "enseignant_email", nullable = false)
-    private Enseignant enseignant;
+    private String enseignant;
 
-    @Column(name = "debut", nullable = false)
+    @Column(name = "heure_debut", nullable = false)
     private LocalDateTime debut;
 
-    @Column(name = "fin", nullable = false)
+    @Column(name = "heure_fin", nullable = false)
     private LocalDateTime fin;
 
     @Enumerated(EnumType.STRING)
@@ -38,7 +37,7 @@ public class Cours {
     // Constructeurs
     public Cours() {}
 
-    public Cours(Matiere matiere, Enseignant enseignant, LocalDateTime debut, LocalDateTime fin, Semestre semestre) {
+    public Cours(Matiere matiere, String enseignant, LocalDateTime debut, LocalDateTime fin, Semestre semestre) {
         this.matiere = matiere;
         this.enseignant = enseignant;
         this.debut = debut;
@@ -71,11 +70,11 @@ public class Cours {
         this.inscriptions = inscriptions;
     }
 
-    public Enseignant getEnseignant() {
+    public String getEnseignant() {
         return enseignant;
     }
 
-    public void setEnseignant(Enseignant enseignant) {
+    public void setEnseignant(String enseignant) {
         this.enseignant = enseignant;
     }
 
