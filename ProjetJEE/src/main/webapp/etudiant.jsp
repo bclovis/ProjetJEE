@@ -53,7 +53,7 @@
         <li><a href="consulterEmploiDuTemps.jsp">Consulter mon emploi du temps</a></li>
         <li><a href="inscrireCours.jsp">S'inscrire à des cours</a></li>
         <li><a href="messagerie.jsp">Accéder à ma messagerie</a></li>
-        <li><a href="etudiant/voirNote.jsp">Voir mes notes</a></li>
+        <li><a href="http://localhost:8081/ProjetJEE_war_exploded/voirNotes">Voir mes notes</a></li>
     </ul>
 
     <form action="logout" method="post" class="logout-button">

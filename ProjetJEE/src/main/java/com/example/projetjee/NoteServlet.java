@@ -17,7 +17,7 @@ public class NoteServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Récupération de l'email de l'étudiant connecté depuis la session
-        String email = "etudiant.test@gmail.com";
+        String email = (String) request.getSession().getAttribute("email");
 
         // Vérification que l'étudiant est bien connecté
         if (email == null) {
@@ -30,7 +30,7 @@ public class NoteServlet extends HttpServlet {
             Transaction transaction = session.beginTransaction();
 
             // Création de la requête pour récupérer les notes de l'étudiant
-            String hql = "FROM Note WHERE etudiant = :email";
+            String hql = "FROM Note WHERE etudiant.email = :email";
             Query<Note> query = session.createQuery(hql, Note.class);
             query.setParameter("email", email);
 

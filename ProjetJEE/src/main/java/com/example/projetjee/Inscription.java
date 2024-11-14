@@ -9,12 +9,14 @@ import java.util.Date;
 public class Inscription {
 
     @Id
-    @JoinColumn(name = "etudiant_email", nullable = false)
-    private String etudiant;
+    @ManyToOne
+    @JoinColumn(name = "etudiant", nullable = false)
+    private Etudiant etudiant;
 
     @Id
-    @JoinColumn(name = "cours_id", nullable = false)
-    private int cours;
+    @ManyToOne
+    @JoinColumn(name = "cours", nullable = false)
+    private Cours cours;
 
     @Column(name = "date", nullable = false)
     @Temporal(TemporalType.DATE)
@@ -23,7 +25,7 @@ public class Inscription {
     // Constructeurs
     public Inscription() {}
 
-    public Inscription(String etudiant, int cours, Date date) {
+    public Inscription(Etudiant etudiant, Cours cours, Date date) {
         this.etudiant = etudiant;
         this.cours = cours;
         this.date = date;
@@ -31,19 +33,19 @@ public class Inscription {
 
     // Getters et Setters
 
-    public String getEtudiant() {
+    public Etudiant getEtudiant() {
         return etudiant;
     }
 
-    public void setEtudiant(String etudiant) {
+    public void setEtudiant(Etudiant etudiant) {
         this.etudiant = etudiant;
     }
 
-    public int getCours() {
+    public Cours getCours() {
         return cours;
     }
 
-    public void setCours(int cours) {
+    public void setCours(Cours cours) {
         this.cours = cours;
     }
 
