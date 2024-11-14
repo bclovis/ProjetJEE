@@ -8,16 +8,13 @@ import java.util.Date;
 public class Inscription {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private Long id;
-
     @ManyToOne
-    @JoinColumn(name = "etudiant_email", nullable = false)
+    @JoinColumn(name = "etudiant", nullable = false)
     private Etudiant etudiant;
 
+    @Id
     @ManyToOne
-    @JoinColumn(name = "cours_id", nullable = false)
+    @JoinColumn(name = "cours", nullable = false)
     private Cours cours;
 
     @Column(name = "date", nullable = false)
@@ -36,13 +33,6 @@ public class Inscription {
     }
 
     // Getters et Setters
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public Etudiant getEtudiant() {
         return etudiant;

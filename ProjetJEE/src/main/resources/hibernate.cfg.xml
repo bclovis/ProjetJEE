@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-configuration PUBLIC
         "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
-        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
 
@@ -24,12 +24,13 @@
         <!-- Schema management -->
         <property name="hibernate.hbm2ddl.auto">update</property>
 
-        <!-- Mappings -->
         <mapping class="com.example.projetjee.Etudiant"/>
         <mapping class="com.example.projetjee.Enseignant"/>
         <mapping class="com.example.projetjee.Admin"/>
-        <mapping class="com.example.projetjee.Cours"/>
+        <mapping class="com.example.projetjee.Note"/>
         <mapping class="com.example.projetjee.Inscription"/>
+        <mapping class="com.example.projetjee.Cours"/>
+
 
     </session-factory>
 </hibernate-configuration>

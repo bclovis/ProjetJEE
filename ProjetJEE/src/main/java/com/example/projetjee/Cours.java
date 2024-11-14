@@ -20,15 +20,14 @@ public class Cours {
 
     @OneToMany(mappedBy = "cours", cascade = CascadeType.ALL)
     private List<Inscription> inscriptions = new ArrayList<>();
-
     @ManyToOne
-    @JoinColumn(name = "enseignant_email", nullable = false)
+    @JoinColumn(name = "enseignant", nullable = false)
     private Enseignant enseignant;
 
-    @Column(name = "debut", nullable = false)
+    @Column(name = "heure_debut", nullable = false)
     private LocalDateTime debut;
 
-    @Column(name = "fin", nullable = false)
+    @Column(name = "heure_fin", nullable = false)
     private LocalDateTime fin;
 
     @Enumerated(EnumType.STRING)

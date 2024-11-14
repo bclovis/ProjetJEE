@@ -15,16 +15,13 @@ public class Note {
     private Long id;
 
     @Column(name = "note", nullable = false)
-    private Float note;
-
+    private float note;
     @ManyToOne
-    @JoinColumn(name = "etudiant_email", nullable = false)
+    @JoinColumn(name = "etudiant", nullable = false)
     private Etudiant etudiant;
-
     @ManyToOne
-    @JoinColumn(name = "cours_id", nullable = false)
+    @JoinColumn(name = "cours", nullable = false)
     private Cours cours;
-
     @Temporal(TemporalType.DATE)
     @Column(name = "date", nullable = false)
     private Date date;
@@ -32,19 +29,15 @@ public class Note {
     @Transient
     private List<Observateur> observateurs = new ArrayList<>();
 
-
-
     // Constructeurs
+    public Note() {
+    }
 
-    public Note(Float note, Date date, Etudiant etudiant, Cours cours) {
+    public Note(float note, Date date, Etudiant etudiant, Cours cours) {
         this.note = note;
         this.date = date;
         this.etudiant = etudiant;
         this.cours = cours;
-    }
-
-    public Note() {
-
     }
 
     // Getters et Setters
@@ -56,11 +49,11 @@ public class Note {
         this.id = id;
     }
 
-    public Float getNote() {
+    public float getNote() {
         return note;
     }
 
-    public void setNote(Float note) {
+    public void setNote(float note) {
         this.note = note;
         notifierObservateurs("Note modifiée : " + note);
     }
