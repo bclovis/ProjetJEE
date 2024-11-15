@@ -26,9 +26,6 @@ public class Note {
     @Column(name = "date", nullable = false)
     private Date date;
 
-    @Transient
-    private List<Observateur> observateurs = new ArrayList<>();
-
     // Constructeurs
     public Note() {
     }
@@ -41,21 +38,9 @@ public class Note {
     }
 
     // Getters et Setters
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public float getNote() {
         return note;
-    }
-
-    public void setNote(float note) {
-        this.note = note;
-        notifierObservateurs("Note modifiée : " + note);
     }
 
     public Date getDate() {
@@ -78,22 +63,6 @@ public class Note {
         return cours;
     }
 
-    public void setCours(Cours cours) {
-        this.cours = cours;
-    }
 
-    // Méthodes pour gérer les observateurs (patron de conception Observer)
-    public void ajouterObservateur(Observateur observateur) {
-        observateurs.add(observateur);
-    }
 
-    public void supprimerObservateur(Observateur observateur) {
-        observateurs.remove(observateur);
-    }
-
-    public void notifierObservateurs(String message) {
-        for (Observateur observateur : observateurs) {
-            observateur.mettreAJour(message);
-        }
-    }
 }

@@ -15,6 +15,36 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>NoteServlet</servlet-name>
+        <servlet-class>com.example.projetjee.NoteServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>NoteServlet</servlet-name>
+        <url-pattern>/voirNotes</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SendNoteServlet</servlet-name>
+        <servlet-class>com.example.projetjee.SendNoteServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SendNoteServlet</servlet-name>
+        <url-pattern>/envoyerNotes</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SendInscriptionServlet</servlet-name>
+        <servlet-class>com.example.projetjee.SendInscriptionServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SendInscriptionServlet</servlet-name>
+        <url-pattern>/envoyerModifInscription</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>LogoutServlet</servlet-name>
         <servlet-class>com.example.projetjee.LogoutServlet</servlet-class>
     </servlet>
@@ -23,6 +53,75 @@
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/logout</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CreerCompteServlet</servlet-name>
+        <servlet-class>com.example.projetjee.CreerCompteServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GererEtudiantsServlet</servlet-name>
+        <servlet-class>com.example.projetjee.GererEtudiantsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GererEtudiantsServlet</servlet-name>
+        <url-pattern>/gererEtudiants</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GererEnseignantsServlet</servlet-name>
+        <servlet-class>com.example.projetjee.GererEnseignantsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GererEnseignantsServlet</servlet-name>
+        <url-pattern>/gererEnseignants</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet-mapping>
+        <servlet-name>CreerCompteServlet</servlet-name>
+        <url-pattern>/CreerCompteServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ModifierEtudiantServlet</servlet-name>
+        <servlet-class>com.example.projetjee.ModifierEtudiantServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ModifierEtudiantServlet</servlet-name>
+        <url-pattern>/modifierEtudiant</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ModifierEnseignantServlet</servlet-name>
+        <servlet-class>com.example.projetjee.ModifierEnseignantServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ModifierEnseignantServlet</servlet-name>
+        <url-pattern>/modifierEnseignant</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>SupprimerEtudiantServlet</servlet-name>
+        <servlet-class>com.example.projetjee.SupprimerEtudiantServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SupprimerEtudiantServlet</servlet-name>
+        <url-pattern>/supprimerEtudiant</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SupprimerEnseignantServlet</servlet-name>
+        <servlet-class>com.example.projetjee.SupprimerEnseignantServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SupprimerEnseignantServlet</servlet-name>
+        <url-pattern>/supprimerEnseignant</url-pattern>
+    </servlet-mapping>
+
+
+
+
+
+
 
     <!-- Configuration de la page de démarrage -->
     <welcome-file-list>
