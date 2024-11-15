@@ -9,10 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee1cf5c7-fc3d-4b3a-b22b-bc8843babee7" name="Changes" comment="Avancement dans la création des classes en ajoutant le JPA, mais il reste des erreurs et c'est inutile d'avoir fait ça pour le moment">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/etudiant.css" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/etudiant.css" afterDir="false" />
-    </list>
+    <list default="true" id="ee1cf5c7-fc3d-4b3a-b22b-bc8843babee7" name="Changes" comment="modif dans le css (bouton déconnexion à corriger)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -316,7 +313,7 @@
       <workItem from="1730824286613" duration="19639000" />
       <workItem from="1731099399325" duration="20210000" />
       <workItem from="1731403000108" duration="1163000" />
-      <workItem from="1731656694757" duration="907000" />
+      <workItem from="1731656694757" duration="1405000" />
     </task>
     <task id="LOCAL-00001" summary="Commencement de la création des classes Model du projet, elles sont à completer">
       <created>1731101177499</created>
@@ -339,7 +336,14 @@
       <option name="project" value="LOCAL" />
       <updated>1731322605653</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="modif dans le css (bouton déconnexion à corriger)">
+      <created>1731658033756</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1731658033756</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,6 +377,7 @@
     <MESSAGE value="Commencement de la création des classes Model du projet, elles sont à completer" />
     <MESSAGE value="Debut création des classes Model du projet, elles sont à completer et à ajouter les autres pour faire marcher le tout" />
     <MESSAGE value="Avancement dans la création des classes en ajoutant le JPA, mais il reste des erreurs et c'est inutile d'avoir fait ça pour le moment" />
-    <option name="LAST_COMMIT_MESSAGE" value="Avancement dans la création des classes en ajoutant le JPA, mais il reste des erreurs et c'est inutile d'avoir fait ça pour le moment" />
+    <MESSAGE value="modif dans le css (bouton déconnexion à corriger)" />
+    <option name="LAST_COMMIT_MESSAGE" value="modif dans le css (bouton déconnexion à corriger)" />
   </component>
 </project>
