@@ -1,7 +1,6 @@
 package com.example.projetjee;
 
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -20,6 +19,7 @@ public class LoginServlet extends HttpServlet {
         boolean isAuthenticated = authenticateUser(email, password, role);
 
         if (isAuthenticated) {
+            request.getSession().setAttribute("email", email);
             // Redirige vers la page appropriée selon le rôle
             switch (role) {
                 case "etudiant":
