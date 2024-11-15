@@ -35,12 +35,13 @@ body {
     font-size: 30px; /* Ajustez la taille selon votre préférence */
 }
 
-.header .icons .icon button {
+.header .icon button {
     background: none;
     border: none;
-    cursor: pointer;
+    padding: 0; /* Enlève tout padding */
+    outline: none; /* Enlève le contour lors du focus */
+    color: inherit; /* Garde la couleur de l'icône */
 }
-
 
 /* Mise en page principale */
 .main-content {
