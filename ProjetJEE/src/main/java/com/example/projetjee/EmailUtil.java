@@ -11,7 +11,7 @@ public class EmailUtil {
     private static final String SMTP_HOST = "smtp.gmail.com"; // Exemple avec Gmail
     private static final String SMTP_PORT = "587";
     private static final String USERNAME = "notificationcytech@gmail.com";
-    private static final String PASSWORD = "notification.password";
+    private static final String PASSWORD = "notification.password123";
 
     public static void sendEmail(String toEmail, String subject, String body) {
         Properties properties = new Properties();

@@ -104,7 +104,6 @@
             <version>7.2.3</version>
         </dependency>
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
