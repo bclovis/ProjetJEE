@@ -10,11 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee1cf5c7-fc3d-4b3a-b22b-bc8843babee7" name="Changes" comment="debut des notifs">
+      <change afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/EmailUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/SendInscriptionServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/SendNoteServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/EmailUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/Observateur.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/SendInscriptionServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/SendNoteServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/etudiant.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/etudiant.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +26,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
