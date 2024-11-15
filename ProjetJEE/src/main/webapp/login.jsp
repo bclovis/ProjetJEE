@@ -4,32 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Connexion</title>
+    <link rel="stylesheet" href="login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
-<h2>Page de Connexion</h2>
-<form action="login" method="post">
-    <label for="email">Email :</label>
-    <input type="email" id="email" name="email" required>
-    <br><br>
+    <img src="Logo_Projet_JEE.PNG" alt="Logo" class="logo">
+    <h2>Log In</h2>
+    <form action="login" method="post">
+        <div class="form-group">
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+            <br><br>
+        </div>
 
-    <label for="password">Mot de passe :</label>
-    <input type="password" id="password" name="password" required>
-    <br><br>
+        <div class="form-group">
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" name="password" required>
+            <br><br>
+        </div>
 
-    <label>Rôle :</label>
-    <input type="radio" id="etudiant" name="role" value="etudiant" required>
-    <label for="etudiant">Étudiant</label>
 
-    <input type="radio" id="enseignant" name="role" value="enseignant">
-    <label for="enseignant">Enseignant</label>
+        <div class="radio-group">
+        <label>Rôle :</label>
+            <input type="radio" id="etudiant" name="role" value="etudiant" required>
+            <label for="etudiant">Étudiant</label>
 
-    <input type="radio" id="admin" name="role" value="admin">
-    <label for="admin">Administrateur</label>
-    <br><br>
+            <input type="radio" id="enseignant" name="role" value="enseignant">
+            <label for="enseignant">Enseignant</label>
 
-    <button type="submit">Se connecter</button>
-</form>
+            <input type="radio" id="admin" name="role" value="admin">
+            <label for="admin">Administrateur</label>
+            <br><br>
+        </div>
 
+        <button type="submit">Se connecter</button>
+    </form>
 <%-- Affichage d'un message d'erreur si la connexion échoue --%>
 <c:if test="${not empty errorMessage}">
     <p style="color: red;">${errorMessage}</p>
