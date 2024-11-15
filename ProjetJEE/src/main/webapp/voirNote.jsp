@@ -25,6 +25,7 @@
     table {
       width: 100%;
       border-collapse: collapse;
+      margin-bottom: 20px;
     }
     table, th, td {
       border: 1px solid black;
@@ -33,6 +34,25 @@
       padding: 10px;
       text-align: left;
     }
+    th {
+      background-color: #f2f2f2;
+    }
+    .actions {
+      display: flex;
+      justify-content: space-between; /* Pour espacer les boutons */
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
   </style>
 </head>
 <body>
@@ -40,32 +60,59 @@
   <h1>Mes Notes</h1>
 
   <c:choose>
-    <c:when test="${empty notes}">
+    <c:when test="${empty notesParMatiere}">
       <p>Aucune note disponible.</p>
     </c:when>
     <c:otherwise>
       <table>
         <thead>
         <tr>
-          <th>Matière</th>
-          <th>Note</th>
+          <th>Note (/20)</th>
           <th>Date</th>
         </tr>
         </thead>
         <tbody>
-        <c:forEach items="${notes}" var="note">
+        <!-- Affichage de la moyenne générale -->
+        <tr>
+          <td colspan="2" style="font-weight: bold; text-align: center;">
+            Moyenne générale : ${moyenneGenerale} / 20
+          </td>
+        </tr>
+
+        <!-- Affichage des notes par matière -->
+        <c:forEach items="${notesParMatiere}" var="matiereEntry">
+          <c:set var="matiere" value="${matiereEntry.key}" />
+          <c:set var="notes" value="${matiereEntry.value}" />
+
+          <!-- Ligne pour la moyenne de la matière -->
           <tr>
-            <td>${note.cours.matiere}</td>
-            <td>${note.note}</td>
-            <td><fmt:formatDate value="${note.date}" pattern="dd/MM/yyyy" /></td>
+            <td colspan="2" style="font-weight: bold; text-align: center;">
+                ${matiere} - Moyenne : ${moyennesParMatiere[matiere]} / 20
+            </td>
           </tr>
+
+          <!-- Lignes pour les notes de la matière -->
+          <c:forEach items="${notes}" var="note">
+            <tr>
+              <td>${note.note} / 20</td>
+              <td><fmt:formatDate value="${note.date}" pattern="dd/MM/yyyy" /></td>
+            </tr>
+          </c:forEach>
         </c:forEach>
         </tbody>
       </table>
     </c:otherwise>
   </c:choose>
 
-  <a href="../etudiant.jsp">Retour à l'accueil étudiant</a>
+  <div class="actions">
+    <form action="http://localhost:8081/ProjetJEE_war_exploded/voirNotes" method="get">
+      <input type="hidden" name="action" value="download">
+      <button type="submit">Télécharger le relevé de notes</button>
+    </form>
+
+    <!-- Bouton aligné à droite -->
+    <button onclick="window.location.href='etudiant.jsp'">Retour à l'accueil étudiant</button>
+  </div>
 </div>
 </body>
 </html>
