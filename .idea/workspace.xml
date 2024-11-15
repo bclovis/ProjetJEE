@@ -11,8 +11,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ee1cf5c7-fc3d-4b3a-b22b-bc8843babee7" name="Changes" comment="debut des notifs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/EmailUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/Observateur.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/SendInscriptionServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/SendNoteServlet.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -302,7 +304,14 @@
       <option name="project" value="LOCAL" />
       <updated>1731658033756</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="mail en cours">
+      <created>1731662574791</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1731662574791</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -337,6 +346,7 @@
     <MESSAGE value="Debut création des classes Model du projet, elles sont à completer et à ajouter les autres pour faire marcher le tout" />
     <MESSAGE value="Avancement dans la création des classes en ajoutant le JPA, mais il reste des erreurs et c'est inutile d'avoir fait ça pour le moment" />
     <MESSAGE value="modif dans le css (bouton déconnexion à corriger)" />
-    <option name="LAST_COMMIT_MESSAGE" value="modif dans le css (bouton déconnexion à corriger)" />
+    <MESSAGE value="mail en cours" />
+    <option name="LAST_COMMIT_MESSAGE" value="mail en cours" />
   </component>
 </project>
