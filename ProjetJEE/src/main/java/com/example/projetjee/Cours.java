@@ -11,7 +11,7 @@ public class Cours {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "cours_id", nullable = false)
+    @Column(name = "id", nullable = false)
     private Long id;
 
     @Enumerated(EnumType.STRING)
@@ -35,8 +35,7 @@ public class Cours {
     private Semestre semestre;
 
     // Constructeurs
-    public Cours() {
-    }
+    public Cours() {}
 
     public Cours(Matiere matiere, Enseignant enseignant, LocalDateTime debut, LocalDateTime fin, Semestre semestre) {
         this.matiere = matiere;

@@ -1,9 +1,7 @@
 package com.example.projetjee;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.Column;
+import jakarta.persistence.*;
+
 import java.util.Date;
 
 @Entity
@@ -25,6 +23,10 @@ public class Etudiant {
 
     @Column(name = "mdp", nullable = false)
     private String mdp;
+
+    @Column(name = "filiere", nullable = true)
+    @Enumerated(EnumType.STRING)
+    private Filiere filiere; // Nouvelle colonne
 
     // Constructeurs
 
@@ -78,5 +80,13 @@ public class Etudiant {
 
     public void setMdp(String mdp) {
         this.mdp = mdp;
+    }
+
+    public Filiere getFiliere() {
+        return filiere;
+    }
+
+    public void setFiliere(Filiere filiere) {
+        this.filiere = filiere;
     }
 }
