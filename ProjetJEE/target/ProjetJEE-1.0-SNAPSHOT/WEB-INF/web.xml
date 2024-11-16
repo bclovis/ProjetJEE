@@ -87,9 +87,24 @@
         <url-pattern>/supprimerEnseignant</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>AssocierProfesseurMatiereServlet</servlet-name>
+        <servlet-class>com.example.projetjee.AssocierProfesseurMatiereServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AssocierProfesseurMatiereServlet</servlet-name>
+        <url-pattern>/AssocierProfesseurMatiereServlet</url-pattern>
+    </servlet-mapping>
 
 
-
+    <servlet>
+        <servlet-name>SupprimerAssociationServlet</servlet-name>
+        <servlet-class>com.example.projetjee.SupprimerAssociationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SupprimerAssociationServlet</servlet-name>
+        <url-pattern>/SupprimerAssociationServlet</url-pattern>
+    </servlet-mapping>
 
 
 
