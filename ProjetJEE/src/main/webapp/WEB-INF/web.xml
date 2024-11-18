@@ -35,6 +35,17 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>SendMessageServlet</servlet-name>
+        <servlet-class>com.example.projetjee.MessageServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SendMessageServlet</servlet-name>
+        <url-pattern>/messageServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
         <servlet-name>CreerCompteServlet</servlet-name>
         <servlet-class>com.example.projetjee.CreerCompteServlet</servlet-class>
     </servlet>

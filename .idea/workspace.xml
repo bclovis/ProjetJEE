@@ -9,15 +9,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee1cf5c7-fc3d-4b3a-b22b-bc8843babee7" name="Changes" comment="email">
+    <list default="true" id="ee1cf5c7-fc3d-4b3a-b22b-bc8843babee7" name="Changes" comment="correction de chemins">
+      <change afterPath="$PROJECT_DIR$/.idea/ProjetJEE.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/MessageServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/etudiant/messagerie.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/EmailUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/SendInscriptionServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/SendNoteServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/resources/hibernate.cfg.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/etudiant.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/etudiant.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/etudiant/voirNote.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/etudiant/voirNote.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,18 +184,6 @@
         </option>
       </method>
     </configuration>
-    <configuration default="true" type="TomeeConfiguration" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
-      <deployment />
-      <server-settings />
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Tomcat 10.1.29" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.29" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -281,6 +271,18 @@
         </option>
       </method>
     </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings />
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Tomcat Server.Tomcat 10.1.29" />
       <item itemvalue="TomEE Server.Unnamed" />
@@ -299,7 +301,8 @@
       <workItem from="1731403000108" duration="1163000" />
       <workItem from="1731656694757" duration="1405000" />
       <workItem from="1731706743743" duration="1258000" />
-      <workItem from="1731774364622" duration="918000" />
+      <workItem from="1731774364622" duration="4314000" />
+      <workItem from="1731844589360" duration="4327000" />
     </task>
     <task id="LOCAL-00001" summary="Commencement de la création des classes Model du projet, elles sont à completer">
       <created>1731101177499</created>
@@ -343,7 +346,14 @@
       <option name="project" value="LOCAL" />
       <updated>1731667433914</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="correction de chemins">
+      <created>1731775483993</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1731775483993</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,6 +390,7 @@
     <MESSAGE value="modif dans le css (bouton déconnexion à corriger)" />
     <MESSAGE value="mail en cours" />
     <MESSAGE value="email" />
-    <option name="LAST_COMMIT_MESSAGE" value="email" />
+    <MESSAGE value="correction de chemins" />
+    <option name="LAST_COMMIT_MESSAGE" value="correction de chemins" />
   </component>
 </project>

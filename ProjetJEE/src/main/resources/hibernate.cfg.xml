@@ -30,6 +30,7 @@
         <mapping class="com.example.projetjee.Note"/>
         <mapping class="com.example.projetjee.Inscription"/>
         <mapping class="com.example.projetjee.Cours"/>
+        <mapping class="com.example.projetjee.Message"/>
 
 
     </session-factory>
