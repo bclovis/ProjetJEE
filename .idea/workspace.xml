@@ -9,17 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee1cf5c7-fc3d-4b3a-b22b-bc8843babee7" name="Changes" comment="correction de chemins">
-      <change afterPath="$PROJECT_DIR$/.idea/ProjetJEE.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/MessageServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/etudiant/messagerie.jsp" afterDir="false" />
+    <list default="true" id="ee1cf5c7-fc3d-4b3a-b22b-bc8843babee7" name="Changes" comment="debut messagerie">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/MessageServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/MessageServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/NoteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/NoteServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/ReleveNotesGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/ReleveNotesGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/etudiant.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/etudiant.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/etudiant/messagerie.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/etudiant/messagerie.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +27,8 @@
       <list>
         <option value="Interface" />
         <option value="CSS File" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -271,18 +267,6 @@
         </option>
       </method>
     </configuration>
-    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
-      <deployment />
-      <server-settings />
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Tomcat Server.Tomcat 10.1.29" />
       <item itemvalue="TomEE Server.Unnamed" />
@@ -302,7 +286,8 @@
       <workItem from="1731656694757" duration="1405000" />
       <workItem from="1731706743743" duration="1258000" />
       <workItem from="1731774364622" duration="4314000" />
-      <workItem from="1731844589360" duration="4327000" />
+      <workItem from="1731844589360" duration="4364000" />
+      <workItem from="1731930221604" duration="11929000" />
     </task>
     <task id="LOCAL-00001" summary="Commencement de la création des classes Model du projet, elles sont à completer">
       <created>1731101177499</created>
@@ -353,7 +338,14 @@
       <option name="project" value="LOCAL" />
       <updated>1731775483993</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="debut messagerie">
+      <created>1731926728661</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1731926728661</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -391,6 +383,7 @@
     <MESSAGE value="mail en cours" />
     <MESSAGE value="email" />
     <MESSAGE value="correction de chemins" />
-    <option name="LAST_COMMIT_MESSAGE" value="correction de chemins" />
+    <MESSAGE value="debut messagerie" />
+    <option name="LAST_COMMIT_MESSAGE" value="debut messagerie" />
   </component>
 </project>
