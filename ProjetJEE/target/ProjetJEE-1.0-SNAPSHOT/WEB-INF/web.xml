@@ -106,11 +106,22 @@
         <url-pattern>/SupprimerAssociationServlet</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>AfficherEmploiDuTempsServlet</servlet-name>
+        <servlet-class>com.example.projetjee.AfficherEmploiDuTempsServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AfficherEmploiDuTempsServlet</servlet-name>
+        <url-pattern>/AfficherEmploiDuTemps</url-pattern>
+    </servlet-mapping>
+
+
 
 
     <!-- Configuration de la page de démarrage -->
     <welcome-file-list>
-        <welcome-file>login.jsp</welcome-file>
+        <welcome-file>admin.jsp</welcome-file>
     </welcome-file-list>
 
 </web-app>
