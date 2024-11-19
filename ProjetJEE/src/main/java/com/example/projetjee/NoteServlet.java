@@ -49,7 +49,7 @@ public class NoteServlet extends HttpServlet {
 
             // Organisation des notes par matière
             Map<Matiere, List<Note>> notesParMatiere = notes.stream()
-                    .collect(Collectors.groupingBy(note -> note.getCours().getMatiere()));
+                    .collect(Collectors.groupingBy(Note::getMatiere));
 
             // Calcul des moyennes par matière
             Map<Matiere, Double> moyennesParMatiere = new HashMap<>();

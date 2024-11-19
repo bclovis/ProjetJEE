@@ -20,8 +20,8 @@ public class Note {
     @JoinColumn(name = "etudiant", nullable = false)
     private Etudiant etudiant;
     @ManyToOne
-    @JoinColumn(name = "cours", nullable = false)
-    private Cours cours;
+    @JoinColumn(name = "matiere", nullable = false)
+    private Matiere matiere;
     @Temporal(TemporalType.DATE)
     @Column(name = "date", nullable = false)
     private Date date;
@@ -30,11 +30,11 @@ public class Note {
     public Note() {
     }
 
-    public Note(float note, Date date, Etudiant etudiant, Cours cours) {
+    public Note(float note, Date date, Etudiant etudiant, Matiere matiere) {
         this.note = note;
         this.date = date;
         this.etudiant = etudiant;
-        this.cours = cours;
+        this.matiere = matiere;
     }
 
     // Getters et Setters
@@ -59,10 +59,8 @@ public class Note {
         this.etudiant = etudiant;
     }
 
-    public Cours getCours() {
-        return cours;
+
+    public Matiere getMatiere() {
+        return matiere;
     }
-
-
-
 }
