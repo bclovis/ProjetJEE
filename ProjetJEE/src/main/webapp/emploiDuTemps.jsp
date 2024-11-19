@@ -17,10 +17,16 @@
         th {
             background-color: #f2f2f2;
         }
+        td {
+            vertical-align: top;
+        }
         .info {
             margin-bottom: 20px;
             font-size: 18px;
             font-weight: bold;
+        }
+        .navigation {
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -30,21 +36,20 @@
 <form method="get" action="AfficherEmploiDuTempsServlet">
     <label for="filiere">Choisir une filière :</label>
     <select id="filiere" name="filiere">
-        <option value="" selected>Filière</option>
-        <option value="Mathématiques">Mathématiques</option>
-        <option value="Informatique">Informatique</option>
+        <option value="" <%= "Toutes".equals(request.getAttribute("filiereNom")) ? "selected" : "" %>>Toutes</option>
+        <option value="Mathématiques" <%= "Mathématiques".equals(request.getAttribute("filiereNom")) ? "selected" : "" %>>Mathématiques</option>
+        <option value="Informatique" <%= "Informatique".equals(request.getAttribute("filiereNom")) ? "selected" : "" %>>Informatique</option>
     </select>
 
     <label for="semaine">Choisir une semaine :</label>
     <select id="semaine" name="semaine">
-        <option value="" selected>Semaine</option>
-        <% for (int i = 1; i <= 32; i++) { %>
-        <option value="<%= i %>">Semaine <%= i %></option>
+        <% Integer semaineAttrib = (Integer) request.getAttribute("semaine"); %>
+        <% for (int i = 1; i <= 36; i++) { %>
+        <option value="<%= i %>" <%= (semaineAttrib != null && i == semaineAttrib) ? "selected" : "" %>>Semaine <%= i %></option>
         <% } %>
     </select>
 
     <button type="submit">Afficher</button>
-    <button type="reset">Réinitialiser</button>
 </form>
 
 <div class="info">
@@ -83,10 +88,13 @@
         <td><%= heure %></td>
         <% for (String jour : jours) { %>
         <td>
-            <%= emploiParJourEtHeure.containsKey(jour) &&
-                    emploiParJourEtHeure.get(jour).containsKey(heure)
-                    ? emploiParJourEtHeure.get(jour).get(heure)
-                    : "" %>
+            <%
+                String contenu = emploiParJourEtHeure.containsKey(jour) &&
+                        emploiParJourEtHeure.get(jour).containsKey(heure)
+                        ? emploiParJourEtHeure.get(jour).get(heure)
+                        : "Aucun cours";
+            %>
+            <div><%= contenu %></div>
         </td>
         <% } %>
     </tr>
