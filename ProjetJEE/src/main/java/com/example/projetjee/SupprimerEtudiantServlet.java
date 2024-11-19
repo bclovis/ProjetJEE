@@ -23,9 +23,11 @@ public class SupprimerEtudiantServlet extends HttpServlet {
             if (etudiant != null) {
                 session.delete(etudiant);
                 transaction.commit();
-                response.sendRedirect("gererEtudiants?message=Suppression réussie");
+                request.setAttribute("message", "Étudiant supprimé avec succès.");
+                //response.sendRedirect("gererEtudiants?message=Suppression réussie");
             } else {
-                response.sendRedirect("gererEtudiants?error=Erreur lors de la suppression");
+                request.setAttribute("message", "Erreur lors de la suppression de l'étudiant.");
+                //response.sendRedirect("gererEtudiants?error=Erreur lors de la suppression");
             }
         } catch (Exception e) {
             e.printStackTrace();

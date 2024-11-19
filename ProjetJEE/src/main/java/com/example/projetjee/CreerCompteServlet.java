@@ -20,6 +20,14 @@ public class CreerCompteServlet extends HttpServlet {
         Date dateNaissance = java.sql.Date.valueOf(request.getParameter("dateNaissance"));
         String mdp = request.getParameter("mdp");
 
+        // Validation du champ date
+
+        if (typeCompte == null || nom == null || email == null) {
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            response.getWriter().write("Erreur : Tous les champs sont requis.");
+            return;
+        }
+
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
 
@@ -33,11 +41,13 @@ public class CreerCompteServlet extends HttpServlet {
             }
 
             transaction.commit();
-            response.sendRedirect("admin.jsp?message=Compte créé avec succès");
+            response.setStatus(HttpServletResponse.SC_OK);
+            response.getWriter().write("Compte créé avec succès.");
         } catch (Exception e) {
             transaction.rollback();
             e.printStackTrace();
-            response.sendRedirect("creationCompte.jsp?error=Erreur lors de la création du compte");
+            response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            response.getWriter().write("Erreur lors de la création du compte.");
         } finally {
             session.close();
         }

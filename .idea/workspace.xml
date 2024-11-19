@@ -9,7 +9,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee1cf5c7-fc3d-4b3a-b22b-bc8843babee7" name="Changes" comment="modif dans le css (bouton déconnexion à corriger)" />
+    <list default="true" id="ee1cf5c7-fc3d-4b3a-b22b-bc8843babee7" name="Changes" comment="supp">
+      <change afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/CSS/admin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/CSS/creationCompte.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/CSS/enseignant.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/CreerCompteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/CreerCompteServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/SupprimerEtudiantServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/SupprimerEtudiantServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/creationCompte.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/creationCompte.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/enseignant.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/enseignant.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/etudiant.css" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/CSS/etudiant.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/etudiant.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/etudiant.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/gererEtudiants.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/gererEtudiants.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/CSS/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,8 +52,8 @@
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
-    <option name="FILTER_INFO" value="true" />
-    <option name="FILTER_DEBUG" value="true" />
+    <option name="FILTER_INFO" value="false" />
+    <option name="FILTER_DEBUG" value="false" />
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="MavenImportPreferences">
@@ -45,6 +62,9 @@
         <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2oRF3U5P8qWJTAovojJgRuY1nN0" />
   <component name="ProjectLevelVcsManager">
@@ -61,15 +81,23 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Ing 2/Semestre 1/Test &amp; Vérification/Ex_JUnit&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Ing 2\Semestre 1\JEE\ProjetJEE\ProjetJEE\src\main\webapp\CSS" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="excludedTypes">
       <set>
@@ -252,55 +280,10 @@
         </option>
       </method>
     </configuration>
-    <configuration name="login.jsp" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" temporary="true" APPLICATION_SERVER_NAME="Tomcat 10.1.29" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/login.jsp" />
-      <deployment>
-        <artifact name="ProjetJEE:war exploded">
-          <settings>
-            <option name="CONTEXT_PATH" value="/ProjetJEE_war_exploded" />
-          </settings>
-        </artifact>
-      </deployment>
-      <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="d3ab824c-56ec-4c8f-9447-c953efd73c0a" />
-      </server-settings>
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="ProjetJEE:war exploded" />
-        </option>
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Tomcat Server.Tomcat 10.1.29" />
-      <item itemvalue="Tomcat Server.login.jsp" />
       <item itemvalue="TomEE Server.Unnamed" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Tomcat Server.login.jsp" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -313,7 +296,11 @@
       <workItem from="1730824286613" duration="19639000" />
       <workItem from="1731099399325" duration="20210000" />
       <workItem from="1731403000108" duration="1163000" />
-      <workItem from="1731656694757" duration="1405000" />
+      <workItem from="1731656694757" duration="10366000" />
+      <workItem from="1731693605191" duration="214000" />
+      <workItem from="1731843327620" duration="10284000" />
+      <workItem from="1731932158164" duration="17343000" />
+      <workItem from="1732020086502" duration="8343000" />
     </task>
     <task id="LOCAL-00001" summary="Commencement de la création des classes Model du projet, elles sont à completer">
       <created>1731101177499</created>
@@ -343,7 +330,14 @@
       <option name="project" value="LOCAL" />
       <updated>1731658033756</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="supp">
+      <created>1731658361695</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1731658361695</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,6 +372,7 @@
     <MESSAGE value="Debut création des classes Model du projet, elles sont à completer et à ajouter les autres pour faire marcher le tout" />
     <MESSAGE value="Avancement dans la création des classes en ajoutant le JPA, mais il reste des erreurs et c'est inutile d'avoir fait ça pour le moment" />
     <MESSAGE value="modif dans le css (bouton déconnexion à corriger)" />
-    <option name="LAST_COMMIT_MESSAGE" value="modif dans le css (bouton déconnexion à corriger)" />
+    <MESSAGE value="supp" />
+    <option name="LAST_COMMIT_MESSAGE" value="supp" />
   </component>
 </project>

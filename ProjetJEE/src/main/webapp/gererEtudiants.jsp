@@ -74,4 +74,45 @@
 
 <a href="gererPersonnel.jsp">Retour à la gestion du personnel</a>
 </body>
+
+<script>
+    // Gérer la recherche d'étudiants
+    document.getElementById('search-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        const params = new URLSearchParams(formData).toString();
+
+        // Charger les résultats dans #dynamic-content
+        fetch('gererEtudiants?' + params)
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('dynamic-content').innerHTML = html;
+            })
+            .catch(err => console.error('Erreur lors de la recherche d\'étudiants :', err));
+    });
+
+    // Modifier un étudiant
+    function modifierEtudiant(email) {
+        loadPage('/modifierEtudiant', { email });
+    }
+
+    // Supprimer un étudiant avec confirmation
+    function supprimerEtudiant(email) {
+        if (confirm('Voulez-vous vraiment supprimer cet étudiant ?')) {
+            fetch(`/supprimerEtudiant?email=${encodeURIComponent(email)}`, { method: 'POST' })
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('dynamic-content').innerHTML = html;
+                })
+                .catch(err => console.error('Erreur lors de la suppression de l\'étudiant :', err));
+        }
+    }
+
+    // Gérer la pagination
+    function navigatePage(page) {
+        loadPage('/gererEtudiants', { page });
+    }
+
+</script>
+
 </html>
