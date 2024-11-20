@@ -1,6 +1,6 @@
 package com.example.projetjee;
-
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -10,6 +10,7 @@ import org.hibernate.Transaction;
 import java.io.IOException;
 import java.util.Date;
 
+@WebServlet(name="CreerCompteServlet", value="/CreerCompteServlet")
 public class CreerCompteServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -19,13 +20,14 @@ public class CreerCompteServlet extends HttpServlet {
         String email = request.getParameter("email");
         Date dateNaissance = java.sql.Date.valueOf(request.getParameter("dateNaissance"));
         String mdp = request.getParameter("mdp");
+        Filiere filiere = Filiere.AUCUNE;
 
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
 
         try {
             if ("etudiant".equals(typeCompte)) {
-                Etudiant etudiant = new Etudiant(email, nom, prenom, dateNaissance, mdp);
+                Etudiant etudiant = new Etudiant(email, nom, prenom, dateNaissance, mdp,filiere);
                 session.save(etudiant);
             } else if ("enseignant".equals(typeCompte)) {
                 Enseignant enseignant = new Enseignant(email, nom, prenom, dateNaissance, mdp);
@@ -42,4 +44,4 @@ public class CreerCompteServlet extends HttpServlet {
             session.close();
         }
     }
-}
+} 

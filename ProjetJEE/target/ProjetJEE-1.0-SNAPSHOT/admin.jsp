@@ -52,7 +52,7 @@
         <li><a href="gererDemandeInscription.jsp">Gérer les demandes d'inscriptions</a></li>
         <li><a href="creationCompte.jsp">Création de comptes</a></li>
         <li><a href="gererPersonnel.jsp">Gérer le personnel</a></li>
-        <li><a href="gererDemandes.jsp">Gérer les demandes de filière</a></li> <!-- Nouveau lien -->
+        <li><a href="gererDemandes">Gérer les demandes de filière</a></li> <!-- Nouveau lien -->
     </ul>
 
     <form action="logout" method="post" class="logout-button">

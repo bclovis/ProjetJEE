@@ -13,8 +13,8 @@
   <select name="filiere" id="filiere">
     <option value="Informatique">Informatique</option>
     <option value="Mathematiques">Mathématiques</option>
-    <option value="Physique">Physique</option>
-    <option value="Chimie">Chimie</option>
+    <option value="Biotechnologie">Biotechnologie</option>
+    <option value="Genie_civil">Génie Civil</option>
   </select>
   <button type="submit">Envoyer ma demande</button>
 </form>

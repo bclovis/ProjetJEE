@@ -4,34 +4,27 @@ import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "Demandefiliere") // Correspond exactement au nom de la table dans la BDD
 public class DemandeFiliere {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @ManyToOne
-    @JoinColumn(name = "etudiant_email", nullable = false)
-    private Etudiant etudiant;
+    @Column(name = "etudiant_email")
+    private String etudiantEmail;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "filiere", nullable = false)
     private Filiere filiere;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "statut", nullable = false)
-    private StatutDemande statut = StatutDemande.EN_ATTENTE;
+    private String statut;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "date_demande", nullable = false)
-    private Date dateDemande = new Date();
+    @Column(name = "date_demande", nullable = false, updatable = false)
+    private Date dateDemande;
 
     @Column(name = "commentaire_admin")
     private String commentaireAdmin;
 
-    // Getters et Setters...
-
+    // Getters et Setters
     public int getId() {
         return id;
     }
@@ -40,12 +33,12 @@ public class DemandeFiliere {
         this.id = id;
     }
 
-    public Etudiant getEtudiant() {
-        return etudiant;
+    public String getEtudiantEmail() {
+        return etudiantEmail;
     }
 
-    public void setEtudiant(Etudiant etudiant) {
-        this.etudiant = etudiant;
+    public void setEtudiantEmail(String etudiantEmail) {
+        this.etudiantEmail = etudiantEmail;
     }
 
     public Filiere getFiliere() {
@@ -56,11 +49,11 @@ public class DemandeFiliere {
         this.filiere = filiere;
     }
 
-    public StatutDemande getStatut() {
+    public String getStatut() {
         return statut;
     }
 
-    public void setStatut(StatutDemande statut) {
+    public void setStatut(String statut) {
         this.statut = statut;
     }
 

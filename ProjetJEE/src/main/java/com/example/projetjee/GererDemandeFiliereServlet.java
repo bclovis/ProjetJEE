@@ -10,74 +10,157 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-@WebServlet("/gererDemandeFiliere")
+@WebServlet(name = "GererDemandeFiliereServlet", value = "/gererDemandes")
 public class GererDemandeFiliereServlet extends HttpServlet {
+    private static final int PAGE_SIZE = 20;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            // Récupère toutes les demandes de filière
-            List<DemandeFiliere> demandes = session.createQuery("FROM DemandeFiliere", DemandeFiliere.class).list();
-            System.out.println("Nombre de demandes : " + demandes.size());
-
-            // Récupère les filières actuelles des étudiants pour afficher dans une colonne supplémentaire
-            Query<Object[]> query = session.createQuery(
-                    "SELECT e.email, e.filiere FROM Etudiant e", Object[].class);
-            List<Object[]> etudiantFiliere = query.list();
-
-            // Transforme les données en une Map pour un accès facile dans la JSP
-            Map<String, String> etudiantFiliereMap = new HashMap<>();
-            for (Object[] row : etudiantFiliere) {
-                etudiantFiliereMap.put((String) row[0], (String) row[1]);
-            }
-
-            // Attache les données à la requête
-            request.setAttribute("demandes", demandes);
-            request.setAttribute("etudiantFiliereMap", etudiantFiliereMap);
-        }
-
-        // Redirige vers la JSP des demandes
-        request.getRequestDispatcher("gererDemandes.jsp").forward(request, response);
+        handleRequest(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int demandeId = Integer.parseInt(request.getParameter("id"));
         String action = request.getParameter("action");
+        String demandeIdStr = request.getParameter("demandeId");
         String commentaire = request.getParameter("commentaire");
+        String keyword = request.getParameter("recherche");
+
+        if (demandeIdStr == null) {
+            response.sendRedirect("gererDemandes" + (keyword != null ? "?recherche=" + keyword : ""));
+            return;
+        }
+
+        int demandeId;
+        try {
+            demandeId = Integer.parseInt(demandeIdStr);
+        } catch (NumberFormatException e) {
+            response.sendRedirect("gererDemandes" + (keyword != null ? "?recherche=" + keyword : ""));
+            return;
+        }
 
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             Transaction transaction = session.beginTransaction();
-
-            // Récupère la demande correspondante
             DemandeFiliere demande = session.get(DemandeFiliere.class, demandeId);
 
-            if (demande != null) {
-                if ("accepter".equals(action)) {
-                    demande.setStatut(StatutDemande.ACCEPTE);
+            if (demande == null) {
+                response.sendRedirect("gererDemandes" + (keyword != null ? "?recherche=" + keyword : ""));
+                return;
+            }
 
-                    // Logique pour mettre à jour la filière de l'étudiant
-                    Etudiant etudiant = demande.getEtudiant();
-                    etudiant.setFiliere(demande.getFiliere());
-                    session.update(etudiant);
-                } else if ("refuser".equals(action)) {
-                    demande.setStatut(StatutDemande.REFUSE);
+            boolean demandeUpdated = false;
+
+            if (action != null) {
+                switch (action) {
+                    case "accepter":
+                        demande.setStatut("ACCEPTEE");
+                        // Mettre à jour la filière de l'étudiant lorsque la demande est acceptée
+                        Query<Etudiant> etudiantQuery = session.createQuery("FROM Etudiant WHERE email = :email", Etudiant.class);
+                        etudiantQuery.setParameter("email", demande.getEtudiantEmail());
+                        Etudiant etudiant = etudiantQuery.uniqueResult();
+                        if (etudiant != null) {
+                            etudiant.setFiliere(demande.getFiliere());
+                            session.update(etudiant);
+                        }
+                        demandeUpdated = true;
+                        break;
+                    case "refuser":
+                        demande.setStatut("REFUSEE");
+                        demandeUpdated = true;
+                        break;
+                    case "supprimer":
+                        session.delete(demande);
+                        transaction.commit();
+                        response.sendRedirect("gererDemandes" + (keyword != null ? "?recherche=" + keyword : ""));
+                        return;
+                    case "commenter":
+                        if (commentaire != null && !commentaire.trim().isEmpty()) {
+                            demande.setCommentaireAdmin(commentaire);
+                            demandeUpdated = true;
+                        }
+                        break;
                 }
+            }
 
-                if (commentaire != null && !commentaire.isEmpty()) {
-                    demande.setCommentaireAdmin(commentaire);
-                }
-
+            if (demandeUpdated) {
                 session.update(demande);
-                transaction.commit();
+            }
+
+            transaction.commit();
+            response.sendRedirect("gererDemandes" + (keyword != null ? "?recherche=" + keyword : ""));
+        } catch (Exception e) {
+            e.printStackTrace();
+            request.setAttribute("error", "Erreur lors de la modification de la demande : " + e.getMessage());
+            request.getRequestDispatcher("gererDemandes.jsp").forward(request, response);
+        }
+    }
+
+    private void handleRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int page = 1;
+        String pageStr = request.getParameter("page");
+        if (pageStr != null && !pageStr.isEmpty()) {
+            try {
+                page = Integer.parseInt(pageStr);
+            } catch (NumberFormatException e) {
+                page = 1; // Par défaut, la page est à 1 si le paramètre n'est pas valide
             }
         }
 
-        // Redirige vers la page des demandes après traitement
-        response.sendRedirect("gererDemandes.jsp?message=Demande traitée avec succès.");
+        String keyword = request.getParameter("recherche");
+        String hql = "FROM DemandeFiliere";
+
+        if (keyword != null && !keyword.trim().isEmpty()) {
+            hql += " WHERE CAST(id AS string) LIKE :keyword " +
+                    "OR LOWER(etudiantEmail) LIKE :keyword " +
+                    "OR LOWER(CAST(filiere AS string)) LIKE :keyword " +
+                    "OR LOWER(statut) LIKE :keyword " +
+                    "OR CAST(dateDemande AS string) LIKE :keyword " +
+                    "OR LOWER(commentaireAdmin) LIKE :keyword";
+        }
+
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            Query<DemandeFiliere> query = session.createQuery(hql, DemandeFiliere.class);
+            if (keyword != null && !keyword.trim().isEmpty()) {
+                query.setParameter("keyword", "%" + keyword.toLowerCase() + "%");
+            }
+
+            // Pagination
+            query.setFirstResult((page - 1) * PAGE_SIZE);
+            query.setMaxResults(PAGE_SIZE);
+            List<DemandeFiliere> demandes = query.list();
+
+            // Calcul du nombre total de pages
+            String countHql = "SELECT COUNT(*) FROM DemandeFiliere";
+            if (keyword != null && !keyword.trim().isEmpty()) {
+                countHql += " WHERE CAST(id AS string) LIKE :keyword " +
+                        "OR LOWER(etudiantEmail) LIKE :keyword " +
+                        "OR LOWER(CAST(filiere AS string)) LIKE :keyword " +
+                        "OR LOWER(statut) LIKE :keyword " +
+                        "OR CAST(dateDemande AS string) LIKE :keyword " +
+                        "OR LOWER(commentaireAdmin) LIKE :keyword";
+            }
+
+            Query<Long> countQuery = session.createQuery(countHql, Long.class);
+            if (keyword != null && !keyword.trim().isEmpty()) {
+                countQuery.setParameter("keyword", "%" + keyword.toLowerCase() + "%");
+            }
+            long totalResults = countQuery.uniqueResult();
+            int totalPages = (int) Math.ceil((double) totalResults / PAGE_SIZE);
+
+            // Set attributes pour la page JSP
+            request.setAttribute("demandes", demandes);
+            request.setAttribute("currentPage", page);
+            request.setAttribute("totalPages", totalPages);
+            request.setAttribute("recherche", keyword);
+
+            // Forward vers la page JSP
+            request.getRequestDispatcher("gererDemandes.jsp").forward(request, response);
+        } catch (Exception e) {
+            e.printStackTrace();
+            request.setAttribute("error", "Erreur lors du chargement des demandes : " + e.getMessage());
+            request.getRequestDispatcher("gererDemandes.jsp").forward(request, response);
+        }
     }
 }

@@ -33,16 +33,18 @@
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/logout</url-pattern>
     </servlet-mapping>
-
     <servlet>
-        <servlet-name>NoteServlet</servlet-name>
-        <servlet-class>com.example.projetjee.NoteServlet</servlet-class>
+        <servlet-name>GererDemandeFiliereServlet</servlet-name>
+        <servlet-class>com.example.projetjee.GererDemandeFiliereServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>NoteServlet</servlet-name>
-        <url-pattern>/voirNote</url-pattern>
+        <servlet-name>GererDemandeFiliereServlet</servlet-name>
+        <url-pattern>/gererDemandes</url-pattern>
     </servlet-mapping>
+
+
+
 
     <!-- Configuration de la page de démarrage -->
     <welcome-file-list>

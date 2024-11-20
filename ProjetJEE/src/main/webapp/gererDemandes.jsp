@@ -1,49 +1,61 @@
-<%@ page contentType="text/html; charset=UTF-8" %>
-<%@ page language="java" pageEncoding="UTF-8" %>
-<!DOCTYPE html>
-<html lang="fr">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Gérer les Demandes de Filière</title>
+    <title>Gérer les Demandes de Filière</title>
 </head>
 <body>
-<h1>Demandes de Filière</h1>
+<h2>Gérer les Demandes de Filière</h2>
+
+<form action="gererDemandes" method="get">
+    <input type="text" name="recherche" placeholder="Rechercher une demande..." />
+    <input type="submit" value="Rechercher" />
+</form>
+
 <table border="1">
-  <thead>
-  <tr>
-    <th>Étudiant</th>
-    <th>Filière actuelle</th>
-    <th>Filière demandée</th>
-    <th>Statut</th>
-    <th>Commentaire</th>
-    <th>Action</th>
-  </tr>
-  </thead>
-  <tbody>
-  <c:forEach var="demande" items="${demandes}">
+    <thead>
     <tr>
-      <td>${demande.etudiant.email}</td>
-      <td>${etudiantFiliereMap[demande.etudiant.email]}</td> <!-- Nouvelle colonne -->
-      <td>${demande.filiere}</td>
-      <td>${demande.statut}</td>
-      <td>${demande.commentaireAdmin}</td>
-      <td>
-        <form action="gererDemandeFiliere" method="post">
-          <input type="hidden" name="id" value="${demande.id}">
-          <input type="hidden" name="action" value="accepter">
-          <textarea name="commentaire" placeholder="Ajouter un commentaire"></textarea>
-          <button type="submit">Accepter</button>
-        </form>
-        <form action="gererDemandeFiliere" method="post">
-          <input type="hidden" name="id" value="${demande.id}">
-          <input type="hidden" name="action" value="refuser">
-          <textarea name="commentaire" placeholder="Ajouter un commentaire"></textarea>
-          <button type="submit">Refuser</button>
-        </form>
-      </td>
+        <th>ID</th>
+        <th>Email Étudiant</th>
+        <th>Filière</th>
+        <th>Statut</th>
+        <th>Date de Demande</th>
+        <th>Commentaire Admin</th>
+        <th>Actions</th>
     </tr>
-  </c:forEach>
-  </tbody>
+    </thead>
+    <tbody>
+    <c:choose>
+        <c:when test="${not empty demandes}">
+            <c:forEach var="demande" items="${demandes}">
+                <tr>
+                    <td>${demande.id}</td>
+                    <td>${demande.etudiantEmail}</td>
+                    <td>${demande.filiere}</td>
+                    <td>${demande.statut}</td>
+                    <td>${demande.dateDemande}</td>
+                    <td>${demande.commentaireAdmin}</td>
+                    <td>
+                        <form method="post" action="gererDemandes">
+                            <input type="hidden" name="demandeId" value="${demande.id}" />
+                            <input type="text" name="commentaire" placeholder="Commentaire admin..." />
+                            <button type="submit" name="action" value="commenter">Ajouter/Modifier le commentaire</button>
+                            <button type="submit" name="action" value="accepter">Accepter</button>
+                            <button type="submit" name="action" value="refuser">Refuser</button>
+                            <button type="submit" name="action" value="supprimer">Supprimer</button>
+                        </form>
+                    </td>
+                </tr>
+            </c:forEach>
+        </c:when>
+        <c:otherwise>
+            <tr>
+                <td colspan="7">Aucune demande trouvée.</td>
+            </tr>
+        </c:otherwise>
+    </c:choose>
+    </tbody>
 </table>
+
 </body>
 </html>
