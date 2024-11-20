@@ -9,16 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee1cf5c7-fc3d-4b3a-b22b-bc8843babee7" name="Changes" comment="messagerie terminée et correction de voirNotes">
-      <change afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/MatiereFiliere.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/ProfesseurMatiere.java" afterDir="false" />
+    <list default="true" id="ee1cf5c7-fc3d-4b3a-b22b-bc8843babee7" name="Changes" comment="changement bdd">
+      <change afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/AjouterNoteServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/enseignant/ajouterNote.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/Cours.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/Cours.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/Inscription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/Matiere.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/Matiere.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/Note.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/Note.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/NoteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/NoteServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/resources/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -292,7 +286,8 @@
       <workItem from="1731844589360" duration="4364000" />
       <workItem from="1731930221604" duration="12098000" />
       <workItem from="1732003389362" duration="20000" />
-      <workItem from="1732045691575" duration="3328000" />
+      <workItem from="1732045691575" duration="3586000" />
+      <workItem from="1732122156888" duration="974000" />
     </task>
     <task id="LOCAL-00001" summary="Commencement de la création des classes Model du projet, elles sont à completer">
       <created>1731101177499</created>
@@ -357,7 +352,14 @@
       <option name="project" value="LOCAL" />
       <updated>1731942666163</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="changement bdd">
+      <created>1732050305720</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1732050305720</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -397,6 +399,7 @@
     <MESSAGE value="correction de chemins" />
     <MESSAGE value="debut messagerie" />
     <MESSAGE value="messagerie terminée et correction de voirNotes" />
-    <option name="LAST_COMMIT_MESSAGE" value="messagerie terminée et correction de voirNotes" />
+    <MESSAGE value="changement bdd" />
+    <option name="LAST_COMMIT_MESSAGE" value="changement bdd" />
   </component>
 </project>
