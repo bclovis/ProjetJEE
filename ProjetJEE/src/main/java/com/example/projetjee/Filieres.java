@@ -1,6 +1,6 @@
 package com.example.projetjee;
 
-public enum Filiere {
+public enum Filieres {
     INFORMATIQUE,
     MATHEMATIQUES,
     BIOTECHNOLOGIE,

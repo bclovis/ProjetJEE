@@ -26,13 +26,13 @@ public class Etudiant {
 
     @Column(name = "filiere", nullable = true)
     @Enumerated(EnumType.STRING)
-    private Filiere filiere; // Nouvelle colonne
+    private Filieres filiere; // Nouvelle colonne
 
     // Constructeurs
 
     public Etudiant() {}
 
-    public Etudiant(String email, String nom, String prenom, Date dateNaissance, String mdp,Filiere filiere) {
+    public Etudiant(String email, String nom, String prenom, Date dateNaissance, String mdp, Filieres filiere) {
         this.email = email;
         this.nom = nom;
         this.prenom = prenom;
@@ -83,11 +83,11 @@ public class Etudiant {
         this.mdp = mdp;
     }
 
-    public Filiere getFiliere() {
+    public Filieres getFiliere() {
         return filiere;
     }
 
-    public void setFiliere(Filiere filiere) {
+    public void setFiliere(Filieres filiere) {
         this.filiere = filiere;
     }
 }

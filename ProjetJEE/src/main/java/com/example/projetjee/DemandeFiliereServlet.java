@@ -28,7 +28,7 @@ public class DemandeFiliereServlet extends HttpServlet {
                 demande.setEtudiantEmail(etudiantEmail);
 
                 try {
-                    demande.setFiliere(Filiere.valueOf(filiereStr.toUpperCase()));
+                    demande.setFiliere(Filieres.valueOf(filiereStr.toUpperCase()));
                 } catch (IllegalArgumentException e) {
                     response.sendRedirect("choixFiliere.jsp?error=Filière invalide.");
                     return;

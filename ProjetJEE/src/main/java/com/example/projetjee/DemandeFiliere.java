@@ -13,7 +13,7 @@ public class DemandeFiliere {
     private String etudiantEmail;
 
     @Enumerated(EnumType.STRING)
-    private Filiere filiere;
+    private Filieres filiere;
 
     private String statut;
 
@@ -41,11 +41,11 @@ public class DemandeFiliere {
         this.etudiantEmail = etudiantEmail;
     }
 
-    public Filiere getFiliere() {
+    public Filieres getFiliere() {
         return filiere;
     }
 
-    public void setFiliere(Filiere filiere) {
+    public void setFiliere(Filieres filiere) {
         this.filiere = filiere;
     }
 
