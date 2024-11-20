@@ -10,36 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee1cf5c7-fc3d-4b3a-b22b-bc8843babee7" name="Changes" comment="debut des notifs">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/CreerCompteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/CreerCompteServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/DemandeFiliere.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/DemandeFiliere.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/DemandeFiliereServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/DemandeFiliereServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/Etudiant.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/Etudiant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/Filiere.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/Filiere.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/GererDemandeFiliereServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/GererDemandeFiliereServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/GererEnseignantsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/GererEnseignantsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/GererEtudiantsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/GererEtudiantsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/ModifierEnseignantServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/ModifierEnseignantServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/ModifierEtudiantServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/ModifierEtudiantServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/SupprimerEnseignantServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/SupprimerEnseignantServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/SupprimerEtudiantServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/SupprimerEtudiantServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/choixFiliere.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/choixFiliere.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/gererDemandes.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/gererDemandes.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/gererEnseignants.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/gererEnseignants.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/gererEtudiants.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/gererEtudiants.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/gererPersonnel.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/gererPersonnel.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/modifierEnseignant.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/modifierEnseignant.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/modifierEtudiant.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/modifierEtudiant.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/Etudiant.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/Etudiant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/Observable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/Observateur.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

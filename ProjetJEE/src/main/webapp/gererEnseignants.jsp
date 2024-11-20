@@ -52,6 +52,7 @@
   </c:choose>
   </tbody>
 </table>
-
+<a href="gererPersonnel.jsp">Retour à la gestion du personnel</a>
+<a href="admin.jsp">Retour à l'accueil</a>
 </body>
 </html>

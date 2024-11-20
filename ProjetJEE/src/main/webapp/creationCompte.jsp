@@ -38,5 +38,6 @@
 
     <button type="submit">Créer le compte</button>
 </form>
+<a href="admin.jsp">Retour à l'accueil</a>
 </body>
 </html>
