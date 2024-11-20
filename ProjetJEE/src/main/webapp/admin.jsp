@@ -84,7 +84,7 @@
     });
 
     // Gestionnaire d'envoi de formulaire pour la création de compte
-    /*document.addEventListener('submit', function (e) {
+    document.addEventListener('submit', function (e) {
         const form = e.target;
         if (form.id === 'creation-compte-form') {
             e.preventDefault(); // Empêche la soumission classique
@@ -92,17 +92,8 @@
             // Récupère les données du formulaire
             const formData = new FormData(form);
 
-            // Affiche les données du formulaire dans la console pour débogage
-            console.log("Données envoyées au serveur :");
-            console.log("typeCompte: " + form.typeCompte.value);
-            console.log("nom: " + form.nom.value);
-            console.log("prenom: " + form.prenom.value);
-            console.log("email: " + form.email.value);
-            console.log("dateNaissance: " + form.dateNaissance.value);
-            console.log("mdp: " + form.mdp.value);
-
             // Envoie les données à la servlet via AJAX
-            fetch('/CreerCompteServlet', {
+            fetch('creer-compte-servlet', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
@@ -118,13 +109,18 @@
             })
                 .then(response => response.text())
                 .then(message => {
-                    document.getElementById('dynamic-content').innerHTML = `
-                <p>hello</p>
-                <p>${message}</p>
-                <p>alors ?</p>
-                <button onclick="loadPage('creationCompte.jsp')">Retour</button>
-            `;
-                })
+                    const content = document.getElementById("dynamic-content");
+                    if (!content) {
+                        console.error("L'élément dynamic-content n'existe pas.");
+                        return;
+                    }
+
+                    // Option stricte pour insérer du texte de manière sécurisée
+                    if (message && message.trim() !== "") {
+                        // Si le message est valide
+                        content.innerHTML = "<p>" + message + "</p>" +
+                            "<button onclick=\"loadPage('creationCompte.jsp')\">Retour</button>";
+                    }})
                 .catch(err => {
                     console.error('Erreur lors de la création du compte :', err);
                     document.getElementById('dynamic-content').innerHTML = `
@@ -133,7 +129,7 @@
             `       ;
             });
         }
-    });*/
+    });
 
 </script>
 

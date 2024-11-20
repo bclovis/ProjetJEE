@@ -9,7 +9,7 @@
 </head>
 <body>
 <h1>Création de Compte</h1>
-<form action="http://localhost:8080/ProjetJEE/CreerCompteServlet" id="creation-compte-form" method="post">
+<form id="creation-compte-form" method="post">
     <label for="typeCompte">Type de compte :</label>
     <select name="typeCompte" id="typeCompte" required>
         <option value="etudiant">Étudiant</option>

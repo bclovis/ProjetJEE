@@ -43,6 +43,7 @@ public class CreerCompteServlet extends HttpServlet {
             transaction.commit();
             response.setStatus(HttpServletResponse.SC_OK);
             response.getWriter().write("Compte créé avec succès.");
+            //response.sendRedirect("admin.jsp");
         } catch (Exception e) {
             transaction.rollback();
             e.printStackTrace();
