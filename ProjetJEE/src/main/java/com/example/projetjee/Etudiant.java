@@ -25,19 +25,19 @@ public class Etudiant {
     private String mdp;
 
     @ManyToOne
+    @JoinColumn(name = "filiere")
     private Filiere filiere;
 
     // Constructeurs
 
     public Etudiant() {}
 
-    public Etudiant(String email, String nom, String prenom, Date dateNaissance, String mdp, Filiere filiere) {
+    public Etudiant(String email, String nom, String prenom, Date dateNaissance, String mdp) {
         this.email = email;
         this.nom = nom;
         this.prenom = prenom;
         this.dateNaissance = dateNaissance;
         this.mdp = mdp;
-        this.filiere = filiere;
     }
 
     // Getters et Setters
@@ -80,5 +80,13 @@ public class Etudiant {
 
     public void setMdp(String mdp) {
         this.mdp = mdp;
+    }
+
+    public void setFiliere(Filiere filiere) {
+        this.filiere = filiere;
+    }
+
+    public Filiere getFiliere() {
+        return filiere;
     }
 }

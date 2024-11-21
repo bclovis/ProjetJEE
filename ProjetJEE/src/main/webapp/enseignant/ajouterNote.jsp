@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,12 +50,16 @@
 
 <!-- Formulaire pour ajouter une note -->
 <h2>Ajouter une Note</h2>
-<form method="post" action="AjouterNoteServlet"> <!-- Utilisation de l'URL correcte -->
+<form method="post" action="ajouterNote">
     <label for="emailEtudiant">Email de l'élève :</label><br>
-    <input type="text" id="emailEtudiant" name="email" required><br><br>
+    <input type="text" id="emailEtudiant" name="emailEtudiant" required><br><br>
 
     <label for="matiere">Matière :</label><br>
-    <input type="text" id="matiere" name="matiere" required><br><br>
+    <select id="matiere" name="matiere" required>
+        <c:forEach var="matiere" items="${matieres}">
+            <option value="${matiere.nom}">${matiere.nom}</option>
+        </c:forEach>
+    </select><br><br>
 
     <label for="note">Note :</label><br>
     <input type="number" step="0.01" id="note" name="note" required><br><br>
