@@ -38,17 +38,37 @@ public class NoteServlet extends HttpServlet {
             Query<Note> query = session.createQuery(hql, Note.class);
             query.setParameter("email", email);
             List<Note> notes = query.list();
+
+            // Récupérer les informations personnelles de l'étudiant
+            String studentHql = "FROM Etudiant WHERE email = :email";
+            Query<Etudiant> studentQuery = session.createQuery(studentHql, Etudiant.class);
+            studentQuery.setParameter("email", email);
+            Etudiant etudiant = (Etudiant) studentQuery.uniqueResult();
+
             transaction.commit();
 
-            // Organisation des notes par matière et calcul des moyennes
-            Map<Matiere, List<Note>> notesParMatiere = notes.stream().collect(Collectors.groupingBy(note -> note.getCours().getMatiere()));
+            // Organisation des notes par matière
+            Map<Matiere, List<Note>> notesParMatiere = notes.stream()
+                    .collect(Collectors.groupingBy(Note::getMatiere));
+
+            // Calcul des moyennes par matière
+            Map<Matiere, Double> moyennesParMatiere = new HashMap<>();
+            for (Matiere matiere : notesParMatiere.keySet()) {
+                List<Note> notesDeMatiere = notesParMatiere.get(matiere);
+                double somme = notesDeMatiere.stream().mapToDouble(Note::getNote).sum();
+                double moyenne = somme / notesDeMatiere.size();
+                moyennesParMatiere.put(matiere, moyenne);
+            }
+
+            // Calcul de la moyenne générale
             double moyenneGenerale = notes.stream().mapToDouble(Note::getNote).average().orElse(0);
 
             if ("download".equals(action)) {
                 // Génération et envoi du relevé PDF
                 String filePath = System.getProperty("java.io.tmpdir") + "/releve_notes.pdf";
 
-                ReleveNotesGenerator.genererReleve(filePath, email, notesParMatiere, moyenneGenerale);
+                // Passer les informations de l'étudiant (nom, prénom, date de naissance) au générateur de PDF
+                ReleveNotesGenerator.genererReleve(filePath, etudiant, notesParMatiere, moyenneGenerale);
 
                 // Répondre avec le fichier PDF
                 response.setContentType("application/pdf");
@@ -61,6 +81,7 @@ public class NoteServlet extends HttpServlet {
                 request.setAttribute("notes", notes);
                 request.setAttribute("moyenneGenerale", moyenneGenerale);
                 request.setAttribute("notesParMatiere", notesParMatiere);
+                request.setAttribute("moyennesParMatiere", moyennesParMatiere); // Passage des moyennes par matière
                 request.getRequestDispatcher("/etudiant/voirNote.jsp").forward(request, response);
             }
         } catch (Exception e) {
@@ -68,5 +89,4 @@ public class NoteServlet extends HttpServlet {
             response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Erreur lors du traitement.");
         }
     }
-
 }

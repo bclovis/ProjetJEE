@@ -1,27 +1,44 @@
 package com.example.projetjee;
 
-public enum Filiere {
-    INFORMATIQUE,
-    MATHEMATIQUES,
-    BIOTECHNOLOGIE,
-    GENIE_CIVIL,
-    AUCUNE;
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "Filiere")
+public class Filiere {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    private String nom;
+
+    // Constructeur par défaut
+    public Filiere() {}
+
+    // Constructeur avec le nom de la filière
+    public Filiere(String nom) {
+        this.nom = nom;
+    }
+
+    // Getters et setters
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
 
     @Override
     public String toString() {
-        switch (this) {
-            case INFORMATIQUE:
-                return "Informatique";
-            case MATHEMATIQUES:
-                return "Mathématiques";
-            case BIOTECHNOLOGIE:
-                return "Physique";
-            case GENIE_CIVIL:
-                return "Chimie";
-            case AUCUNE:
-                return "";
-            default:
-                return super.toString();
-        }
+        return "Filiere [id=" + id + ", nom=" + nom + "]";
     }
 }

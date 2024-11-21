@@ -13,13 +13,10 @@ public class Cours {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
-
-    @Enumerated(EnumType.STRING)
-    @Column(name = "matiere", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "matiere", nullable = false)
     private Matiere matiere;
 
-    @OneToMany(mappedBy = "cours", cascade = CascadeType.ALL)
-    private List<Inscription> inscriptions = new ArrayList<>();
     @ManyToOne
     @JoinColumn(name = "enseignant", nullable = false)
     private Enseignant enseignant;
@@ -60,14 +57,6 @@ public class Cours {
 
     public void setMatiere(Matiere matiere) {
         this.matiere = matiere;
-    }
-
-    public List<Inscription> getInscriptions() {
-        return inscriptions;
-    }
-
-    public void setInscriptions(List<Inscription> inscriptions) {
-        this.inscriptions = inscriptions;
     }
 
     public Enseignant getEnseignant() {

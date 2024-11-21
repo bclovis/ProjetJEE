@@ -51,9 +51,10 @@
 
     <ul>
         <li><a href="consulterEmploiDuTemps.jsp">Consulter mon emploi du temps</a></li>
-        <li><a href="inscrireCours.jsp">S'inscrire à des cours</a></li>
         <li><a href="messagerie.jsp">Accéder à ma messagerie</a></li>
-        <li><a href="choixFiliere.jsp">Faire une demande de choix de filière</a></li> <!-- Nouveau lien -->
+        <li><a href="messageServlet">Accéder à ma messagerie</a></li>
+        <li><a href="choixFiliere.jsp">Faire une demande de choix de filière</a></li>
+        <li><a href="voirNotes">Voir mes notes</a></li><!-- Nouveau lien -->
     </ul>
 
     <form action="http://localhost:8081/ProjetJEE_war_exploded/envoyerNotes" method="POST">

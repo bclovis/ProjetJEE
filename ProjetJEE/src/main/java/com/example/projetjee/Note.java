@@ -1,9 +1,8 @@
 package com.example.projetjee;
 
 import jakarta.persistence.*;
-import java.util.ArrayList;
+
 import java.util.Date;
-import java.util.List;
 
 @Entity
 @Table(name = "Note")
@@ -20,8 +19,8 @@ public class Note {
     @JoinColumn(name = "etudiant", nullable = false)
     private Etudiant etudiant;
     @ManyToOne
-    @JoinColumn(name = "cours", nullable = false)
-    private Cours cours;
+    @JoinColumn(name = "matiere", nullable = false)
+    private Matiere matiere;
     @Temporal(TemporalType.DATE)
     @Column(name = "date", nullable = false)
     private Date date;
@@ -30,17 +29,21 @@ public class Note {
     public Note() {
     }
 
-    public Note(float note, Date date, Etudiant etudiant, Cours cours) {
+    public Note(float note, Etudiant etudiant, Matiere matiere) {
         this.note = note;
-        this.date = date;
+        this.date = new Date();
         this.etudiant = etudiant;
-        this.cours = cours;
+        this.matiere = matiere;
     }
 
     // Getters et Setters
 
     public float getNote() {
         return note;
+    }
+
+    public void setNote(float note) {
+        this.note = note;
     }
 
     public Date getDate() {
@@ -59,10 +62,12 @@ public class Note {
         this.etudiant = etudiant;
     }
 
-    public Cours getCours() {
-        return cours;
+
+    public Matiere getMatiere() {
+        return matiere;
     }
 
-
-
+    public void setMatiere(Matiere matiere) {
+        this.matiere = matiere;
+    }
 }
