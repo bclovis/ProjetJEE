@@ -38,7 +38,22 @@
             font-weight: bold;
             margin-bottom: 20px;
         }
-        /* Style pour le bouton flottant */
+        .action-button {
+            margin-top: 5px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .action-button.delete {
+            background-color: #f44336;
+        }
+        .action-button:hover {
+            opacity: 0.8;
+        }
         .add-course-button {
             position: fixed;
             bottom: 20px;
@@ -62,7 +77,7 @@
 <body>
 <h1>Emploi du Temps</h1>
 
-<!-- Affichage des messages de confirmation ou d'erreur -->
+<!-- Affichage des messages -->
 <c:if test="${not empty message}">
     <p class="message">${message}</p>
 </c:if>
@@ -109,6 +124,8 @@
     <%
         Map<String, Map<String, String>> emploiParJourEtHeure =
                 (Map<String, Map<String, String>>) request.getAttribute("emploiParJourEtHeure");
+        Map<String, Map<String, Integer>> emploiIdParJourEtHeure =
+                (Map<String, Map<String, Integer>>) request.getAttribute("emploiIdParJourEtHeure");
 
         if (emploiParJourEtHeure == null || emploiParJourEtHeure.isEmpty()) {
     %>
@@ -130,8 +147,23 @@
                         emploiParJourEtHeure.get(jour).containsKey(heure)
                         ? emploiParJourEtHeure.get(jour).get(heure)
                         : "Aucun cours";
+
+                Integer coursId = emploiIdParJourEtHeure.containsKey(jour) &&
+                        emploiIdParJourEtHeure.get(jour).containsKey(heure)
+                        ? emploiIdParJourEtHeure.get(jour).get(heure)
+                        : null;
             %>
             <div><%= contenu %></div>
+            <% if (coursId != null) { %>
+            <form action="SupprimerCoursServlet" method="post" style="display: inline;">
+                <input type="hidden" name="coursId" value="<%= coursId %>" />
+                <button type="submit" class="action-button delete">Supprimer</button>
+            </form>
+            <form action="DeplacerCoursServlet" method="get" style="display: inline;">
+                <input type="hidden" name="coursId" value="<%= coursId %>" />
+                <button type="submit" class="action-button">Déplacer</button>
+            </form>
+            <% } %>
         </td>
         <% } %>
     </tr>

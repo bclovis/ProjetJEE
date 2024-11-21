@@ -9,14 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee1cf5c7-fc3d-4b3a-b22b-bc8843babee7" name="Changes" comment="Emploi du temps des deux filières avec le nom des profs.">
-      <change afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/AjouterCoursServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/ajouterCours.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jee.sql" afterDir="false" />
+    <list default="true" id="ee1cf5c7-fc3d-4b3a-b22b-bc8843babee7" name="Changes" comment="Ajouter un cours à partir de l'emploi du temps">
+      <change afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/DeplacerCoursServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/SupprimerCoursServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/deplacerCours.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/AfficherEmploiDuTempsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/AfficherEmploiDuTempsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/AjouterCoursServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/AjouterCoursServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/emploiDuTemps.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/emploiDuTemps.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -310,7 +311,7 @@
       <workItem from="1732003325439" duration="7000" />
       <workItem from="1732018609623" duration="14552000" />
       <workItem from="1732132119933" duration="2816000" />
-      <workItem from="1732181718624" duration="4417000" />
+      <workItem from="1732181718624" duration="7177000" />
     </task>
     <task id="LOCAL-00001" summary="Commencement de la création des classes Model du projet, elles sont à completer">
       <created>1731101177499</created>
@@ -364,7 +365,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732044453936</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Ajouter un cours à partir de l'emploi du temps">
+      <option name="closed" value="true" />
+      <created>1732187406711</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1732187406711</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -402,6 +411,7 @@
     <MESSAGE value="Faire l'association entre un prof et un cours" />
     <MESSAGE value="Emploi du temps, attention il faut ne pas oublier de faire le lien entre la matière et le professeur" />
     <MESSAGE value="Emploi du temps des deux filières avec le nom des profs." />
-    <option name="LAST_COMMIT_MESSAGE" value="Emploi du temps des deux filières avec le nom des profs." />
+    <MESSAGE value="Ajouter un cours à partir de l'emploi du temps" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajouter un cours à partir de l'emploi du temps" />
   </component>
 </project>
