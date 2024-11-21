@@ -17,6 +17,7 @@
     <li><a href="gererPersonnel.jsp">Gérer le personnel</a></li>
     <li><a href="AssocierProfesseurMatiereServlet">Associer un Professeur à une Matière</a></li>
     <li><a href="emploiDuTemps.jsp">Voir Emploi du temps</a></li>
+    <li><a href="gererDemandes">Gérer les demandes de filière</a></li>
 </ul>
 
 <form action="logout" method="post">
