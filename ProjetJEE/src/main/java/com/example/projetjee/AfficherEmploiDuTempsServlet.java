@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
+
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -17,6 +18,12 @@ public class AfficherEmploiDuTempsServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Récupérer le message de succès ou d'erreur depuis les paramètres
+        String message = request.getParameter("message");
+        if (message != null) {
+            request.setAttribute("message", message);
+        }
+
         String filiereNom = request.getParameter("filiere");
         String semaineParam = request.getParameter("semaine");
         int semaine = semaineParam != null && !semaineParam.isEmpty() ? Integer.parseInt(semaineParam) : -1;

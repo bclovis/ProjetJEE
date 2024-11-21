@@ -28,10 +28,47 @@
         .navigation {
             margin-top: 20px;
         }
+        .message {
+            color: green;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        /* Style pour le bouton flottant */
+        .add-course-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 50%;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+            text-align: center;
+        }
+        .add-course-button:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
 <h1>Emploi du Temps</h1>
+
+<!-- Affichage des messages de confirmation ou d'erreur -->
+<c:if test="${not empty message}">
+    <p class="message">${message}</p>
+</c:if>
+<c:if test="${not empty error}">
+    <p class="error">${error}</p>
+</c:if>
 
 <form method="get" action="AfficherEmploiDuTempsServlet">
     <label for="filiere">Choisir une filière :</label>
@@ -104,5 +141,9 @@
     %>
     </tbody>
 </table>
+
+<!-- Bouton flottant pour ajouter un cours -->
+<a href="ajouterCours" class="add-course-button" title="Ajouter un cours">+</a>
+
 </body>
 </html>
