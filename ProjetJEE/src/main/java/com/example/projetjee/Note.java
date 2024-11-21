@@ -1,6 +1,9 @@
 package com.example.projetjee;
 
 import jakarta.persistence.*;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -24,15 +27,15 @@ public class Note {
     private Matiere matiere;
     @Temporal(TemporalType.DATE)
     @Column(name = "date", nullable = false)
-    private Date date;
+    private LocalDate date;
 
     // Constructeurs
     public Note() {
     }
 
-    public Note(float note, Date date, Etudiant etudiant, Matiere matiere) {
+    public Note(float note, Etudiant etudiant, Matiere matiere) {
         this.note = note;
-        this.date = date;
+        this.date = LocalDate.now();
         this.etudiant = etudiant;
         this.matiere = matiere;
     }
@@ -43,11 +46,15 @@ public class Note {
         return note;
     }
 
-    public Date getDate() {
+    public void setNote(float note) {
+        this.note = note;
+    }
+
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
@@ -62,5 +69,9 @@ public class Note {
 
     public Matiere getMatiere() {
         return matiere;
+    }
+
+    public void setMatiere(Matiere matiere) {
+        this.matiere = matiere;
     }
 }

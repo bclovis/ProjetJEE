@@ -1,9 +1,7 @@
 package com.example.projetjee;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.Column;
+import jakarta.persistence.*;
+
 import java.util.Date;
 
 @Entity
@@ -26,16 +24,20 @@ public class Etudiant {
     @Column(name = "mdp", nullable = false)
     private String mdp;
 
+    @ManyToOne
+    private Filiere filiere;
+
     // Constructeurs
 
     public Etudiant() {}
 
-    public Etudiant(String email, String nom, String prenom, Date dateNaissance, String mdp) {
+    public Etudiant(String email, String nom, String prenom, Date dateNaissance, String mdp, Filiere filiere) {
         this.email = email;
         this.nom = nom;
         this.prenom = prenom;
         this.dateNaissance = dateNaissance;
         this.mdp = mdp;
+        this.filiere = filiere;
     }
 
     // Getters et Setters
