@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 @Table(name = "Filiere")
 public class Filiere {
 
+    public static final String AUCUNE = "AUCUNE";
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -18,6 +19,10 @@ public class Filiere {
     // Constructeur avec le nom de la filière
     public Filiere(String nom) {
         this.nom = nom;
+    }
+
+    public static String valueOf(String upperCase) {
+        return null;
     }
 
     // Getters et setters

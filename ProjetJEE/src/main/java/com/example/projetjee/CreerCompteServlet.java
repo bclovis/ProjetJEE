@@ -1,4 +1,6 @@
 package com.example.projetjee;
+import com.example.projetjee.HibernateUtil;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -20,7 +22,7 @@ public class CreerCompteServlet extends HttpServlet {
         String email = request.getParameter("email");
         Date dateNaissance = java.sql.Date.valueOf(request.getParameter("dateNaissance"));
         String mdp = request.getParameter("mdp");
-        Filiere filiere = Filiere.AUCUNE;
+        String filiere = Filiere.AUCUNE;
 
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();

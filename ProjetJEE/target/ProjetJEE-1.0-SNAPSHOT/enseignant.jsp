@@ -12,7 +12,7 @@
 <p>Bonjour, enseignant !</p>
 <p>Voici les actions disponibles pour vous :</p>
 <ul>
-    <li><a href="ajouterNote.jsp">Ajouter une note</a></li>
+    <li><a href="ajouterNote">Ajouter une note</a></li>
     <li><a href="voirEmploiDuTemps.jsp">Voir mon emploi du temps</a></li>
     <li><a href="voirMesClasses.jsp">Voir mes classes</a></li>
 </ul>
