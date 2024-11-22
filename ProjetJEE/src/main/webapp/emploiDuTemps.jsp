@@ -177,5 +177,6 @@
 <!-- Bouton flottant pour ajouter un cours -->
 <a href="ajouterCours" class="add-course-button" title="Ajouter un cours">+</a>
 
+<a href="admin.jsp">Retour à l'accueil</a>
 </body>
 </html>

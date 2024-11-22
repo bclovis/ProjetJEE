@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html>
 <head>
     <title>Gérer les Étudiants</title>
@@ -31,7 +32,9 @@
                     <td>${etudiant.email}</td>
                     <td>${etudiant.nom}</td>
                     <td>${etudiant.prenom}</td>
-                    <td>${etudiant.dateNaissance}</td>
+                    <td>
+                        <fmt:formatDate value="${etudiant.dateNaissance}" pattern="dd/MM/yyyy" /> <!-- Formater la date -->
+                    </td>
                     <td>${etudiant.filiere}</td>
                     <td>
                         <form method="post" action="modifierEtudiant">
@@ -56,5 +59,6 @@
 </table>
 <a href="gererPersonnel.jsp">Retour à la gestion du personnel</a>
 <a href="admin.jsp">Retour à l'accueil</a>
+<a href="gererEtudiants">Afficher toute la liste</a>
 </body>
 </html>

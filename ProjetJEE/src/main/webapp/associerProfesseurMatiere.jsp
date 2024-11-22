@@ -69,5 +69,6 @@
     </c:forEach>
     </tbody>
 </table>
+<a href="admin.jsp">Retour à l'accueil</a>
 </body>
 </html>
