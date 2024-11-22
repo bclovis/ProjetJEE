@@ -1,9 +1,7 @@
 package com.example.projetjee;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.Column;
+import jakarta.persistence.*;
+
 import java.util.Date;
 
 @Entity
@@ -26,16 +24,21 @@ public class Etudiant {
     @Column(name = "mdp", nullable = false)
     private String mdp;
 
+    @Column(name = "filiere", nullable = true)
+    @Enumerated(EnumType.STRING)
+    private Filieres filiere; // Nouvelle colonne
+
     // Constructeurs
 
     public Etudiant() {}
 
-    public Etudiant(String email, String nom, String prenom, Date dateNaissance, String mdp) {
+    public Etudiant(String email, String nom, String prenom, Date dateNaissance, String mdp, Filieres filiere) {
         this.email = email;
         this.nom = nom;
         this.prenom = prenom;
         this.dateNaissance = dateNaissance;
         this.mdp = mdp;
+        this.filiere=filiere;
     }
 
     // Getters et Setters
@@ -78,5 +81,13 @@ public class Etudiant {
 
     public void setMdp(String mdp) {
         this.mdp = mdp;
+    }
+
+    public Filieres getFiliere() {
+        return filiere;
+    }
+
+    public void setFiliere(Filieres filiere) {
+        this.filiere = filiere;
     }
 }

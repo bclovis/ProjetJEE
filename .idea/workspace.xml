@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
+      <artifact name="ProjetJEE:war" />
       <artifact name="ProjetJEE:war exploded" />
     </artifacts-to-build>
   </component>
@@ -9,17 +10,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee1cf5c7-fc3d-4b3a-b22b-bc8843babee7" name="Changes" comment="Création de compte fonctionnel tout en restant dans la page admin.jsp ! C'est top !">
-      <change afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/CSS/gererEtudiant.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/CSS/modifierEtudiant.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="ee1cf5c7-fc3d-4b3a-b22b-bc8843babee7" name="Changes" comment="possibilité déplacer cours et supprimer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/CreerCompteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/CreerCompteServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/GererEtudiantsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/GererEtudiantsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/ModifierEtudiantServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/ModifierEtudiantServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/associerProfesseurMatiere.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/associerProfesseurMatiere.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/emploiDuTemps.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/emploiDuTemps.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/gererDemandes.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/gererDemandes.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/gererEnseignants.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/gererEnseignants.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/gererEtudiants.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/gererEtudiants.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/modifierEtudiant.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/modifierEtudiant.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,38 +27,44 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="CSS File" />
+        <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Pascal" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Pascal95120&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/bclovis/ProjetJEE.git&quot;,
+    &quot;accountId&quot;: &quot;c0768123-cfee-4f80-a275-fb22f063f885&quot;
+  }
+}</component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
-    <option name="FILTER_INFO" value="false" />
-    <option name="FILTER_DEBUG" value="false" />
-    <option name="CUSTOM_FILTER" value="" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2oRF3U5P8qWJTAovojJgRuY1nN0" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -71,33 +74,35 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.TestEmploiDuTemps.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.Tomcat 10.1.29.executor&quot;: &quot;Run&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Pascal&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Ing 2/Semestre 1/Test &amp; Vérification/Ex_JUnit&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;H:/Cours CYTECH ING2 S3/JEE/mysql-connector-j-8.0.32 (1)/mysql-connector-j-8.0.32/mysql-connector-j-8.0.32.jar&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.17772512&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.24424553&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Ing 2\Semestre 1\JEE\ProjetJEE\ProjetJEE\src\main\webapp\CSS" />
-    </key>
-  </component>
   <component name="RunDashboard">
     <option name="excludedTypes">
       <set>
         <option value="TomeeConfiguration" />
       </set>
     </option>
+    <option name="openRunningConfigInTab" value="true" />
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.29">
     <configuration name="Unnamed" type="TomeeConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="TomEE 10.1.29" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
@@ -271,6 +276,7 @@
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
           <artifact name="ProjetJEE:war exploded" />
+          <artifact name="ProjetJEE:war" />
         </option>
       </method>
     </configuration>
@@ -278,6 +284,14 @@
       <item itemvalue="Tomcat Server.Tomcat 10.1.29" />
       <item itemvalue="TomEE Server.Unnamed" />
     </list>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -290,11 +304,12 @@
       <workItem from="1730824286613" duration="19639000" />
       <workItem from="1731099399325" duration="20210000" />
       <workItem from="1731403000108" duration="1163000" />
-      <workItem from="1731656694757" duration="10366000" />
-      <workItem from="1731693605191" duration="214000" />
-      <workItem from="1731843327620" duration="10284000" />
-      <workItem from="1731932158164" duration="17343000" />
-      <workItem from="1732020086502" duration="39013000" />
+      <workItem from="1731656694757" duration="1405000" />
+      <workItem from="1731923803683" duration="691000" />
+      <workItem from="1731930964161" duration="4472000" />
+      <workItem from="1731946175030" duration="2200000" />
+      <workItem from="1732003325439" duration="7000" />
+      <workItem from="1732018609623" duration="8613000" />
     </task>
     <task id="LOCAL-00001" summary="Commencement de la création des classes Model du projet, elles sont à completer">
       <created>1731101177499</created>
@@ -324,26 +339,28 @@
       <option name="project" value="LOCAL" />
       <updated>1731658033756</updated>
     </task>
-    <task id="LOCAL-00005" summary="supp">
-      <created>1731658361695</created>
+    <task id="LOCAL-00005" summary="Faire l'association entre un prof et un cours">
+      <option name="closed" value="true" />
+      <created>1731766334064</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1731658361695</updated>
+      <updated>1731766334064</updated>
     </task>
-    <task id="LOCAL-00006" summary="Tentative d'avancement mais toujours bloquer avec mon erreur">
-      <created>1732047317252</created>
+    <task id="LOCAL-00006" summary="Emploi du temps, attention il faut ne pas oublier de faire le lien entre la matière et le professeur">
+      <option name="closed" value="true" />
+      <created>1732023364826</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1732047317252</updated>
+      <updated>1732023364826</updated>
     </task>
-    <task id="LOCAL-00007" summary="Création de compte fonctionnel tout en restant dans la page admin.jsp ! C'est top !">
-      <created>1732137475604</created>
+    <task id="LOCAL-00007" summary="possibilité déplacer cours et supprimer">
+      <created>1732284719587</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1732137475604</updated>
+      <updated>1732284719587</updated>
     </task>
     <option name="localTasksCounter" value="8" />
     <servers />
@@ -362,7 +379,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="origin/Pascal" />
                       </list>
                     </value>
                   </entry>
@@ -380,9 +397,9 @@
     <MESSAGE value="Debut création des classes Model du projet, elles sont à completer et à ajouter les autres pour faire marcher le tout" />
     <MESSAGE value="Avancement dans la création des classes en ajoutant le JPA, mais il reste des erreurs et c'est inutile d'avoir fait ça pour le moment" />
     <MESSAGE value="modif dans le css (bouton déconnexion à corriger)" />
-    <MESSAGE value="supp" />
-    <MESSAGE value="Tentative d'avancement mais toujours bloquer avec mon erreur" />
-    <MESSAGE value="Création de compte fonctionnel tout en restant dans la page admin.jsp ! C'est top !" />
-    <option name="LAST_COMMIT_MESSAGE" value="Création de compte fonctionnel tout en restant dans la page admin.jsp ! C'est top !" />
+    <MESSAGE value="Faire l'association entre un prof et un cours" />
+    <MESSAGE value="Emploi du temps, attention il faut ne pas oublier de faire le lien entre la matière et le professeur" />
+    <MESSAGE value="possibilité déplacer cours et supprimer" />
+    <option name="LAST_COMMIT_MESSAGE" value="possibilité déplacer cours et supprimer" />
   </component>
 </project>

@@ -25,7 +25,8 @@
         <!-- Menu latéral gauche -->
         <nav class="sidebar">
             <ul>
-                <li><a href="#" data-page="">Gérer les demandes d'inscriptions</a></li>
+                /*<li><a href="#" data-page="">Gérer les demandes d'inscriptions</a></li>*/
+                <li><a href="gererDemandes">Gérer les demandes de filière</a></li>
                 <li><a href="#" data-page="creationCompte.jsp">Création de comptes</a></li>
                 <li>
                     <a href="#" data-toogle="submenu" onclick="deroulerSubmenu(event)">Gérer le personnel</a>
@@ -34,6 +35,8 @@
                         <li><a href="#" data-page="gererEnseignants.jsp">Gérer les enseignants</a></li>
                     </ul>
                 </li>
+                <li><a href="AssocierProfesseurMatiereServlet">Associer un Professeur à une Matière</a></li>
+                <li><a href="emploiDuTemps.jsp">Voir Emploi du temps</a></li>
             </ul>
         </nav>
 

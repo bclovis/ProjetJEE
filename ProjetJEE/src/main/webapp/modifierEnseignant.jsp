@@ -23,7 +23,8 @@
 <div class="form-container">
     <h1>Modifier Enseignant</h1>
     <form action="modifierEnseignant" method="post">
-        <input type="hidden" name="email" value="<%= request.getParameter("email") %>" />
+        <input type="hidden" name="email" value="<%= request.getAttribute("email") %>" />
+
         <label for="nom">Nom :</label>
         <input type="text" id="nom" name="nom" value="<%= request.getAttribute("nom") %>" required>
 

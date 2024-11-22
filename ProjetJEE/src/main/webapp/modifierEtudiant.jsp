@@ -12,6 +12,7 @@
 <div class="form-container">
   <form action="modifierEtudiant" method="post">
     <input type="hidden" name="email" value="<%= request.getAttribute("email") %>" />
+
     <label for="nom">Nom :</label>
     <input type="text" id="nom" name="nom" value="<%= request.getAttribute("nom") %>" required>
 

@@ -10,31 +10,36 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @WebServlet(name = "ModifierEtudiantServlet", value = "/modifierEtudiant")
 public class ModifierEtudiantServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String email = request.getParameter("email");
-        System.out.println(email);
 
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            Query<Etudiant> query = session.createQuery("FROM Etudiant WHERE email = :email", Etudiant.class);
-            query.setParameter("email", email);
-            Etudiant etudiant = query.uniqueResult();
+        if (email != null && !email.isEmpty()) {
+            try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+                Etudiant etudiant = session.get(Etudiant.class, email);
 
-            if (etudiant != null) {
-                request.setAttribute("email", email); // Ajout pour la JSP
-                request.setAttribute("nom", etudiant.getNom());
-                request.setAttribute("prenom", etudiant.getPrenom());
-                request.setAttribute("dateNaissance", etudiant.getDateNaissance());
-                request.setAttribute("mdp", etudiant.getMdp());
+                if (etudiant != null) {
+                    request.setAttribute("email", etudiant.getEmail());
+                    request.setAttribute("nom", etudiant.getNom());
+                    request.setAttribute("prenom", etudiant.getPrenom());
+                    request.setAttribute("dateNaissance", new SimpleDateFormat("yyyy-MM-dd").format(etudiant.getDateNaissance()));
+                    request.setAttribute("mdp", etudiant.getMdp());
+
+                    request.getRequestDispatcher("modifierEtudiant.jsp").forward(request, response);
+                } else {
+                    response.sendRedirect("gererEtudiants?error=Étudiant%20introuvable");
+                    /* à corriger JS */
+                }
             }
-
-            request.getRequestDispatcher("modifierEtudiant.jsp").forward(request, response);
-        } catch (Exception e) {
-            e.printStackTrace();
-            response.sendRedirect("gererEtudiants?error=Erreur lors de la récupération des informations de l'étudiant");
+        } else {
+            response.sendRedirect("gererEtudiants?error=Email%20non%20fourni");
+            /* à corriger JS */
         }
     }
 
@@ -43,35 +48,48 @@ public class ModifierEtudiantServlet extends HttpServlet {
         String email = request.getParameter("email");
         String nom = request.getParameter("nom");
         String prenom = request.getParameter("prenom");
-        String dateNaissance = request.getParameter("dateNaissance");
+        String dateNaissanceStr = request.getParameter("dateNaissance");
         String mdp = request.getParameter("mdp");
+
+        if (email == null || nom == null || prenom == null || dateNaissanceStr == null || mdp == null) {
+            response.sendRedirect("modifierEtudiant?email=" + email + "&error=Champs%20incomplets");
+            return;
+        }
+
+        Date dateNaissance;
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            dateNaissance = sdf.parse(dateNaissanceStr);
+        } catch (ParseException e) {
+            response.sendRedirect("modifierEtudiant?email=" + email + "&error=Format%20de%20date%20invalide");
+            return;
+        }
 
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             Transaction transaction = session.beginTransaction();
-            Query query = session.createQuery("UPDATE Etudiant SET nom = :nom, prenom = :prenom, dateNaissance = :dateNaissance, mdp = :mdp WHERE email = :email");
-            query.setParameter("nom", nom);
-            query.setParameter("prenom", prenom);
-            query.setParameter("dateNaissance", java.sql.Date.valueOf(dateNaissance));
-            query.setParameter("mdp", mdp);
-            query.setParameter("email", email);
+            Etudiant etudiant = session.get(Etudiant.class, email);
 
-            int result = query.executeUpdate();
-            transaction.commit();
+            if (etudiant != null) {
+                etudiant.setNom(nom);
+                etudiant.setPrenom(prenom);
+                etudiant.setDateNaissance(dateNaissance);
+                etudiant.setMdp(mdp);
 
-            if (result > 0) {
-                // Redirection vers admin.jsp avec gererEtudiants.jsp préchargé
-                response.sendRedirect("admin.jsp?page=gererEtudiants.jsp");
-                //response.sendRedirect("gererEtudiants?message=Modification réussie");
+                session.update(etudiant);
+                transaction.commit();
+                response.sendRedirect("gererEtudiants?message=Modification%20réussie");
+                /* response.sendRedirect("admin.jsp?page=gererEtudiants.jsp");*/
             } else {
-                // Gestion des erreurs (optionnel)
+                response.sendRedirect("modifierEtudiant?email=" + email + "&error=Étudiant%20introuvable");
+                /* JS à faire
                 request.setAttribute("erreur", "Échec de la modification.");
                 request.getRequestDispatcher("modifierEtudiant.jsp").forward(request, response);
-                //response.sendRedirect("gererEtudiants?error=Erreur lors de la mise à jour");
+                 */
             }
         } catch (Exception e) {
             e.printStackTrace();
-            response.sendRedirect("admin.jsp?page=gererEtudiants.jsp");
-            //response.sendRedirect("gererEtudiants?error=Erreur lors de la mise à jour de l'étudiant");
+            response.sendRedirect("gererEtudiants?error=Erreur lors de la mise à jour de l'étudiant");
+            /* response.sendRedirect("admin.jsp?page=gererEtudiants.jsp");*/
         }
     }
 }

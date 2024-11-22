@@ -26,9 +26,9 @@
         <nav class="sidebar">
             <ul>
                 <li><a href="consulterEmploiDuTemps.jsp">Consulter mon emploi du temps</a></li>
-                <li><a href="inscrireCours.jsp">S'inscrire à des cours</a></li>
                 <li><a href="messagerie.jsp">Accéder à ma messagerie</a></li>
                 <li><a href="voirNotes.jsp">Voir mes notes</a></li>
+                <li><a href="choixFiliere.jsp">Faire une demande de choix de filière</a></li> <!-- Nouveau lien -->
             </ul>
         </nav>
 

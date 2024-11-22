@@ -12,6 +12,7 @@
 <ul>
     <li><a href="gererEtudiants">Gérer les Étudiants</a></li>
     <li><a href="gererEnseignants">Gérer les Enseignants</a></li>
+    <li><a href="admin.jsp">Retour à l'accueil</a></li>
 </ul>
 <form action="logout" method="post">
     <button type="submit">Déconnexion</button>

@@ -87,11 +87,43 @@
         <url-pattern>/supprimerEnseignant</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>AssocierProfesseurMatiereServlet</servlet-name>
+        <servlet-class>com.example.projetjee.AssocierProfesseurMatiereServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AssocierProfesseurMatiereServlet</servlet-name>
+        <url-pattern>/AssocierProfesseurMatiereServlet</url-pattern>
+    </servlet-mapping>
 
 
+    <servlet>
+        <servlet-name>SupprimerAssociationServlet</servlet-name>
+        <servlet-class>com.example.projetjee.SupprimerAssociationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SupprimerAssociationServlet</servlet-name>
+        <url-pattern>/SupprimerAssociationServlet</url-pattern>
+    </servlet-mapping>
 
+    <servlet>
+        <servlet-name>AfficherEmploiDuTempsServlet</servlet-name>
+        <servlet-class>com.example.projetjee.AfficherEmploiDuTempsServlet</servlet-class>
+    </servlet>
 
+    <servlet-mapping>
+        <servlet-name>AfficherEmploiDuTempsServlet</servlet-name>
+        <url-pattern>/AfficherEmploiDuTemps</url-pattern>
+    </servlet-mapping>
 
+    <servlet>
+        <servlet-name>AjouterCoursServlet</servlet-name>
+        <servlet-class>com.example.projetjee.AjouterCoursServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AjouterCoursServlet</servlet-name>
+        <url-pattern>/ajouterCours</url-pattern>
+    </servlet-mapping>
 
     <!-- Configuration de la page de démarrage -->
     <welcome-file-list>

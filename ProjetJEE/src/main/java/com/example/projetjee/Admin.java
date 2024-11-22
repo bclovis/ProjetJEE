@@ -4,7 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Column;
-import java.util.Date;
+import java.sql.Date;
 
 @Entity
 @Table(name = "Admin")
