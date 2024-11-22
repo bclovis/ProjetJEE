@@ -12,7 +12,6 @@
 <p>Bonjour, administrateur !</p>
 <p>Voici les actions disponibles pour vous :</p>
 <ul>
-    <li><a href="gererDemandeInscription.jsp">Gérer les demandes d'inscriptions</a></li>
     <li><a href="creationCompte.jsp">Création de comptes</a></li>
     <li><a href="gererPersonnel.jsp">Gérer le personnel</a></li>
     <li><a href="AssocierProfesseurMatiereServlet">Associer un Professeur à une Matière</a></li>

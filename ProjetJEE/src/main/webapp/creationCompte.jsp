@@ -8,6 +8,17 @@
 </head>
 <body>
 <h1>Création de Compte</h1>
+
+<%-- Affichage du message d'erreur s'il existe --%>
+<%
+    String error = (String) request.getAttribute("error");
+    if (error != null) {
+%>
+<p style="color: red;"><%= error %></p>
+<%
+    }
+%>
+
 <form action="CreerCompteServlet" method="post">
     <label for="typeCompte">Type de compte :</label>
     <select name="typeCompte" id="typeCompte" required>
