@@ -116,6 +116,14 @@
         <url-pattern>/AfficherEmploiDuTemps</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>AjouterCoursServlet</servlet-name>
+        <servlet-class>com.example.projetjee.AjouterCoursServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AjouterCoursServlet</servlet-name>
+        <url-pattern>/ajouterCours</url-pattern>
+    </servlet-mapping>
 
 
 

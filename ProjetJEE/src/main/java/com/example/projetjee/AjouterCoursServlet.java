@@ -142,7 +142,7 @@ public class AjouterCoursServlet extends HttpServlet {
             transaction.commit();
 
             // Redirection vers la page emploi du temps
-            response.sendRedirect("AfficherEmploiDuTempsServlet?message=Cours ajouté avec succès");
+            response.sendRedirect("AfficherEmploiDuTempsServlet?message=Cours ajoute avec succes");
         } catch (Exception e) {
             e.printStackTrace();
             request.setAttribute("error", "Erreur lors de l'ajout du cours.");
