@@ -41,7 +41,7 @@ public class ReleveNotesGenerator {
                         .mapToDouble(Note::getNote)
                         .average()
                         .orElse(0);
-                document.add(new Paragraph(matiere + " (Moyenne : " + moyenneMatiere + " / 20)").setBold().setMarginBottom(10));
+                document.add(new Paragraph(matiere.getNom() + " (Moyenne : " + moyenneMatiere + " / 20)").setBold().setMarginBottom(10));
 
                 // Créer une table
                 Table table = new Table(new float[]{1, 1});

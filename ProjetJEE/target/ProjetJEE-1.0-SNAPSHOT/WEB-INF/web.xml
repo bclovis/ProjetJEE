@@ -15,6 +15,16 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>NoteServlet</servlet-name>
+        <servlet-class>com.example.projetjee.NoteServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>NoteServlet</servlet-name>
+        <url-pattern>/voirNotes</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>LogoutServlet</servlet-name>
         <servlet-class>com.example.projetjee.LogoutServlet</servlet-class>
     </servlet>
@@ -23,6 +33,17 @@
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/logout</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SendMessageServlet</servlet-name>
+        <servlet-class>com.example.projetjee.MessageServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SendMessageServlet</servlet-name>
+        <url-pattern>/messageServlet</url-pattern>
+    </servlet-mapping>
+
 
     <servlet>
         <servlet-name>CreerCompteServlet</servlet-name>
@@ -35,6 +56,15 @@
     <servlet-mapping>
         <servlet-name>GererEtudiantsServlet</servlet-name>
         <url-pattern>/gererEtudiants</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AjouterNoteServlet</servlet-name>
+        <servlet-class>com.example.projetjee.AjouterNoteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AjouterNoteServlet</servlet-name>
+        <url-pattern>/ajouterNote</url-pattern>
     </servlet-mapping>
 
     <servlet>

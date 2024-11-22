@@ -13,7 +13,7 @@
 <p>Voici les actions disponibles pour vous :</p>
 <ul>
     <li><a href="ajouterNote">Ajouter une note</a></li>
-    <li><a href="AfficherEmploiDuTempsServlet">Voir mon emploi du temps</a></li>
+    <li><a href="AfficherEDTEtuEnsServlet">Voir mon emploi du temps</a></li>
 </ul>
 
 <form action="logout" method="post">
