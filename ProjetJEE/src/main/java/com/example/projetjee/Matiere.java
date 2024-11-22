@@ -5,20 +5,20 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "Matiere")
 public class Matiere {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private Long id;
+    private int id;
 
-    @Column(name = "nom", nullable = false)
+    @Column(nullable = false)
     private String nom;
 
-    // Constructeurs
-    public Matiere() {}
+    // Getters et Setters
+    public int getId() {
+        return id;
+    }
 
-    public Matiere(String nom) {
-        this.nom = nom;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNom() {
@@ -27,13 +27,5 @@ public class Matiere {
 
     public void setNom(String nom) {
         this.nom = nom;
-    }
-
-    public Long getId() {
-        return id;
-    }
-    @Override
-    public String toString(){
-        return nom;
     }
 }
