@@ -9,35 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee1cf5c7-fc3d-4b3a-b22b-bc8843babee7" name="Changes" comment="creation fichiers ajouterNote(1)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/CreerCompteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/CreerCompteServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/DemandeFiliere.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/DemandeFiliere.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/Etudiant.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/Etudiant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/Filiere.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/Filiere.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/WEB-INF/classes/com/example/projetjee/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/WEB-INF/classes/com/example/projetjee/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/WEB-INF/classes/com/example/projetjee/Cours.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/WEB-INF/classes/com/example/projetjee/Cours.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/WEB-INF/classes/com/example/projetjee/Etudiant.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/WEB-INF/classes/com/example/projetjee/Etudiant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/WEB-INF/classes/com/example/projetjee/Matiere.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/WEB-INF/classes/com/example/projetjee/Matiere.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/WEB-INF/classes/com/example/projetjee/Note.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/WEB-INF/classes/com/example/projetjee/Note.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/WEB-INF/classes/com/example/projetjee/NoteServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/WEB-INF/classes/com/example/projetjee/NoteServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/WEB-INF/classes/com/example/projetjee/Observable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/WEB-INF/classes/com/example/projetjee/Observateur.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/WEB-INF/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/WEB-INF/classes/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/enseignant.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/enseignant.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/etudiant.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/etudiant.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/Cours.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/Cours.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/Etudiant.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/HibernateUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/Inscription.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/LoginServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/LogoutServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/Matiere.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/Matiere.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/Note.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/NoteServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/target/classes/hibernate.cfg.xml" afterDir="false" />
-    </list>
+    <list default="true" id="ee1cf5c7-fc3d-4b3a-b22b-bc8843babee7" name="Changes" comment="creation fichiers ajouterNote(1)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Anis" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
