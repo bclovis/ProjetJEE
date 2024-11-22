@@ -76,7 +76,7 @@ public class AjouterNoteServlet extends HttpServlet {
 
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             // Récupérer les matières enseignées par le professeur
-            String hql = "SELECT m FROM ProfesseurMatiere pm JOIN pm.matiere m WHERE pm.enseignant.email = :emailProf";
+            String hql = "SELECT m FROM ProfesseurMatiere pm JOIN pm.matiere m WHERE pm.professeurEmail.email = :emailProf";
             Query<Matiere> query = session.createQuery(hql, Matiere.class);
             query.setParameter("emailProf", emailProf);
             List<Matiere> matieres = query.getResultList();
@@ -116,7 +116,7 @@ public class AjouterNoteServlet extends HttpServlet {
     }
 
     private boolean professeurEnseigneMatiere(Session session, String emailProf, Long matiereId) {
-        String hql = "SELECT COUNT(*) FROM ProfesseurMatiere pm WHERE pm.enseignant.email = :emailProf AND pm.matiere.id = :matiereId";
+        String hql = "SELECT COUNT(*) FROM ProfesseurMatiere pm WHERE pm.professeurEmail.email = :emailProf AND pm.matiere.id = :matiereId";
         Query<Long> query = session.createQuery(hql, Long.class);
         query.setParameter("emailProf", emailProf);
         query.setParameter("matiereId", matiereId);

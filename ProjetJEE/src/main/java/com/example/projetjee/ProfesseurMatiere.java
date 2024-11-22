@@ -12,7 +12,7 @@ public class ProfesseurMatiere {
     private Long id;
     @ManyToOne
     @JoinColumn(name = "professeur_email", nullable = false)
-    private Enseignant enseignant;
+    private Enseignant professeurEmail;
 
     @ManyToOne
     @JoinColumn(name = "matiere_id", nullable = false)
@@ -21,8 +21,8 @@ public class ProfesseurMatiere {
     // Constructeurs
     public ProfesseurMatiere() {}
 
-    public ProfesseurMatiere(Enseignant enseignant, Matiere matiere) {
-        this.enseignant = enseignant;
+    public ProfesseurMatiere(Enseignant professeurEmail, Matiere matiere) {
+        this.professeurEmail = professeurEmail;
         this.matiere = matiere;
         ;
     }
@@ -31,12 +31,12 @@ public class ProfesseurMatiere {
         return id;
     }
 
-    public Enseignant getEnseignant() {
-        return enseignant;
+    public Enseignant getProfesseurEmail() {
+        return professeurEmail;
     }
 
-    public void setEnseignant(Enseignant enseignant) {
-        this.enseignant = enseignant;
+    public void setProfesseurEmail(Enseignant enseignant) {
+        this.professeurEmail = enseignant;
     }
 
     public Matiere getMatiere() {
