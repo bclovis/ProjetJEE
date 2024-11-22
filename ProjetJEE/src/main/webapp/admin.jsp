@@ -131,6 +131,54 @@
         }
     });
 
+    // Gestionnaire d'envoi de formulaire pour la recherche d'étudiant
+    document.addEventListener('submit', function (e) {
+        const form = e.target;
+        if (form.id === 'gerer-etudiant-form') {
+            e.preventDefault(); // Empêche la soumission classique
+
+            // Récupérer la valeur saisie
+            const keyword = document.getElementById('search-input').value;
+
+            // Envoie les données à la servlet via AJAX
+            fetch('gererEtudiants?keyword=' + encodeURIComponent(keyword), {
+                method: 'GET',
+            })
+                .then(response => response.text())
+                .then(html => {
+                    // Injecte le contenu HTML reçu dans la zone dynamique
+                    document.getElementById('dynamic-content').innerHTML = html;
+                })
+                .catch(error => {
+                    console.error('Erreur lors de la recherche:', error);
+                });
+            }
+        });
+
+    // Fonction pour afficher dans admin.jsp le formulaire de changement d'information de l'étudiant
+    function ouvrirFormModifier(buttonElement) {
+        // Charger la page modifierEtudiant.jsp avec l'email passé en paramètre
+        const email = buttonElement.getAttribute('data-email');
+        console.log("Email reçu pour modification :", email); // Debug
+
+        fetch(`modifierEtudiant.jsp?email=${(email)}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Erreur lors du chargement de la page");
+                }
+                return response.text();
+            })
+            .then(html => {
+                // Injecter le contenu HTML de `modifierEtudiant.jsp` dans #dynamic-content
+                const contentArea = document.getElementById('dynamic-content');
+                if (contentArea) {
+                    contentArea.innerHTML = html; // Remplace le contenu par la page chargée
+                } else {
+                    console.error("L'élément #dynamic-content n'existe pas.");
+                }
+            })
+            .catch(error => console.error("Erreur :", error));
+    }
 </script>
 
 </html>

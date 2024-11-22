@@ -20,8 +20,6 @@ public class CreerCompteServlet extends HttpServlet {
         Date dateNaissance = java.sql.Date.valueOf(request.getParameter("dateNaissance"));
         String mdp = request.getParameter("mdp");
 
-        // Validation du champ date
-
         if (typeCompte == null || nom == null || email == null) {
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             response.getWriter().write("Erreur : Tous les champs sont requis.");

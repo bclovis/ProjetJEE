@@ -53,11 +53,15 @@ public class GererEtudiantsServlet extends HttpServlet {
             request.setAttribute("currentPage", page);
             request.setAttribute("totalPages", totalPages);
 
-            // Forward to JSP
+            // Redirection de la réponse AJAX vers la JSP partielle
             request.getRequestDispatcher("gererEtudiants.jsp").forward(request, response);
+            // Forward to JSP
+            //request.getRequestDispatcher("gererEtudiants.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
-            response.sendRedirect("gererPersonnel.jsp?error=Erreur lors de la récupération des étudiants");
+            response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            response.getWriter().write("Erreur lors de la recherche de l'étudiant.");
+            //response.sendRedirect("gererPersonnel.jsp?error=Erreur lors de la récupération des étudiants");
         }
     }
 }

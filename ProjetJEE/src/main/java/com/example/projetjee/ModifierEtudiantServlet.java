@@ -16,6 +16,7 @@ public class ModifierEtudiantServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String email = request.getParameter("email");
+        System.out.println(email);
 
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             Query<Etudiant> query = session.createQuery("FROM Etudiant WHERE email = :email", Etudiant.class);
@@ -23,6 +24,7 @@ public class ModifierEtudiantServlet extends HttpServlet {
             Etudiant etudiant = query.uniqueResult();
 
             if (etudiant != null) {
+                request.setAttribute("email", email); // Ajout pour la JSP
                 request.setAttribute("nom", etudiant.getNom());
                 request.setAttribute("prenom", etudiant.getPrenom());
                 request.setAttribute("dateNaissance", etudiant.getDateNaissance());
@@ -57,13 +59,19 @@ public class ModifierEtudiantServlet extends HttpServlet {
             transaction.commit();
 
             if (result > 0) {
-                response.sendRedirect("gererEtudiants?message=Modification réussie");
+                // Redirection vers admin.jsp avec gererEtudiants.jsp préchargé
+                response.sendRedirect("admin.jsp?page=gererEtudiants.jsp");
+                //response.sendRedirect("gererEtudiants?message=Modification réussie");
             } else {
-                response.sendRedirect("gererEtudiants?error=Erreur lors de la mise à jour");
+                // Gestion des erreurs (optionnel)
+                request.setAttribute("erreur", "Échec de la modification.");
+                request.getRequestDispatcher("modifierEtudiant.jsp").forward(request, response);
+                //response.sendRedirect("gererEtudiants?error=Erreur lors de la mise à jour");
             }
         } catch (Exception e) {
             e.printStackTrace();
-            response.sendRedirect("gererEtudiants?error=Erreur lors de la mise à jour de l'étudiant");
+            response.sendRedirect("admin.jsp?page=gererEtudiants.jsp");
+            //response.sendRedirect("gererEtudiants?error=Erreur lors de la mise à jour de l'étudiant");
         }
     }
 }

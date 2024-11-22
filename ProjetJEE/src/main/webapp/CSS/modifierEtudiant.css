@@ -1,0 +1,63 @@
+/* Formulaire de modification */
+.form-container {
+    width: 400px;
+    margin: 0px auto 10px;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h1 {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #0056b3;
+}
+
+.form-container label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="date"],
+.form-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #45a049;
+}
+
+/* Boutons supplémentaires */
+.form-container a {
+    display: inline-block;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #0056b3;
+    text-decoration: none;
+}
+
+.form-container a:hover {
+    text-decoration: underline;
+}
