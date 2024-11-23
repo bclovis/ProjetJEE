@@ -134,6 +134,15 @@
         <url-pattern>/voirNotes</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>MessageServlet</servlet-name>
+        <servlet-class>com.example.projetjee.MessageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MessageServlet</servlet-name>
+        <url-pattern>/messageServlet</url-pattern>
+    </servlet-mapping>
+
 
 
     <!-- Configuration de la page de démarrage -->
