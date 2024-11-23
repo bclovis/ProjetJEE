@@ -125,14 +125,17 @@ public class AjouterNoteServlet extends HttpServlet {
     }
 
     private boolean etudiantDansFiliereMatiere(Session session, String emailEtudiant, int matiereId) {
-        String hql = "SELECT COUNT(*) " +
-                "FROM MatiereFiliere mf " +
-                "JOIN mf.filiere f " +
-                "JOIN Etudiant e ON e.filiere.id = f.id " +
-                "WHERE mf.matiere.id = :matiereId AND e.email = :emailEtudiant";
+        String hql = """
+        SELECT COUNT(*)
+        FROM MatiereFiliere mf
+        JOIN Filiere f ON mf.filiere.id = f.id
+        WHERE mf.matiere.id = :matiereId
+        AND f.nom = (SELECT e.filiere FROM Etudiant e WHERE e.email = :emailEtudiant)
+    """;
         Query<Long> query = session.createQuery(hql, Long.class);
         query.setParameter("matiereId", matiereId);
         query.setParameter("emailEtudiant", emailEtudiant);
         return query.uniqueResult() > 0;
     }
+
 }

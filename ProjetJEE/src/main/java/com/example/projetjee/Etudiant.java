@@ -25,7 +25,6 @@ public class Etudiant {
     private String mdp;
 
     @Column(name = "filiere", nullable = true)
-    @Enumerated(EnumType.STRING)
     private String filiere; // Nouvelle colonne
 
     // Constructeurs

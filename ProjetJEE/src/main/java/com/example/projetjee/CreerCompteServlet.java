@@ -22,7 +22,7 @@ public class CreerCompteServlet extends HttpServlet {
         String email = request.getParameter("email");
         Date dateNaissance = java.sql.Date.valueOf(request.getParameter("dateNaissance"));
         String mdp = request.getParameter("mdp");
-        String filiere = Filiere.AUCUNE;
+        String filiere = "AUCUNE";
 
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();

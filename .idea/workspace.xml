@@ -10,14 +10,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee1cf5c7-fc3d-4b3a-b22b-bc8843babee7" name="Changes" comment="Ajouter un cours à partir de l'emploi du temps">
-      <change afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/DeplacerCoursServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/SupprimerCoursServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/deplacerCours.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/AfficherEmploiDuTempsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/AfficherEmploiDuTempsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/AjouterCoursServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/AjouterCoursServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/emploiDuTemps.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/emploiDuTemps.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/ProjetJEE.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/ProjetJEE.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/AfficherEDTEtuEnsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/AfficherEDTEtuEnsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/AjouterNoteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/AjouterNoteServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/CreerCompteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/CreerCompteServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/DemandeFiliereServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/DemandeFiliereServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/Etudiant.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/Etudiant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/NoteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/NoteServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/classpath.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/Admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/AjouterNoteServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/Cours.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/CreerCompteServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/DemandeFiliere.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/DemandeFiliereServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/Enseignant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/Etudiant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/Filiere.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/GererDemandeFiliereServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/GererEnseignantsServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/GererEtudiantsServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/HibernateUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/Inscription.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/LoginServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/LogoutServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/Matiere.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/MatiereFiliere.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/Message.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/MessageServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/ModifierEnseignantServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/ModifierEtudiantServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/Note.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/NoteServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/ProfesseurMatiere.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/ReleveNotesGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/Semestre.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/StatutDemande.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/SupprimerEnseignantServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/com/example/projetjee/SupprimerEtudiantServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/target/classes/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +229,19 @@
         </option>
       </method>
     </configuration>
-    <configuration name="Tomcat 10.1.29" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.291" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration default="true" type="TomeeConfiguration" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings />
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 10.1.29" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.29" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -390,7 +439,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/Pascal" />
+                        <option value="Betsaleel" />
                       </list>
                     </value>
                   </entry>
