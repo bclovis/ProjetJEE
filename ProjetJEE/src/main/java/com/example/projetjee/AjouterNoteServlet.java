@@ -6,9 +6,11 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -31,7 +33,7 @@ public class AjouterNoteServlet extends HttpServlet {
         }
 
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            // Récupérer la matière
+            // Vérifier la matière
             Matiere matiere = getMatiereByName(session, nomMatiere);
             if (matiere == null) {
                 request.setAttribute("error", "Erreur : Matière non trouvée.");
@@ -39,7 +41,7 @@ public class AjouterNoteServlet extends HttpServlet {
                 return;
             }
 
-            // Vérifier si le professeur enseigne cette matière
+            // Vérifier les droits du professeur
             if (!professeurEnseigneMatiere(session, emailProf, matiere.getId())) {
                 request.setAttribute("error", "Erreur : Vous ne pouvez pas saisir de note pour cette matière.");
                 request.getRequestDispatcher("/enseignant/ajouterNote.jsp").forward(request, response);
@@ -53,27 +55,30 @@ public class AjouterNoteServlet extends HttpServlet {
                 return;
             }
 
-            // Charger l'étudiant
-            Etudiant etudiant = session.get(Etudiant.class, emailEtudiant);
-            if (etudiant == null) {
-                request.setAttribute("error", "Erreur : Étudiant non trouvé.");
-                request.getRequestDispatcher("/enseignant/ajouterNote.jsp").forward(request, response);
-                return;
-            }
-
             // Ajouter la note
-            session.beginTransaction();
+            Transaction transaction = session.beginTransaction();
+            Etudiant etudiant = session.get(Etudiant.class, emailEtudiant);
             Note noteEntity = new Note(note, etudiant, matiere);
             session.save(noteEntity);
-            session.getTransaction().commit();
 
-            response.sendRedirect("ajouterNote");
+            // Ajouter un message pour l'étudiant
+            String messageContent = String.format(
+                    "Vous avez reçu une nouvelle note : %.2f en %s.",
+                    note, nomMatiere
+            );
+            Message message = new Message(emailProf, emailEtudiant, "Nouvelle Note", messageContent, LocalDateTime.now());
+            session.save(message);
+
+            transaction.commit();
+
+            response.sendRedirect("ajouterNote?success=true");
         } catch (Exception e) {
             e.printStackTrace();
             request.setAttribute("error", "Erreur lors de l'ajout de la note.");
             request.getRequestDispatcher("/enseignant/ajouterNote.jsp").forward(request, response);
         }
     }
+
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
