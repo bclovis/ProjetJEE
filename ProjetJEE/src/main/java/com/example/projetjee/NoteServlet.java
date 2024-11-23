@@ -57,11 +57,13 @@ public class NoteServlet extends HttpServlet {
                 List<Note> notesDeMatiere = notesParMatiere.get(matiere);
                 double somme = notesDeMatiere.stream().mapToDouble(Note::getNote).sum();
                 double moyenne = somme / notesDeMatiere.size();
+                moyenne = Math.round(moyenne * 100.0) / 100.0;
                 moyennesParMatiere.put(matiere, moyenne);
             }
 
             // Calcul de la moyenne générale
             double moyenneGenerale = notes.stream().mapToDouble(Note::getNote).average().orElse(0);
+            moyenneGenerale = Math.round(moyenneGenerale * 100.0) / 100.0;
 
             if ("download".equals(action)) {
                 // Génération et envoi du relevé PDF
