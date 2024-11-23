@@ -1,31 +1,23 @@
 package com.example.projetjee;
 
 import jakarta.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "Filiere")
 public class Filiere {
 
-    public static final String AUCUNE = "AUCUNE";
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @Column(nullable = false)
     private String nom;
 
-    // Constructeur par défaut
-    public Filiere() {}
+    @OneToMany(mappedBy = "filiere", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<EmploiDuTemps> emploiDuTemps;
 
-    // Constructeur avec le nom de la filière
-    public Filiere(String nom) {
-        this.nom = nom;
-    }
-
-    public static String valueOf(String upperCase) {
-        return null;
-    }
-
-    // Getters et setters
+    // Getters et Setters
     public int getId() {
         return id;
     }
@@ -42,8 +34,11 @@ public class Filiere {
         this.nom = nom;
     }
 
-    @Override
-    public String toString() {
-        return "Filiere [id=" + id + ", nom=" + nom + "]";
+    public Set<EmploiDuTemps> getEmploiDuTemps() {
+        return emploiDuTemps;
+    }
+
+    public void setEmploiDuTemps(Set<EmploiDuTemps> emploiDuTemps) {
+        this.emploiDuTemps = emploiDuTemps;
     }
 }

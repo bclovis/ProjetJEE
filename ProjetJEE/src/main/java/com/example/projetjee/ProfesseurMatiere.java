@@ -5,45 +5,38 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "ProfesseurMatiere")
 public class ProfesseurMatiere {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private Long id;
-    @ManyToOne
-    @JoinColumn(name = "professeur_email", nullable = false)
-    private Enseignant enseignant;
+    private int id;
 
-    @ManyToOne
-    @JoinColumn(name = "matiere_id", nullable = false)
-    private Matiere matiere;
+    @Column(name = "professeur_email", nullable = false)
+    private String professeurEmail;
 
-    // Constructeurs
-    public ProfesseurMatiere() {}
+    @Column(name = "matiere_id", nullable = false)
+    private int matiereId;
 
-    public ProfesseurMatiere(Enseignant enseignant, Matiere matiere) {
-        this.enseignant = enseignant;
-        this.matiere = matiere;
-        ;
-    }
-
-    public Long getId() {
+    // Getters et Setters
+    public int getId() {
         return id;
     }
 
-    public Enseignant getEnseignant() {
-        return enseignant;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setEnseignant(Enseignant enseignant) {
-        this.enseignant = enseignant;
+    public String getProfesseurEmail() {
+        return professeurEmail;
     }
 
-    public Matiere getMatiere() {
-        return matiere;
+    public void setProfesseurEmail(String professeurEmail) {
+        this.professeurEmail = professeurEmail;
     }
 
-    public void setMatiere(Matiere matiere) {
-        this.matiere = matiere;
+    public int getMatiereId() {
+        return matiereId;
+    }
+
+    public void setMatiereId(int matiereId) {
+        this.matiereId = matiereId;
     }
 }
