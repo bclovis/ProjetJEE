@@ -399,7 +399,14 @@
       <option name="project" value="LOCAL" />
       <updated>1732388955818</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Envoyer un message de notification à un étudiant lorsqu'il a une nouvelle note : fini">
+      <created>1732393017393</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1732393017393</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
