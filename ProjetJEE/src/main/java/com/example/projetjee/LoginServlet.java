@@ -20,6 +20,7 @@ public class LoginServlet extends HttpServlet {
 
         if (isAuthenticated) {
             request.getSession().setAttribute("email", email);
+            request.getSession().setAttribute("role", role);
             // Redirige vers la page appropriée selon le rôle
             switch (role) {
                 case "etudiant":

@@ -31,6 +31,9 @@
         <mapping class="com.example.projetjee.ProfesseurMatiere"/>
         <mapping class="com.example.projetjee.EmploiDuTemps"/>
         <mapping class="com.example.projetjee.Filiere"/>
+        <mapping class="com.example.projetjee.Note"/>
+        <mapping class="com.example.projetjee.Message"/>
+
 
 
     </session-factory>
