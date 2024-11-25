@@ -50,15 +50,11 @@
     <p>Bonjour, étudiant ! Voici les options disponibles :</p>
 
     <ul>
-        <li><a href="consulterEmploiDuTemps.jsp">Consulter mon emploi du temps</a></li>
-        <li><a href="inscrireCours.jsp">S'inscrire à des cours</a></li>
-        <li><a href="messagerie.jsp">Accéder à ma messagerie</a></li>
-        <li><a href="choixFiliere.jsp">Faire une demande de choix de filière</a></li> <!-- Nouveau lien -->
+        <li><a href="AfficherEDTEtuEnsServlet">Consulter mon emploi du temps</a></li>
+        <li><a href="messageServlet">Accéder à ma messagerie</a></li>
+        <li><a href="choixFiliere.jsp">Faire une demande de choix de filière</a></li>
+        <li><a href="voirNotes">Voir mes notes</a></li><!-- Nouveau lien -->
     </ul>
-
-    <form action="http://localhost:8081/ProjetJEE_war_exploded/envoyerNotes" method="POST">
-        <button type="submit">Voir mes notes</button>
-    </form>
 
     <form action="logout" method="post" class="logout-button">
         <button type="submit">Déconnexion</button>

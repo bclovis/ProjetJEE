@@ -14,6 +14,17 @@
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
 
+    <!-- Note Servlet -->
+    <servlet>
+        <servlet-name>NoteServlet</servlet-name>
+        <servlet-class>com.example.projetjee.NoteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NoteServlet</servlet-name>
+        <url-pattern>/voirNotes</url-pattern>
+    </servlet-mapping>
+
+    <!-- Logout Servlet -->
     <servlet>
         <servlet-name>LogoutServlet</servlet-name>
         <servlet-class>com.example.projetjee.LogoutServlet</servlet-class>
@@ -24,10 +35,6 @@
         <url-pattern>/logout</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>CreerCompteServlet</servlet-name>
-        <servlet-class>com.example.projetjee.CreerCompteServlet</servlet-class>
-    </servlet>
     <servlet>
         <servlet-name>GererEtudiantsServlet</servlet-name>
         <servlet-class>com.example.projetjee.GererEtudiantsServlet</servlet-class>
@@ -46,11 +53,38 @@
         <url-pattern>/gererEnseignants</url-pattern>
     </servlet-mapping>
 
+    <!-- Message Servlet -->
+    <servlet>
+        <servlet-name>MessageServlet</servlet-name>
+        <servlet-class>com.example.projetjee.MessageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MessageServlet</servlet-name>
+        <url-pattern>/messageServlet</url-pattern>
+    </servlet-mapping>
 
+    <!-- Ajouter Note Servlet -->
+    <servlet>
+        <servlet-name>AjouterNoteServlet</servlet-name>
+        <servlet-class>com.example.projetjee.AjouterNoteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AjouterNoteServlet</servlet-name>
+        <url-pattern>/ajouterNote</url-pattern>
+    </servlet-mapping>
+
+    <!-- Créer Compte Servlet -->
+    <servlet>
+        <servlet-name>CreerCompteServlet</servlet-name>
+        <servlet-class>com.example.projetjee.CreerCompteServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CreerCompteServlet</servlet-name>
         <url-pattern>/CreerCompteServlet</url-pattern>
     </servlet-mapping>
+
+    <!-- Gérer Étudiants Servlet -->
+
 
     <servlet>
         <servlet-name>ModifierEtudiantServlet</servlet-name>

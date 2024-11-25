@@ -33,6 +33,11 @@
         <mapping class="com.example.projetjee.Filiere"/>
         <mapping class="com.example.projetjee.Filieres"/>
         <mapping class="com.example.projetjee.DemandeFiliere"/>
+        <mapping class="com.example.projetjee.Note"/>
+        <mapping class="com.example.projetjee.Message"/>
+        <mapping class="com.example.projetjee.MatiereFiliere" />
+
+
 
 
     </session-factory>
