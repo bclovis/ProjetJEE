@@ -27,9 +27,9 @@
     <br><br>
 
     <button type="submit">Modifier</button>
-    <a href="#" onclick="loadPage('gererEtudiants.jsp'); return false;">Retour à la liste</a>
+    <a href="admin.jsp">Retour à la liste</a>
   </form>
-  <a href="gererEtudiants">Retour</a>
+
 </div>
 </body>
 </html>

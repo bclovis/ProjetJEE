@@ -9,9 +9,9 @@
 </head>
 <body>
 <h1>Création de Compte</h1>
-<form id="creation-compte-form" method="post">
 
-<%-- Affichage du message d'erreur s'il existe --%>
+
+<%-- Affichage du message d'erreur s'il existe
 <%
     String error = (String) request.getAttribute("error");
     if (error != null) {
@@ -20,8 +20,8 @@
 <%
     }
 %>
-
-<form action="CreerCompteServlet" method="post">
+ --%>
+<form id="creation-compte-form" method="post">
     <label for="typeCompte">Type de compte :</label>
     <select name="typeCompte" id="typeCompte" required>
         <option value="etudiant">Étudiant</option>

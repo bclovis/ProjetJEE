@@ -4,6 +4,7 @@
 <html>
 <head>
   <title>Ajouter un Cours</title>
+  <link rel="stylesheet" href="CSS/ajouterCours.css">
 </head>
 <body>
 <h1>Ajouter un Cours</h1>

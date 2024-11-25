@@ -4,56 +4,9 @@
 <html>
 <head>
     <title>Emploi du Temps</title>
+    <link rel="stylesheet" href="CSS/emploiDuTemps.css?v=3">
     <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        th, td {
-            border: 1px solid black;
-            text-align: center;
-            padding: 8px;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        td {
-            vertical-align: top;
-        }
-        .info {
-            margin-bottom: 20px;
-            font-size: 18px;
-            font-weight: bold;
-        }
-        .navigation {
-            margin-top: 20px;
-        }
-        .message {
-            color: green;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-        .error {
-            color: red;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-        .action-button {
-            margin-top: 5px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 3px;
-            font-size: 12px;
-            cursor: pointer;
-        }
-        .action-button.delete {
-            background-color: #f44336;
-        }
-        .action-button:hover {
-            opacity: 0.8;
-        }
+        /*
         .add-course-button {
             position: fixed;
             bottom: 20px;
@@ -72,6 +25,7 @@
         .add-course-button:hover {
             background-color: #45a049;
         }
+        */
     </style>
 </head>
 <body>
@@ -86,20 +40,26 @@
 </c:if>
 
 <form method="get" action="AfficherEmploiDuTempsServlet">
-    <label for="filiere">Choisir une filière :</label>
-    <select id="filiere" name="filiere">
-        <option value="" <%= "Toutes".equals(request.getAttribute("filiereNom")) ? "selected" : "" %>>Toutes</option>
-        <option value="Mathématiques" <%= "Mathématiques".equals(request.getAttribute("filiereNom")) ? "selected" : "" %>>Mathématiques</option>
-        <option value="Informatique" <%= "Informatique".equals(request.getAttribute("filiereNom")) ? "selected" : "" %>>Informatique</option>
-    </select>
+    <div class="form-group">
+        <label for="filiere">Choisir une filière :</label>
+        <select id="filiere" name="filiere">
+            <option value="" <%= "Toutes".equals(request.getAttribute("filiereNom")) ? "selected" : "" %>>Toutes</option>
+            <option value="Mathématiques" <%= "Mathématiques".equals(request.getAttribute("filiereNom")) ? "selected" : "" %>>Mathématiques</option>
+            <option value="Informatique" <%= "Informatique".equals(request.getAttribute("filiereNom")) ? "selected" : "" %>>Informatique</option>
+        </select>
+    </div>
+    <br>
 
-    <label for="semaine">Choisir une semaine :</label>
-    <select id="semaine" name="semaine">
-        <% Integer semaineAttrib = (Integer) request.getAttribute("semaine"); %>
-        <% for (int i = 1; i <= 36; i++) { %>
-        <option value="<%= i %>" <%= (semaineAttrib != null && i == semaineAttrib) ? "selected" : "" %>>Semaine <%= i %></option>
-        <% } %>
-    </select>
+    <div class="form-group">
+        <label for="semaine">Choisir une semaine :</label>
+        <select id="semaine" name="semaine">
+            <% Integer semaineAttrib = (Integer) request.getAttribute("semaine"); %>
+            <% for (int i = 1; i <= 36; i++) { %>
+            <option value="<%= i %>" <%= (semaineAttrib != null && i == semaineAttrib) ? "selected" : "" %>>Semaine <%= i %></option>
+            <% } %>
+        </select>
+    </div>
+    <br>
 
     <button type="submit">Afficher</button>
 </form>
@@ -141,18 +101,26 @@
     <tr>
         <td><%= heure %></td>
         <% for (String jour : jours) { %>
-        <td>
-            <%
-                String contenu = emploiParJourEtHeure.containsKey(jour) &&
-                        emploiParJourEtHeure.get(jour).containsKey(heure)
-                        ? emploiParJourEtHeure.get(jour).get(heure)
-                        : "Aucun cours";
+        <%
+            String contenu = emploiParJourEtHeure.containsKey(jour) &&
+                    emploiParJourEtHeure.get(jour).containsKey(heure)
+                    ? emploiParJourEtHeure.get(jour).get(heure)
+                    : "Aucun cours";
 
-                Integer coursId = emploiIdParJourEtHeure.containsKey(jour) &&
-                        emploiIdParJourEtHeure.get(jour).containsKey(heure)
-                        ? emploiIdParJourEtHeure.get(jour).get(heure)
-                        : null;
-            %>
+            Integer coursId = emploiIdParJourEtHeure.containsKey(jour) &&
+                    emploiIdParJourEtHeure.get(jour).containsKey(heure)
+                    ? emploiIdParJourEtHeure.get(jour).get(heure)
+                    : null;
+            String cellClass;
+            if ("Pause".equals(contenu)) {
+                cellClass = "pause-cell";
+            } else if ("Aucun cours".equals(contenu)) {
+                cellClass = "empty-cell";
+            } else {
+                cellClass = "filled-cell";
+            }
+        %>
+        <td class="<%= cellClass %>">
             <div><%= contenu %></div>
             <% if (coursId != null) { %>
             <form action="SupprimerCoursServlet" method="post" style="display: inline;">
@@ -175,8 +143,8 @@
 </table>
 
 <!-- Bouton flottant pour ajouter un cours -->
-<a href="ajouterCours" class="add-course-button" title="Ajouter un cours">+</a>
-
+<a href="ajouterCours" class="add-course-button" title="Ajouter un cours">Ajouter un cours</a>
+<br>
 <a href="admin.jsp">Retour à l'accueil</a>
 </body>
 </html>

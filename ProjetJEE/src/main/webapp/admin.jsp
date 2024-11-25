@@ -25,18 +25,17 @@
         <!-- Menu latéral gauche -->
         <nav class="sidebar">
             <ul>
-                /*<li><a href="#" data-page="">Gérer les demandes d'inscriptions</a></li>*/
-                <li><a href="gererDemandes">Gérer les demandes de filière</a></li>
+                <li><a href="#" data-page="gererDemandes">Gérer les demandes de filière</a></li>
                 <li><a href="#" data-page="creationCompte.jsp">Création de comptes</a></li>
                 <li>
                     <a href="#" data-toogle="submenu" onclick="deroulerSubmenu(event)">Gérer le personnel</a>
                     <ul class="submenu" style="display: none;">
-                        <li><a href="#" data-page="gererEtudiants.jsp">Gérer les étudiants</a></li>
-                        <li><a href="#" data-page="gererEnseignants.jsp">Gérer les enseignants</a></li>
+                        <li><a href="#" data-page="gererEtudiants">Gérer les étudiants</a></li>
+                        <li><a href="#" data-page="gererEnseignants">Gérer les enseignants</a></li>
                     </ul>
                 </li>
-                <li><a href="AssocierProfesseurMatiereServlet">Associer un Professeur à une Matière</a></li>
-                <li><a href="emploiDuTemps.jsp">Voir Emploi du temps</a></li>
+                <li><a href="#" data-page="AssocierProfesseurMatiereServlet">Associer un Professeur à une Matière</a></li>
+                <li><a href="#" data-page="emploiDuTemps.jsp">Voir Emploi du temps</a></li>
             </ul>
         </nav>
 
@@ -96,7 +95,7 @@
             const formData = new FormData(form);
 
             // Envoie les données à la servlet via AJAX
-            fetch('creer-compte-servlet', {
+            fetch('creationCompte', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
@@ -141,10 +140,10 @@
             e.preventDefault(); // Empêche la soumission classique
 
             // Récupérer la valeur saisie
-            const keyword = document.getElementById('search-input').value;
+            const recherche = document.getElementById('search-input').value;
 
             // Envoie les données à la servlet via AJAX
-            fetch('gererEtudiants?keyword=' + encodeURIComponent(keyword), {
+            fetch('gererEtudiants?recherche=' + encodeURIComponent(recherche), {
                 method: 'GET',
             })
                 .then(response => response.text())
@@ -158,13 +157,37 @@
             }
         });
 
+    // Gestionnaire d'envoi de formulaire pour la recherche d'enseignant
+    document.addEventListener('submit', function (e) {
+        const form = e.target;
+        if (form.id === 'gerer-enseignant-form') {
+            e.preventDefault(); // Empêche la soumission classique
+
+            // Récupérer la valeur saisie
+            const keyword = document.getElementById('search-input').value;
+
+            // Envoie les données à la servlet via AJAX
+            fetch('gererEnseignants?recherche=' + encodeURIComponent(keyword), {
+                method: 'GET',
+            })
+                .then(response => response.text())
+                .then(html => {
+                    // Injecte le contenu HTML reçu dans la zone dynamique
+                    document.getElementById('dynamic-content').innerHTML = html;
+                })
+                .catch(error => {
+                    console.error('Erreur lors de la recherche:', error);
+                });
+        }
+    });
+
     // Fonction pour afficher dans admin.jsp le formulaire de changement d'information de l'étudiant
     function ouvrirFormModifier(buttonElement) {
         // Charger la page modifierEtudiant.jsp avec l'email passé en paramètre
         const email = buttonElement.getAttribute('data-email');
         console.log("Email reçu pour modification :", email); // Debug
 
-        fetch(`modifierEtudiant.jsp?email=${(email)}`)
+        fetch(`modifierEtudiant?email=${(email)}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error("Erreur lors du chargement de la page");

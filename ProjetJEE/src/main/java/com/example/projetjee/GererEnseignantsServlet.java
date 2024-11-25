@@ -78,8 +78,10 @@ public class GererEnseignantsServlet extends HttpServlet {
             request.getRequestDispatcher("gererEnseignants.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
-            request.setAttribute("error", "Erreur lors du chargement des enseignants : " + e.getMessage());
-            request.getRequestDispatcher("gererEnseignants.jsp").forward(request, response);
+            response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            response.getWriter().write("Erreur lors de la recherche de l'enseignant.");
+            //request.setAttribute("error", "Erreur lors du chargement des enseignants : " + e.getMessage());
+            //request.getRequestDispatcher("gererEnseignants.jsp").forward(request, response);
         }
     }
 }

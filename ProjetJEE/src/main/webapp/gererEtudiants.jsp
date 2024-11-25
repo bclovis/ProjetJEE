@@ -5,25 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Liste des Étudiants</title>
-    <style>
-        .search-bar {
-            margin-bottom: 15px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        table, th, td {
-            border: 1px solid black;
-        }
-        .pagination a {
-            margin: 0 5px;
-            text-decoration: none;
-        }
-        .pagination a.current-page {
-            font-weight: bold;
-        }
-    </style>
+    <link rel="stylesheet" href="CSS/gererEtudiant.css">
 </head>
 <body>
 <h1>Liste des Étudiants</h1>
@@ -59,11 +41,10 @@
             <td>
                 <fmt:formatDate value="${etudiant.dateNaissance}" pattern="dd/MM/yyyy" /> <!-- Formater la date -->
             </td>
+            <td>${etudiant.filiere}</td>
             <td>
                 <button class="btn btn-primary" data-email="${etudiant.email}" onclick="ouvrirFormModifier(this)">ModifierTest</button>
                 <button class="btn btn-primary" data-email="${etudiant.email}" onclick="">SupprimerTest</button>
-                <a href="modifierEtudiant?email=${etudiant.email}">Modifier</a> |
-                <a href="supprimerEtudiant?email=${etudiant.email}" onclick="return confirm('Voulez-vous vraiment supprimer cet étudiant ?');">Supprimer</a>
                 <form method="post" action="modifierEtudiant">
                     <input type="hidden" name="email" value="${etudiant.email}" />
                     <button type="submit">Modifier</button>
@@ -93,6 +74,6 @@
     </c:forEach>
 </div>
 
-<a href="gererPersonnel.jsp">Retour à la gestion du personnel</a>
+<a href="admin.jsp">Retour à l'accueil</a>
 </body>
 </html>

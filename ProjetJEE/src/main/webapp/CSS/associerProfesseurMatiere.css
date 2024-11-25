@@ -1,0 +1,131 @@
+/* Style général pour les formulaires */
+form {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap; /* Permet de gérer les petits écrans */
+    gap: 10px; /* Espacement entre les éléments */
+}
+
+/* Groupement des labels et inputs */
+.form-group {
+    display: flex;
+    align-items: center; /* Aligne les éléments verticalement */
+    gap: 10px; /* Espacement entre label et input */
+    margin-bottom: 10px; /* Espacement entre les lignes */
+}
+
+.form-group label,
+.form-group select {
+    display: inline-block;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Inputs de type select et texte */
+form select,
+form input[type="text"] {
+    height: 38px; /* Hauteur uniforme */
+    padding: 0 10px; /* Espacement interne */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    max-width: 300px; /* Largeur maximale */
+}
+
+/* Boutons */
+form button,
+form input[type="submit"] {
+    height: 38px; /* Même hauteur que les inputs */
+    padding: 0 12px; /* Espacement interne horizontal */
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    line-height: 1; /* Évite l'étirement vertical */
+}
+
+form button:hover,
+form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Barre de recherche */
+.search-bar-container {
+    display: flex; /* Aligne sur une ligne */
+    align-items: center; /* Centre verticalement les éléments */
+    gap: 10px; /* Espacement horizontal entre les enfants */
+    margin-bottom: 20px; /* Espacement sous la barre */
+}
+
+.search-form input[type="text"] {
+    flex: 1; /* S'adapte à l'espace disponible */
+}
+
+.search-form button {
+    height: 38px; /* Uniformise la hauteur des boutons */
+    padding: 0 12px; /* Espacement interne horizontal */
+}
+
+/* Correction pour aligner le bouton Réinitialiser */
+.search-bar-container .reset-form {
+    display: flex;
+    align-items: center; /* Centre verticalement */
+    margin: 0; /* Supprime tout margin-bottom supplémentaire */
+}
+
+.search-bar-container .reset-form button {
+    height: 38px; /* Uniformise la hauteur avec les autres boutons */
+    padding: 0 12px; /* Assure une consistance interne */
+    line-height: 1; /* Évite tout étirement vertical */
+    margin-bottom: 20%; /* Bricolage pour faire en sorte que les boutons rechercher et réinitialiser soient aligner */
+}
+
+/* Tableaux */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #0056b3;
+    color: white;
+    text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+/* Boutons d'action dans les tableaux */
+table form button {
+    margin-right: 5px;
+    background-color: #d9534f; /* Rouge */
+}
+
+table form button:hover {
+    background-color: #c9302c;
+}
+
+/* Alignement des formulaires dans une même cellule */
+table td form {
+    display: inline-block;
+}

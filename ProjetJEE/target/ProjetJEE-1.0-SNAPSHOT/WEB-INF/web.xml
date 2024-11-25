@@ -30,7 +30,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>CreerCompteServlet</servlet-name>
-        <url-pattern>/creer-compte-servlet</url-pattern>
+        <url-pattern>/creationCompte</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -124,6 +124,8 @@
         <servlet-name>AjouterCoursServlet</servlet-name>
         <url-pattern>/ajouterCours</url-pattern>
     </servlet-mapping>
+
+
 
     <!-- Configuration de la page de démarrage -->
     <welcome-file-list>

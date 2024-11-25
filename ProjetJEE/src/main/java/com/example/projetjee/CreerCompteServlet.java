@@ -16,7 +16,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.regex.Pattern;
 
-@WebServlet(name = "CreerCompteServlet", value = "/CreerCompteServlet")
+//@WebServlet(name = "CreerCompteServlet", value = "/CreerCompteServlet")
 public class CreerCompteServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -88,19 +88,18 @@ public class CreerCompteServlet extends HttpServlet {
                     session.save(enseignant);
                 }
                 transaction.commit();
-                response.sendRedirect("admin.jsp?message=Compte créé avec succès");
-                /* response.setStatus(HttpServletResponse.SC_OK);
-                response.getWriter().write("Compte créé avec succès.");*/
+                //response.sendRedirect("admin.jsp?message=Compte créé avec succès");
+                response.setStatus(HttpServletResponse.SC_OK);
+                response.getWriter().write("Compte créé avec succès.");
             } catch (Exception e) {
                 if (transaction != null) {
                     transaction.rollback();
                 }
                 e.printStackTrace();
-                request.setAttribute("error", "Erreur lors de la création du compte : " + e.getMessage());
-                request.getRequestDispatcher("creationCompte.jsp").forward(request, response);
-                /* response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-            response.getWriter().write("Erreur lors de la création du compte.");
-             */
+                /*request.setAttribute("error", "Erreur lors de la création du compte : " + e.getMessage());
+                request.getRequestDispatcher("creationCompte.jsp").forward(request, response);*/
+                response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+                response.getWriter().write("Erreur lors de la création du compte.");
             }
         }
     }
