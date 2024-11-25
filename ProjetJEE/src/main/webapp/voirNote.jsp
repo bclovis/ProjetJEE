@@ -105,7 +105,7 @@
   </c:choose>
 
   <div class="actions">
-    <form action="http://localhost:8081/ProjetJEE_war_exploded/voirNotes" method="get">
+    <form action="voirNotes" method="get">
       <input type="hidden" name="action" value="download">
       <button type="submit">Télécharger le relevé de notes</button>
     </form>

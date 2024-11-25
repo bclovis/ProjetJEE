@@ -17,22 +17,6 @@
         <junit.version>5.9.1</junit.version>
     </properties>
 
-    <dependencyManagement>
-        <dependencies>
-            <!-- Gestion explicite des versions pour éviter les conflits -->
-            <dependency>
-                <groupId>jakarta.mail</groupId>
-                <artifactId>jakarta.mail-api</artifactId>
-                <version>2.0.0</version>
-            </dependency>
-            <dependency>
-                <groupId>jakarta.activation</groupId>
-                <artifactId>jakarta.activation-api</artifactId>
-                <version>2.0.1</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
     <dependencies>
         <!-- Jakarta Servlet API -->
         <dependency>
@@ -83,28 +67,21 @@
             <version>8.0.33</version>
         </dependency>
 
-        <!-- Jakarta Mail API -->
-        <dependency>
-            <groupId>jakarta.mail</groupId>
-            <artifactId>jakarta.mail-api</artifactId>
-            <version>2.0.0</version>
-        </dependency>
-
-        <!-- Jakarta Activation API -->
-        <dependency>
-            <groupId>jakarta.activation</groupId>
-            <artifactId>jakarta.activation-api</artifactId>
-            <version>2.0.1</version>
-        </dependency>
-
         <!-- iText for PDF generation -->
+
         <dependency>
             <groupId>com.itextpdf</groupId>
-            <artifactId>itext7-core</artifactId>
+            <artifactId>kernel</artifactId>
             <version>7.2.3</version>
         </dependency>
-    </dependencies>
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>layout</artifactId>
+            <version>7.2.3</version>
+        </dependency>
 
+
+    </dependencies>
     <build>
         <plugins>
             <plugin>
