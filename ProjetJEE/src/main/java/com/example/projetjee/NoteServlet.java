@@ -82,6 +82,7 @@ public class NoteServlet extends HttpServlet {
                 // Envoi des données à la JSP pour affichage
                 request.setAttribute("notes", notes);
                 request.setAttribute("moyenneGenerale", moyenneGenerale);
+                request.setAttribute("rapport", genererRapport(moyenneGenerale));
                 request.setAttribute("notesParMatiere", notesParMatiere);
                 request.setAttribute("moyennesParMatiere", moyennesParMatiere); // Passage des moyennes par matière
                 request.getRequestDispatcher("/etudiant/voirNote.jsp").forward(request, response);
@@ -91,4 +92,23 @@ public class NoteServlet extends HttpServlet {
             response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Erreur lors du traitement.");
         }
     }
+
+    public static String genererRapport(double moyenneGenerale) {
+        String rapport;
+
+        if (moyenneGenerale >= 17) {
+            rapport = "Des résultats remarquables. Le travail et l'engagement sont exemplaires. Il faut continuer sur cette voie pour maintenir ce niveau d'excellence.";
+        } else if (moyenneGenerale >= 14) {
+            rapport = "Très bon travail, continuez à maintenir ce niveau d'effort et de motivation pour atteindre des performances exceptionnelles.";
+        } else if (moyenneGenerale >= 10) {
+            rapport = "Les résultats sont globalement bons, mais il est possible d'atteindre un niveau encore plus élevé avec plus de rigueur et d'engagement.";
+        } else if (moyenneGenerale >= 7) {
+            rapport = "Des progrès sont attendus. Une implication plus constante et un travail plus méthodique permettront d'atteindre des résultats plus satisfaisants.";
+        } else {
+            rapport = "Les résultats sont en dessous des attentes. Il est essentiel de prendre des initiatives pour mieux maîtriser les matières abordées.";
+        }
+
+        return rapport;
+    }
+
 }

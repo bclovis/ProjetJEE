@@ -9,11 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee1cf5c7-fc3d-4b3a-b22b-bc8843babee7" name="Changes" comment="emploi du temps pour étudiant et enseignant fini">
+    <list default="true" id="ee1cf5c7-fc3d-4b3a-b22b-bc8843babee7" name="Changes" comment="emploi du temps pour étudiant et enseignant fini (correction bug)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/NoteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/NoteServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/ReleveNotesGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/java/com/example/projetjee/ReleveNotesGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/etudiant/voirNote.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/src/main/webapp/etudiant/voirNote.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJEE/target/ProjetJEE-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -308,7 +309,10 @@
       <workItem from="1732018609623" duration="14552000" />
       <workItem from="1732132119933" duration="2816000" />
       <workItem from="1732181718624" duration="7177000" />
-      <workItem from="1732391789459" duration="2289000" />
+      <workItem from="1732391789459" duration="3214000" />
+      <workItem from="1732407471397" duration="31000" />
+      <workItem from="1732474753890" duration="1653000" />
+      <workItem from="1732571852012" duration="2717000" />
     </task>
     <task id="LOCAL-00001" summary="Commencement de la création des classes Model du projet, elles sont à completer">
       <created>1731101177499</created>
@@ -377,7 +381,14 @@
       <option name="project" value="LOCAL" />
       <updated>1732308451616</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="emploi du temps pour étudiant et enseignant fini (correction bug)">
+      <created>1732396170620</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1732396170620</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -417,6 +428,7 @@
     <MESSAGE value="Emploi du temps des deux filières avec le nom des profs." />
     <MESSAGE value="Ajouter un cours à partir de l'emploi du temps" />
     <MESSAGE value="emploi du temps pour étudiant et enseignant fini" />
-    <option name="LAST_COMMIT_MESSAGE" value="emploi du temps pour étudiant et enseignant fini" />
+    <MESSAGE value="emploi du temps pour étudiant et enseignant fini (correction bug)" />
+    <option name="LAST_COMMIT_MESSAGE" value="emploi du temps pour étudiant et enseignant fini (correction bug)" />
   </component>
 </project>

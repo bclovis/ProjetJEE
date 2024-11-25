@@ -23,6 +23,7 @@ public class ReleveNotesGenerator {
             // Format de la date de naissance au format français (dd/MM/yyyy)
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
             String dateNaissanceFormatee = sdf.format(etudiant.getDateNaissance());  // Formate la date sans l'heure
+            String rapport = NoteServlet.genererRapport(moyenneGenerale);
 
             // Titre et informations générales
             document.add(new Paragraph("Relevé de Notes").setBold().setFontSize(16));
@@ -30,6 +31,7 @@ public class ReleveNotesGenerator {
             document.add(new Paragraph("Prénom : " + etudiant.getPrenom()).setFontSize(12).setMarginBottom(10));  // Plus d'espace ici
             document.add(new Paragraph("Date de naissance : " + dateNaissanceFormatee).setFontSize(12).setMarginBottom(10));  // Espacement
             document.add(new Paragraph("Moyenne générale : " + moyenneGenerale + " / 20").setFontSize(12).setBold().setMarginBottom(20));  // Moyenne en gras
+            document.add(new Paragraph(rapport).setFontSize(12).setMarginBottom(20));
 
             // Parcourir les matières et les notes
             for (Map.Entry<Matiere, List<Note>> entry : notesParMatiere.entrySet()) {

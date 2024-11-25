@@ -79,6 +79,13 @@
           </td>
         </tr>
 
+        <!-- Affichage du rapport sous la moyenne générale -->
+        <tr>
+          <td colspan="2" style="font-weight: bold; text-align: center; color: #000000;">
+            <c:out value="${rapport}" />
+          </td>
+        </tr>
+
         <!-- Affichage des notes par matière -->
         <c:forEach items="${notesParMatiere}" var="matiereEntry">
           <c:set var="matiere" value="${matiereEntry.key}" />

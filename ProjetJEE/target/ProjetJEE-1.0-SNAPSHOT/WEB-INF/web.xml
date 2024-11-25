@@ -159,7 +159,7 @@
 
     <!-- Configuration de la page de démarrage -->
     <welcome-file-list>
-        <welcome-file>admin.jsp</welcome-file>
+        <welcome-file>login.jsp</welcome-file>
     </welcome-file-list>
 
 </web-app>
