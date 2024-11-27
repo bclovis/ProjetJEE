@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
-<%@ page language="java" import="com.example.projetjee.Enseignant" %>
+<%@ page language="java" import="com.example.projetjee.Model.Enseignant" %>
 <!DOCTYPE html>
 <html lang="fr">
 <head>

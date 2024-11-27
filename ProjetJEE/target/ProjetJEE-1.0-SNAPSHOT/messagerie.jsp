@@ -49,6 +49,16 @@
 
       <button type="submit">Envoyer</button>
     </form>
+
+    <%
+      // Récupérer le rôle de l'utilisateur depuis la session
+      String role = (String) session.getAttribute("role");
+      String accueilPage = "etudiant.jsp"; // Par défaut, rediriger vers la page étudiant
+      if ("enseignant".equals(role)) {
+        accueilPage = "enseignant.jsp";
+      }
+    %>
+    <center><a href="<%= accueilPage %>" class="return-home">Retour à l'accueil</a></center>
   </div>
 
   <!-- Pagination -->
@@ -59,12 +69,6 @@
       </c:forEach>
     </div>
   </c:if>
-</div>
-
-  <!-- Bouton Retour à l'accueil étudiant -->
-  <div class="actions">
-    <button onclick="window.location.href='etudiant.jsp'">Retour à l'accueil</button>
-  </div>
 </div>
 </body>
 </html>

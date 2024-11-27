@@ -6,7 +6,7 @@
 
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>com.example.projetjee.LoginServlet</servlet-class>
+        <servlet-class>com.example.projetjee.Servlet.LoginServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -16,7 +16,7 @@
 
     <servlet>
         <servlet-name>CreerCompteServlet</servlet-name>
-        <servlet-class>com.example.projetjee.CreerCompteServlet</servlet-class>
+        <servlet-class>com.example.projetjee.Servlet.CreerCompteServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>CreerCompteServlet</servlet-name>
@@ -25,7 +25,7 @@
 
     <servlet>
         <servlet-name>GererEtudiantsServlet</servlet-name>
-        <servlet-class>com.example.projetjee.GererEtudiantsServlet</servlet-class>
+        <servlet-class>com.example.projetjee.Servlet.GererEtudiantsServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>GererEtudiantsServlet</servlet-name>
@@ -34,7 +34,7 @@
 
     <servlet>
         <servlet-name>NoteServlet</servlet-name>
-        <servlet-class>com.example.projetjee.NoteServlet</servlet-class>
+        <servlet-class>com.example.projetjee.Servlet.NoteServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -44,7 +44,7 @@
 
     <servlet>
         <servlet-name>LogoutServlet</servlet-name>
-        <servlet-class>com.example.projetjee.LogoutServlet</servlet-class>
+        <servlet-class>com.example.projetjee.Servlet.LogoutServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -53,7 +53,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>GererDemandeFiliereServlet</servlet-name>
-        <servlet-class>com.example.projetjee.GererDemandeFiliereServlet</servlet-class>
+        <servlet-class>com.example.projetjee.Servlet.GererDemandeFiliereServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -63,7 +63,7 @@
 
     <servlet>
         <servlet-name>GererEnseignantsServlet</servlet-name>
-        <servlet-class>com.example.projetjee.GererEnseignantsServlet</servlet-class>
+        <servlet-class>com.example.projetjee.Servlet.GererEnseignantsServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>GererEnseignantsServlet</servlet-name>
@@ -72,7 +72,7 @@
 
     <servlet>
         <servlet-name>MessageServlet</servlet-name>
-        <servlet-class>com.example.projetjee.MessageServlet</servlet-class>
+        <servlet-class>com.example.projetjee.Servlet.MessageServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>MessageServlet</servlet-name>
@@ -81,7 +81,7 @@
 
     <servlet>
         <servlet-name>AjouterNoteServlet</servlet-name>
-        <servlet-class>com.example.projetjee.AjouterNoteServlet</servlet-class>
+        <servlet-class>com.example.projetjee.Servlet.AjouterNoteServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AjouterNoteServlet</servlet-name>
@@ -90,7 +90,7 @@
 
     <servlet>
         <servlet-name>ModifierEtudiantServlet</servlet-name>
-        <servlet-class>com.example.projetjee.ModifierEtudiantServlet</servlet-class>
+        <servlet-class>com.example.projetjee.Servlet.ModifierEtudiantServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ModifierEtudiantServlet</servlet-name>
@@ -99,7 +99,7 @@
 
     <servlet>
         <servlet-name>ModifierEnseignantServlet</servlet-name>
-        <servlet-class>com.example.projetjee.ModifierEnseignantServlet</servlet-class>
+        <servlet-class>com.example.projetjee.Servlet.ModifierEnseignantServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ModifierEnseignantServlet</servlet-name>
@@ -107,7 +107,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>SupprimerEtudiantServlet</servlet-name>
-        <servlet-class>com.example.projetjee.SupprimerEtudiantServlet</servlet-class>
+        <servlet-class>com.example.projetjee.Servlet.SupprimerEtudiantServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>SupprimerEtudiantServlet</servlet-name>
@@ -116,7 +116,7 @@
 
     <servlet>
         <servlet-name>SupprimerEnseignantServlet</servlet-name>
-        <servlet-class>com.example.projetjee.SupprimerEnseignantServlet</servlet-class>
+        <servlet-class>com.example.projetjee.Servlet.SupprimerEnseignantServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>SupprimerEnseignantServlet</servlet-name>
@@ -125,7 +125,7 @@
 
     <servlet>
         <servlet-name>AssocierProfesseurMatiereServlet</servlet-name>
-        <servlet-class>com.example.projetjee.AssocierProfesseurMatiereServlet</servlet-class>
+        <servlet-class>com.example.projetjee.Servlet.AssocierProfesseurMatiereServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AssocierProfesseurMatiereServlet</servlet-name>
@@ -135,7 +135,7 @@
 
     <servlet>
         <servlet-name>SupprimerAssociationServlet</servlet-name>
-        <servlet-class>com.example.projetjee.SupprimerAssociationServlet</servlet-class>
+        <servlet-class>com.example.projetjee.Servlet.SupprimerAssociationServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>SupprimerAssociationServlet</servlet-name>
@@ -144,7 +144,7 @@
 
     <servlet>
         <servlet-name>AfficherEmploiDuTempsServlet</servlet-name>
-        <servlet-class>com.example.projetjee.AfficherEmploiDuTempsServlet</servlet-class>
+        <servlet-class>com.example.projetjee.Servlet.AfficherEmploiDuTempsServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -154,7 +154,7 @@
 
     <servlet>
         <servlet-name>AjouterCoursServlet</servlet-name>
-        <servlet-class>com.example.projetjee.AjouterCoursServlet</servlet-class>
+        <servlet-class>com.example.projetjee.Servlet.AjouterCoursServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AjouterCoursServlet</servlet-name>
