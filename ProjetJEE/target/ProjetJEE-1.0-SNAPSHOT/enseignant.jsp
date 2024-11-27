@@ -27,6 +27,7 @@
             <ul>
                 <li><a href="ajouterNote">Ajouter une note</a></li>
                 <li><a href="AfficherEDTEtuEnsServlet">Voir mon emploi du temps</a></li>
+                <li><a href="messageServlet">Accéder à ma messagerie</a></li>
             </ul>
         </nav>
 

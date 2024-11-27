@@ -30,15 +30,22 @@ public class MessageServlet extends HttpServlet {
         // Vérification si l'email du destinataire existe dans la base de données
         boolean emailExists = false;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            // Recherche d'un utilisateur avec l'email du destinataire
-            String hql = "FROM Etudiant WHERE email = :email";
-            Query<Etudiant> query = session.createQuery(hql, Etudiant.class);
-            query.setParameter("email", recipient);
-            List<Etudiant> result = query.list();
-
-            // Si la liste est vide, cela signifie que l'email n'existe pas
-            if (!result.isEmpty()) {
+            // Vérifier dans Etudiant
+            String hqlEtudiant = "FROM Etudiant WHERE email = :email";
+            Query<Etudiant> queryEtudiant = session.createQuery(hqlEtudiant, Etudiant.class);
+            queryEtudiant.setParameter("email", recipient);
+            if (!queryEtudiant.list().isEmpty()) {
                 emailExists = true;
+            }
+
+            // Vérifier dans Enseignant si non trouvé dans Etudiant
+            if (!emailExists) {
+                String hqlEnseignant = "FROM Enseignant WHERE email = :email";
+                Query<Enseignant> queryEnseignant = session.createQuery(hqlEnseignant, Enseignant.class);
+                queryEnseignant.setParameter("email", recipient);
+                if (!queryEnseignant.list().isEmpty()) {
+                    emailExists = true;
+                }
             }
         }
 
@@ -123,5 +130,5 @@ public class MessageServlet extends HttpServlet {
 
         request.getRequestDispatcher("/messagerie.jsp").forward(request, response);
     }
-
 }
+
