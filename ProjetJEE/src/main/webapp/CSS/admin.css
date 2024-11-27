@@ -1,0 +1,115 @@
+/* Style général */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+/* Barre de navigation en haut */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #0056b3;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header img.logo {
+    height: 55px;
+    width: auto;
+}
+
+.header .icons {
+    display: flex;
+    align-items: center;
+}
+
+.header .icon {
+    margin-left: 15px;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.header .icons .icon i {
+    font-size: 30px; /* Ajustez la taille selon votre préférence */
+}
+
+.header .icon button {
+    background: none;
+    border: none;
+    padding: 0; /* Enlève tout padding */
+    outline: none; /* Enlève le contour lors du focus */
+    color: inherit; /* Garde la couleur de l'icône */
+}
+
+/* Mise en page principale */
+.main-content {
+    display: flex;
+    margin-top: 20px;
+}
+
+/* Menu latéral gauche */
+.sidebar {
+    width: 25%;
+    background-color: #ffffff;
+    border-right: 1px solid #ddd;
+    padding: 15px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    color: #0056b3;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+}
+
+.sidebar a:hover {
+    background-color: #e2e6ea;
+}
+
+/* Style du sous-menu */
+.sidebar .submenu {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 15px; /* Décalage pour indiquer une hiérarchie */
+}
+
+.sidebar .submenu li {
+    margin: 5px 0;
+}
+
+.sidebar .submenu a {
+    text-decoration: none;
+    color: #0056b3;
+    font-size: 14px;
+}
+
+.sidebar .submenu a:hover {
+    text-decoration: underline;
+    color: #003f7f;
+}
+
+/* Zone de contenu principale */
+.content-area {
+    width: 75%;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.logout-form button{
+    margin-bottom: 0;
+}

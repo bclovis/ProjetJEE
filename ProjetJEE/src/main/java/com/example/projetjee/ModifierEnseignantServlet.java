@@ -7,9 +7,11 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.query.Query;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @WebServlet(name = "ModifierEnseignantServlet", value = "/modifierEnseignant")
 public class ModifierEnseignantServlet extends HttpServlet {
@@ -17,22 +19,24 @@ public class ModifierEnseignantServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String email = request.getParameter("email");
 
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            Query<Enseignant> query = session.createQuery("FROM Enseignant WHERE email = :email", Enseignant.class);
-            query.setParameter("email", email);
-            Enseignant enseignant = query.uniqueResult();
+        if (email != null && !email.isEmpty()) {
+            try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+                Enseignant enseignant = session.get(Enseignant.class, email);
 
-            if (enseignant != null) {
-                request.setAttribute("nom", enseignant.getNom());
-                request.setAttribute("prenom", enseignant.getPrenom());
-                request.setAttribute("dateNaissance", enseignant.getDateNaissance());
-                request.setAttribute("mdp", enseignant.getMdp());
+                if (enseignant != null) {
+                    request.setAttribute("email", enseignant.getEmail());
+                    request.setAttribute("nom", enseignant.getNom());
+                    request.setAttribute("prenom", enseignant.getPrenom());
+                    request.setAttribute("dateNaissance", new SimpleDateFormat("yyyy-MM-dd").format(enseignant.getDateNaissance()));
+                    request.setAttribute("mdp", enseignant.getMdp());
+
+                    request.getRequestDispatcher("modifierEnseignant.jsp").forward(request, response);
+                } else {
+                    response.sendRedirect("gererEnseignants?error=Enseignant%20introuvable");
+                }
             }
-
-            request.getRequestDispatcher("modifierEnseignant.jsp").forward(request, response);
-        } catch (Exception e) {
-            e.printStackTrace();
-            response.sendRedirect("gererEnseignants?error=Erreur lors de la récupération des informations de l'enseignant");
+        } else {
+            response.sendRedirect("gererEnseignants?error=Email%20non%20fourni");
         }
     }
 
@@ -41,29 +45,39 @@ public class ModifierEnseignantServlet extends HttpServlet {
         String email = request.getParameter("email");
         String nom = request.getParameter("nom");
         String prenom = request.getParameter("prenom");
-        String dateNaissance = request.getParameter("dateNaissance");
+        String dateNaissanceStr = request.getParameter("dateNaissance");
         String mdp = request.getParameter("mdp");
+
+        if (email == null || nom == null || prenom == null || dateNaissanceStr == null || mdp == null) {
+            response.sendRedirect("modifierEnseignant?email=" + email + "&error=Champs%20incomplets");
+            return;
+        }
+
+        Date dateNaissance;
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            dateNaissance = sdf.parse(dateNaissanceStr);
+        } catch (ParseException e) {
+            response.sendRedirect("modifierEnseignant?email=" + email + "&error=Format%20de%20date%20invalide");
+            return;
+        }
 
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             Transaction transaction = session.beginTransaction();
-            Query query = session.createQuery("UPDATE Enseignant SET nom = :nom, prenom = :prenom, dateNaissance = :dateNaissance, mdp = :mdp WHERE email = :email");
-            query.setParameter("nom", nom);
-            query.setParameter("prenom", prenom);
-            query.setParameter("dateNaissance", java.sql.Date.valueOf(dateNaissance));
-            query.setParameter("mdp", mdp);
-            query.setParameter("email", email);
+            Enseignant enseignant = session.get(Enseignant.class, email);
 
-            int result = query.executeUpdate();
-            transaction.commit();
+            if (enseignant != null) {
+                enseignant.setNom(nom);
+                enseignant.setPrenom(prenom);
+                enseignant.setDateNaissance(dateNaissance);
+                enseignant.setMdp(mdp);
 
-            if (result > 0) {
-                response.sendRedirect("gererEnseignants?message=Modification réussie");
+                session.update(enseignant);
+                transaction.commit();
+                response.sendRedirect("gererEnseignants?message=Modification%20réussie");
             } else {
-                response.sendRedirect("gererEnseignants?error=Erreur lors de la mise à jour");
+                response.sendRedirect("modifierEnseignant?email=" + email + "&error=Enseignant%20introuvable");
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-            response.sendRedirect("gererEnseignants?error=Erreur lors de la mise à jour de l'enseignant");
         }
     }
 }

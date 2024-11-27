@@ -1,0 +1,94 @@
+/* Table des étudiants */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #0056b3;
+    color: white;
+    text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+/* Centrage et mise en page du formulaire */
+.ajout-form {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style des labels */
+.ajout-form label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/* Champs texte et sélection */
+.ajout-form input,
+.ajout-form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Bouton de soumission */
+.ajout-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.ajout-form button:hover {
+    background-color: #45a049;
+}
+
+.return-home{
+    display: inline-block; /* Permet de simuler l'apparence d'un bouton */
+    height: 38px; /* Hauteur uniforme avec les boutons */
+    padding: 0 12px; /* Espacement interne horizontal */
+    background-color: #4CAF50; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    border: none; /* Pas de bordure */
+    border-radius: 4px; /* Coins arrondis */
+    font-size: 14px; /* Taille de police */
+    font-family: arial;
+    cursor: pointer; /* Curseur en forme de main */
+    line-height: 38px; /* Aligne verticalement le texte */
+    text-align: center; /* Centre le texte */
+    text-decoration: none; /* Supprime le soulignement */
+    margin-top: 5%;
+    margin-left: 2%;
+}

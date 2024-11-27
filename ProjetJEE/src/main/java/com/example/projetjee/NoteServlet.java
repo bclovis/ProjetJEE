@@ -15,6 +15,7 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
 
+@WebServlet(name = "NoteServlet", value = "/voirNotes")
 public class NoteServlet extends HttpServlet {
 
     @Override
@@ -85,7 +86,7 @@ public class NoteServlet extends HttpServlet {
                 request.setAttribute("rapport", genererRapport(moyenneGenerale));
                 request.setAttribute("notesParMatiere", notesParMatiere);
                 request.setAttribute("moyennesParMatiere", moyennesParMatiere); // Passage des moyennes par matière
-                request.getRequestDispatcher("/etudiant/voirNote.jsp").forward(request, response);
+                request.getRequestDispatcher("/voirNote.jsp").forward(request, response);
             }
         } catch (Exception e) {
             e.printStackTrace();

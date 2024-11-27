@@ -15,6 +15,24 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>CreerCompteServlet</servlet-name>
+        <servlet-class>com.example.projetjee.CreerCompteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreerCompteServlet</servlet-name>
+        <url-pattern>/creationCompte</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GererEtudiantsServlet</servlet-name>
+        <servlet-class>com.example.projetjee.GererEtudiantsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GererEtudiantsServlet</servlet-name>
+        <url-pattern>/gererEtudiants</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>NoteServlet</servlet-name>
         <servlet-class>com.example.projetjee.NoteServlet</servlet-class>
     </servlet>
@@ -33,38 +51,14 @@
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/logout</url-pattern>
     </servlet-mapping>
-
     <servlet>
-        <servlet-name>SendMessageServlet</servlet-name>
-        <servlet-class>com.example.projetjee.MessageServlet</servlet-class>
+        <servlet-name>GererDemandeFiliereServlet</servlet-name>
+        <servlet-class>com.example.projetjee.GererDemandeFiliereServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>SendMessageServlet</servlet-name>
-        <url-pattern>/messageServlet</url-pattern>
-    </servlet-mapping>
-
-
-    <servlet>
-        <servlet-name>CreerCompteServlet</servlet-name>
-        <servlet-class>com.example.projetjee.CreerCompteServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>GererEtudiantsServlet</servlet-name>
-        <servlet-class>com.example.projetjee.GererEtudiantsServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>GererEtudiantsServlet</servlet-name>
-        <url-pattern>/gererEtudiants</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>AjouterNoteServlet</servlet-name>
-        <servlet-class>com.example.projetjee.AjouterNoteServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>AjouterNoteServlet</servlet-name>
-        <url-pattern>/ajouterNote</url-pattern>
+        <servlet-name>GererDemandeFiliereServlet</servlet-name>
+        <url-pattern>/gererDemandes</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -76,10 +70,22 @@
         <url-pattern>/gererEnseignants</url-pattern>
     </servlet-mapping>
 
-
+    <servlet>
+        <servlet-name>MessageServlet</servlet-name>
+        <servlet-class>com.example.projetjee.MessageServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
-        <servlet-name>CreerCompteServlet</servlet-name>
-        <url-pattern>/CreerCompteServlet</url-pattern>
+        <servlet-name>MessageServlet</servlet-name>
+        <url-pattern>/messageServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AjouterNoteServlet</servlet-name>
+        <servlet-class>com.example.projetjee.AjouterNoteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AjouterNoteServlet</servlet-name>
+        <url-pattern>/ajouterNote</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -156,10 +162,8 @@
     </servlet-mapping>
 
 
-
     <!-- Configuration de la page de démarrage -->
     <welcome-file-list>
         <welcome-file>login.jsp</welcome-file>
     </welcome-file-list>
-
 </web-app>

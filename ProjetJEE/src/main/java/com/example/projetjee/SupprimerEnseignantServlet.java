@@ -12,8 +12,9 @@ import java.io.IOException;
 
 @WebServlet(name = "SupprimerEnseignantServlet", value = "/supprimerEnseignant")
 public class SupprimerEnseignantServlet extends HttpServlet {
+
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String email = request.getParameter("email");
 
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
@@ -23,9 +24,9 @@ public class SupprimerEnseignantServlet extends HttpServlet {
             if (enseignant != null) {
                 session.delete(enseignant);
                 transaction.commit();
-                response.sendRedirect("gererEnseignants?message=Suppression réussie");
+                response.sendRedirect("gererEnseignants?message=Enseignant supprimé avec succès");
             } else {
-                response.sendRedirect("gererEnseignants?error=Erreur lors de la suppression");
+                response.sendRedirect("gererEnseignants?error=Enseignant introuvable");
             }
         } catch (Exception e) {
             e.printStackTrace();

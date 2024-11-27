@@ -4,20 +4,7 @@
 <html>
 <head>
     <title>Gestion des Notes</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid black;
-            padding: 10px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
+    <link rel="stylesheet" href="CSS/ajouterNote.css">
 </head>
 <body>
 <h1>Gestion des Notes</h1>
@@ -50,7 +37,7 @@
 
 <!-- Formulaire pour ajouter une note -->
 <h2>Ajouter une Note</h2>
-<form method="post" action="ajouterNote">
+<form class="ajout-form" method="post" action="ajouterNote">
     <label for="emailEtudiant">Email de l'élève :</label><br>
     <input type="text" id="emailEtudiant" name="emailEtudiant" required><br><br>
 
@@ -66,5 +53,7 @@
 
     <button type="submit">Ajouter</button>
 </form>
+
+<a href="enseignant.jsp" class="return-home">Retour à l'accueil</a>
 </body>
 </html>

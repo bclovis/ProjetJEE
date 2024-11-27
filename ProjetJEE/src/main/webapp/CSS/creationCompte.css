@@ -1,0 +1,43 @@
+/* Centrage et mise en page du formulaire */
+#creation-compte-form {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style des labels */
+#creation-compte-form label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/* Champs texte et sélection */
+#creation-compte-form input,
+#creation-compte-form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Bouton de soumission */
+#creation-compte-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#creation-compte-form button:hover {
+    background-color: #45a049;
+}

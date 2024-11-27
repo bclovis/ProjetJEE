@@ -46,6 +46,12 @@ public class AfficherEDTEtuEnsServlet extends HttpServlet {
             emploiParJourEtHeure.get(jour).put(heure, contenu);
         }
 
+        // Ajouter la pause de 12h à 14h
+        for (String jour : List.of("Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi")) {
+            emploiParJourEtHeure.putIfAbsent(jour, new HashMap<>());
+            emploiParJourEtHeure.get(jour).put("12h-14h", "Pause");
+        }
+
         // Ajouter les données à la requête pour la JSP
         request.setAttribute("emploiParJourEtHeure", emploiParJourEtHeure);
         request.setAttribute("semaine", semaine); // Pour réutiliser dans la JSP
@@ -59,27 +65,26 @@ public class AfficherEDTEtuEnsServlet extends HttpServlet {
         if ("etudiant".equals(role)) {
             // Requête pour les étudiants
             hql = """
-                SELECT e.jour, e.heure, m.nom, p.nom
-                FROM EmploiDuTemps e
-                JOIN e.matiere m
-                JOIN e.professeur p
-                JOIN e.filiere f
-                JOIN Etudiant et ON et.filiere.id = f.id
-                WHERE et.email = :email
-                AND e.semaineDebut <= :semaine AND e.semaineFin >= :semaine
-                ORDER BY e.jour, e.heure
-                """;
+            SELECT e.jour, e.heure, m.nom, p.nom
+            FROM EmploiDuTemps e
+            JOIN e.matiere m
+            JOIN e.professeur p
+            JOIN Filiere f ON e.filiere.id = f.id
+            WHERE f.nom = (SELECT et.filiere FROM Etudiant et WHERE et.email = :email)
+            AND e.semaineDebut <= :semaine AND e.semaineFin >= :semaine
+            ORDER BY e.jour, e.heure
+        """;
         } else if ("enseignant".equals(role)) {
             // Requête pour les enseignants
             hql = """
-                SELECT e.jour, e.heure, m.nom, p.nom
-                FROM EmploiDuTemps e
-                JOIN e.matiere m
-                JOIN e.professeur p
-                WHERE p.email = :email
-                AND e.semaineDebut <= :semaine AND e.semaineFin >= :semaine
-                ORDER BY e.jour, e.heure
-                """;
+            SELECT e.jour, e.heure, m.nom, p.nom
+            FROM EmploiDuTemps e
+            JOIN e.matiere m
+            JOIN e.professeur p
+            WHERE p.email = :email
+            AND e.semaineDebut <= :semaine AND e.semaineFin >= :semaine
+            ORDER BY e.jour, e.heure
+        """;
         } else {
             session.close();
             throw new IllegalArgumentException("Rôle utilisateur non valide : " + role);
@@ -92,4 +97,5 @@ public class AfficherEDTEtuEnsServlet extends HttpServlet {
         session.close();
         return results;
     }
+
 }

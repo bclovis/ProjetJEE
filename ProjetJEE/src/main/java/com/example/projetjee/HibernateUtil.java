@@ -1,16 +1,21 @@
 package com.example.projetjee;
 
+import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.HibernateException;
 
 public class HibernateUtil {
 
-    private static SessionFactory sessionFactory;
+    private static final SessionFactory sessionFactory;
 
     static {
         try {
-            sessionFactory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+            // Charger la configuration Hibernate
+            System.out.println("Tentative de chargement de la configuration Hibernate...");
+            Configuration configuration = new Configuration();
+            configuration.configure();
+            sessionFactory = configuration.buildSessionFactory();
+            System.out.println("Configuration Hibernate chargée avec succès.");
         } catch (HibernateException e) {
             System.err.println("Erreur d'initialisation de la SessionFactory : " + e.getMessage());
             e.printStackTrace();

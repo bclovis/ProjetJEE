@@ -5,25 +5,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Modifier Enseignant</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .form-container {
-            width: 300px;
-            margin: 0 auto;
-        }
-        .form-container label {
-            display: block;
-            margin: 10px 0 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="CSS/modifierEtudiant.css">
 </head>
 <body>
+<h1>Modifier les informations de l'enseignant</h1>
 <div class="form-container">
-    <h1>Modifier Enseignant</h1>
     <form action="modifierEnseignant" method="post">
-        <input type="hidden" name="email" value="<%= request.getParameter("email") %>" />
+        <input type="hidden" name="email" value="<%= request.getAttribute("email") %>" />
+
         <label for="nom">Nom :</label>
         <input type="text" id="nom" name="nom" value="<%= request.getAttribute("nom") %>" required>
 
@@ -38,8 +27,11 @@
         <br><br>
 
         <button type="submit">Modifier</button>
+        <a href="admin.jsp">Retour à la liste</a>
     </form>
+    <!--
     <a href="gererEnseignants">Retour</a>
+    -->
 </div>
 </body>
 </html>

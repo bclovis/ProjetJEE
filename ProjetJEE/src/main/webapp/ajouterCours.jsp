@@ -4,6 +4,7 @@
 <html>
 <head>
   <title>Ajouter un Cours</title>
+  <link rel="stylesheet" href="CSS/ajouterCours.css">
 </head>
 <body>
 <h1>Ajouter un Cours</h1>
@@ -66,6 +67,8 @@
   </select><br>
 
   <button type="submit">Ajouter</button>
+  <br><br>
+  <a href="admin.jsp" class="return-home">Retour à l'accueil</a>
 </form>
 </body>
 </html>

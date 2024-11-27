@@ -121,7 +121,7 @@ public class MessageServlet extends HttpServlet {
         request.setAttribute("currentPage", page);
         request.setAttribute("totalPages", (int) Math.ceil((double) totalMessages / messagesPerPage));
 
-        request.getRequestDispatcher("/etudiant/messagerie.jsp").forward(request, response);
+        request.getRequestDispatcher("/messagerie.jsp").forward(request, response);
     }
 
 }

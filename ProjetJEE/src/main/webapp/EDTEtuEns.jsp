@@ -4,65 +4,15 @@
 <html>
 <head>
     <title>Emploi du Temps</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
-
-        h1 {
-            color: #333;
-            text-align: center;
-        }
-
-        table {
-            width: 100%;
-            margin: 20px auto;
-            border-collapse: collapse;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: center;
-            border: 1px solid #ddd;
-        }
-
-        th {
-            background-color: #4CAF50;
-            color: white;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        form {
-            margin: 20px auto;
-            text-align: center;
-        }
-
-        label, select, button {
-            font-size: 16px;
-            padding: 10px;
-            margin: 5px;
-        }
-
-        .no-data {
-            text-align: center;
-            color: #777;
-            font-size: 18px;
-        }
-
-    </style>
+    <link rel="stylesheet" href="CSS/EDTEtuEns.css?v=3">
 </head>
 <body>
 <h1>Emploi du Temps</h1>
 
 <!-- Formulaire pour changer de semaine -->
+
 <form method="get" action="AfficherEDTEtuEnsServlet">
+    <div  class="form-group">
     <label for="semaine">Semaine :</label>
     <select id="semaine" name="semaine">
         <%
@@ -73,8 +23,11 @@
         <option value="<%= i %>" <%= (i == semaine) ? "selected" : "" %>>Semaine <%= i %></option>
         <% } %>
     </select>
+    </div>
+
     <button type="submit">Changer de semaine</button>
 </form>
+
 
 <!-- Tableau pour afficher l'emploi du temps -->
 <table>
@@ -119,8 +72,16 @@
                         emploiParJourEtHeure.get(jour).containsKey(heure)
                         ? emploiParJourEtHeure.get(jour).get(heure)
                         : "Aucun cours";
+                String cellClass;
+                if ("Pause".equals(contenu)) {
+                    cellClass = "pause-cell";
+                } else if ("Aucun cours".equals(contenu)) {
+                    cellClass = "empty-cell";
+                } else {
+                    cellClass = "filled-cell";
+                }
         %>
-        <td>
+        <td class="<%= cellClass %>">
             <div><%= contenu %></div>
         </td>
         <%
@@ -133,6 +94,16 @@
     %>
     </tbody>
 </table>
+
+<%
+    // Récupérer le rôle de l'utilisateur depuis la session
+    String role = (String) session.getAttribute("role");
+    String accueilPage = "etudiant.jsp"; // Par défaut, rediriger vers la page étudiant
+    if ("enseignant".equals(role)) {
+        accueilPage = "enseignant.jsp";
+    }
+%>
+<a href="<%= accueilPage %>" class="return-home">Retour à l'accueil</a>
 
 </body>
 </html>

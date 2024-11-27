@@ -1,0 +1,135 @@
+/* Style général pour les formulaires */
+form {
+    display: flex;
+    flex-wrap: wrap; /* Permet de gérer les petits écrans */
+    gap: 15px; /* Espacement entre les éléments */
+    margin-bottom: 3%;
+}
+
+/* Groupement des labels et inputs */
+.form-group {
+    display: flex;
+    align-items: center; /* Aligne les éléments verticalement */
+    gap: 10px; /* Espacement entre label et input */
+    margin-bottom: 10px; /* Espacement entre les lignes */
+}
+
+.form-group label,
+.form-group select {
+    display: inline-block;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Inputs de type select */
+form select {
+    height: 38px; /* Hauteur uniforme */
+    padding: 0 10px; /* Espacement interne */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    max-width: 300px; /* Largeur maximale */
+}
+
+/* Boutons */
+form button {
+    height: 38px; /* Même hauteur que les inputs */
+    padding: 0 12px; /* Espacement interne horizontal */
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    line-height: 1; /* Évite l'étirement vertical */
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Augmenter la hauteur des lignes du tableau */
+table tbody tr {
+    height: 50px; /* Ajustez cette valeur pour définir la hauteur désirée */
+}
+
+th, td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 8px;
+}
+th {
+    background-color: #f2f2f2;
+}
+td {
+    vertical-align: top;
+}
+.info {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.navigation {
+    margin-top: 20px;
+}
+.message {
+    color: green;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.error {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Cellules avec un cours */
+.filled-cell div {
+    background-color: #4A4AFF; /* Fond bleu */
+    color: #fff; /* Texte blanc */
+    padding: 5px;
+    border-radius: 4px; /* Facultatif, pour arrondir les angles */
+    text-align: center;
+    border: 1px solid #012a36; /* Bordures spécifiques */
+}
+
+/* Cellules sans cours */
+.empty-cell div {
+    background-color: transparent; /* Pas de couleur de fond */
+    color: inherit; /* Texte hérité */
+    border: 1px solid #012a36; /* Bordures spécifiques */
+}
+
+/* Cellules pour les pauses */
+.pause-cell div {
+    background-color: #d3d3d3; /* Fond gris clair */
+    color: #000; /* Texte noir */
+    padding: 5px;
+    border-radius: 4px;
+    text-align: center;
+    border: 1px solid #999; /* Bordure gris foncé */
+}
+
+.return-home{
+    display: inline-block; /* Permet de simuler l'apparence d'un bouton */
+    height: 38px; /* Hauteur uniforme avec les boutons */
+    padding: 0 12px; /* Espacement interne horizontal */
+    background-color: #4CAF50; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    border: none; /* Pas de bordure */
+    border-radius: 4px; /* Coins arrondis */
+    font-size: 14px; /* Taille de police */
+    cursor: pointer; /* Curseur en forme de main */
+    line-height: 38px; /* Aligne verticalement le texte */
+    text-align: center; /* Centre le texte */
+    text-decoration: none; /* Supprime le soulignement */
+    margin-bottom: 20px;
+    font-family: Arial;
+}
+
