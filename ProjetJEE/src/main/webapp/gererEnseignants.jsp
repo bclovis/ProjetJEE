@@ -72,6 +72,6 @@
   </c:forEach>
 </div>
 
-<a href="admin.jsp">Retour à l'accueil</a>
+<a href="admin.jsp" class="return-home">Retour à l'accueil</a>
 </body>
 </html>

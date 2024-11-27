@@ -2,7 +2,8 @@
 form {
     display: flex;
     flex-wrap: wrap; /* Permet de gérer les petits écrans */
-    gap: 10px; /* Espacement entre les éléments */
+    gap: 15px; /* Espacement entre les éléments */
+    margin-bottom: 3%;
 }
 
 /* Groupement des labels et inputs */
@@ -31,7 +32,7 @@ form select {
 }
 
 /* Boutons */
-.button {
+form button {
     height: 38px; /* Même hauteur que les inputs */
     padding: 0 12px; /* Espacement interne horizontal */
     background-color: #4CAF50;
@@ -43,7 +44,7 @@ form select {
     line-height: 1; /* Évite l'étirement vertical */
 }
 
-.button:hover {
+form button:hover {
     background-color: #45a049;
 }
 
@@ -51,6 +52,11 @@ table {
     border-collapse: collapse;
     width: 100%;
     margin-bottom: 20px;
+}
+
+/* Augmenter la hauteur des lignes du tableau */
+table tbody tr {
+    height: 50px; /* Ajustez cette valeur pour définir la hauteur désirée */
 }
 
 th, td {
@@ -83,23 +89,6 @@ td {
     margin-bottom: 20px;
 }
 
-.action-button {
-    margin-top: 5px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 3px;
-    font-size: 12px;
-    cursor: pointer;
-}
-.action-button.delete {
-    background-color: #f44336;
-}
-.action-button:hover {
-    opacity: 0.8;
-}
-
 /* Cellules avec un cours */
 .filled-cell div {
     background-color: #4A4AFF; /* Fond bleu */
@@ -127,28 +116,6 @@ td {
     border: 1px solid #999; /* Bordure gris foncé */
 }
 
-/* Style pour les liens ressemblant aux boutons */
-.add-course-button {
-    display: inline-block; /* Permet de simuler l'apparence d'un bouton */
-    height: 38px; /* Hauteur uniforme avec les boutons */
-    padding: 0 12px; /* Espacement interne horizontal */
-    background-color: #4CAF50; /* Couleur de fond */
-    color: white; /* Couleur du texte */
-    border: none; /* Pas de bordure */
-    border-radius: 4px; /* Coins arrondis */
-    font-size: 14px; /* Taille de police */
-    cursor: pointer; /* Curseur en forme de main */
-    line-height: 38px; /* Aligne verticalement le texte */
-    text-align: center; /* Centre le texte */
-    text-decoration: none; /* Supprime le soulignement */
-    margin-bottom: 20px;
-}
-
-.add-course-button:hover {
-    background-color: #45a049; /* Couleur lors du survol */
-}
-
-/*noinspection DuplicatedCode*/
 .return-home{
     display: inline-block; /* Permet de simuler l'apparence d'un bouton */
     height: 38px; /* Hauteur uniforme avec les boutons */
@@ -163,5 +130,6 @@ td {
     text-align: center; /* Centre le texte */
     text-decoration: none; /* Supprime le soulignement */
     margin-bottom: 20px;
-    margin-top: 50px;
+    font-family: Arial;
 }
+

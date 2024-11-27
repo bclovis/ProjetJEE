@@ -3,16 +3,20 @@
 <html>
 <head>
     <title>Gérer les Demandes de Filière</title>
+    <link rel="stylesheet" href="CSS/gererDemandes.css">
 </head>
 <body>
-<h2>Gérer les Demandes de Filière</h2>
+<h1>Liste des Demandes de Filière</h1>
 
-<form action="gererDemandes" method="get">
-    <input type="text" name="recherche" placeholder="Rechercher une demande..." />
-    <input type="submit" value="Rechercher" />
-</form>
+<!-- Barre de recherche -->
+<div class="search-bar">
+    <form action="gererDemandes" method="get">
+        <input type="text" name="recherche" placeholder="Rechercher une demande..." />
+        <button type="submit">Rechercher</button>
+    </form>
+</div>
 
-<table border="1">
+<table>
     <thead>
     <tr>
         <th>ID</th>
@@ -57,5 +61,14 @@
     </tbody>
 </table>
 
+<!-- Pagination -->
+<div class="pagination">
+    <c:forEach begin="1" end="${totalPages}" var="i">
+        <a href="gererEtudiants?page=${i}&keyword=${param.keyword}"
+           class="${i == currentPage ? 'current-page' : ''}">${i}</a>
+    </c:forEach>
+</div>
+
+<a href="admin.jsp" class="return-home">Retour à l'accueil</a>
 </body>
 </html>

@@ -14,7 +14,7 @@
         <img src="Logo_Projet_JEE.PNG" alt="Logo Université" class="logo">
         <div class="icons">
             <span class="icon"><i class="fa-solid fa-circle-user"></i></span>  <!-- Icône du compte utilisateur -->
-            <form action="logout" method="post" style="display:inline;">
+            <form class="logout-form" action="logout" method="post" style="display:inline;">
                 <button type="submit" class="icon" title="Déconnexion"><i class="fa-solid fa-power-off"></i></button>  <!-- Icône de déconnexion -->
             </form>
         </div>

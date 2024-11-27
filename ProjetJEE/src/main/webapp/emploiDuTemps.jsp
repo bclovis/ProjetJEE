@@ -5,28 +5,6 @@
 <head>
     <title>Emploi du Temps</title>
     <link rel="stylesheet" href="CSS/emploiDuTemps.css?v=3">
-    <style>
-        /*
-        .add-course-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 15px 20px;
-            border-radius: 50%;
-            font-size: 16px;
-            cursor: pointer;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-            text-decoration: none;
-            text-align: center;
-        }
-        .add-course-button:hover {
-            background-color: #45a049;
-        }
-        */
-    </style>
 </head>
 <body>
 <h1>Emploi du Temps</h1>
@@ -61,7 +39,7 @@
     </div>
     <br>
 
-    <button type="submit">Afficher</button>
+    <button type="submit" class="button">Afficher</button>
 </form>
 
 <div class="info">
@@ -145,6 +123,6 @@
 <!-- Bouton flottant pour ajouter un cours -->
 <a href="ajouterCours" class="add-course-button" title="Ajouter un cours">Ajouter un cours</a>
 <br>
-<a href="admin.jsp">Retour à l'accueil</a>
+<a href="admin.jsp" class="return-home">Retour à l'accueil</a>
 </body>
 </html>

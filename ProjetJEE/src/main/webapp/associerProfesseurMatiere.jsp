@@ -12,7 +12,7 @@
 <h1>Associer un Professeur à une Matière</h1>
 
 <!-- Formulaire pour associer un professeur et une matière -->
-<form action="AssocierProfesseurMatiereServlet" method="post">
+<form class="form" action="AssocierProfesseurMatiereServlet" method="post">
     <div class="form-group">
         <label for="professeur">Professeur :</label>
         <select name="professeur_email" id="professeur">
@@ -35,18 +35,18 @@
     </div>
     <br>
 
-    <button type="submit">Associer</button>
+    <button type="submit" class="button">Associer</button>
 </form>
 
 <div class="search-bar-container">
     <!-- Barre de recherche -->
     <form class="search-form" action="AssocierProfesseurMatiereServlet" method="get">
         <input type="text" name="keyword" placeholder="Rechercher prof/matière" value="${keyword}">
-        <button type="submit">Rechercher</button>
+        <button type="submit" class="button">Rechercher</button>
     </form>
     <!-- Bouton pour réinitialiser la recherche -->
     <form class="reset-form" action="AssocierProfesseurMatiereServlet" method="get">
-        <button type="submit">Réinitialiser</button>
+        <button type="submit" class="button">Réinitialiser</button>
     </form>
 </div>
 
@@ -66,9 +66,9 @@
             <td>${assoc[1]} ${assoc[2]}</td> <!-- Nom et prénom du professeur -->
             <td>${assoc[3]}</td>             <!-- Nom de la matière -->
             <td>
-                <form action="SupprimerAssociationServlet" method="post">
+                <form class="remove-form" action="SupprimerAssociationServlet" method="post">
                     <input type="hidden" name="id" value="${assoc[0]}"/>
-                    <button type="submit">Supprimer</button>
+                    <button type="submit" class="button">Supprimer</button>
                 </form>
             </td>
         </tr>
@@ -76,6 +76,6 @@
     </tbody>
 </table>
 <br><br>
-<a href="admin.jsp">Retour à l'accueil</a>
+<a href="admin.jsp" class="return-home">Retour à l'accueil</a>
 </body>
 </html>

@@ -6,54 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Mes Notes</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      width: 80%;
-      margin: auto;
-      padding: 20px;
-      background-color: #ffffff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      margin-top: 30px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 20px;
-    }
-    table, th, td {
-      border: 1px solid black;
-    }
-    th, td {
-      padding: 10px;
-      text-align: left;
-    }
-    th {
-      background-color: #f2f2f2;
-    }
-    .actions {
-      display: flex;
-      justify-content: space-between; /* Pour espacer les boutons */
-      margin-top: 20px;
-    }
-    button {
-      padding: 10px 20px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #45a049;
-    }
-  </style>
+  <link rel="stylesheet" href="CSS/voirNote.css?v=3">
 </head>
 <body>
 <div class="container">
@@ -111,7 +64,7 @@
     </form>
 
     <!-- Bouton aligné à droite -->
-    <button onclick="window.location.href='etudiant.jsp'">Retour à l'accueil étudiant</button>
+    <button onclick="window.location.href='etudiant.jsp'">Retour à l'accueil</button>
   </div>
 </div>
 </body>

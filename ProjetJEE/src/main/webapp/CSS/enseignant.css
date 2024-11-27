@@ -29,6 +29,8 @@ body {
 .header .icon {
     margin-left: 15px;
     cursor: pointer;
+    border: none;
+    background: none;
 }
 
 .header .icons .icon i {

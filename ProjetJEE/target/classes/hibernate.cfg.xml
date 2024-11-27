@@ -36,6 +36,8 @@
         <mapping class="com.example.projetjee.MatiereFiliere" />
 
 
+        <mapping class="com.example.projetjee.Filieres"/>
+        <mapping class="com.example.projetjee.DemandeFiliere"/>
 
 
     </session-factory>

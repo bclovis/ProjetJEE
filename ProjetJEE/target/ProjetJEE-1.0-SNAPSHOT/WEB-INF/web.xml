@@ -15,16 +15,6 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>LogoutServlet</servlet-name>
-        <servlet-class>com.example.projetjee.LogoutServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>LogoutServlet</servlet-name>
-        <url-pattern>/logout</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
         <servlet-name>CreerCompteServlet</servlet-name>
         <servlet-class>com.example.projetjee.CreerCompteServlet</servlet-class>
     </servlet>
@@ -43,6 +33,35 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>NoteServlet</servlet-name>
+        <servlet-class>com.example.projetjee.NoteServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>NoteServlet</servlet-name>
+        <url-pattern>/voirNotes</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>com.example.projetjee.LogoutServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>GererDemandeFiliereServlet</servlet-name>
+        <servlet-class>com.example.projetjee.GererDemandeFiliereServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>GererDemandeFiliereServlet</servlet-name>
+        <url-pattern>/gererDemandes</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>GererEnseignantsServlet</servlet-name>
         <servlet-class>com.example.projetjee.GererEnseignantsServlet</servlet-class>
     </servlet>
@@ -51,6 +70,23 @@
         <url-pattern>/gererEnseignants</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>MessageServlet</servlet-name>
+        <servlet-class>com.example.projetjee.MessageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MessageServlet</servlet-name>
+        <url-pattern>/messageServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AjouterNoteServlet</servlet-name>
+        <servlet-class>com.example.projetjee.AjouterNoteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AjouterNoteServlet</servlet-name>
+        <url-pattern>/ajouterNote</url-pattern>
+    </servlet-mapping>
 
     <servlet>
         <servlet-name>ModifierEtudiantServlet</servlet-name>
@@ -126,10 +162,8 @@
     </servlet-mapping>
 
 
-
     <!-- Configuration de la page de démarrage -->
     <welcome-file-list>
         <welcome-file>login.jsp</welcome-file>
     </welcome-file-list>
-
 </web-app>

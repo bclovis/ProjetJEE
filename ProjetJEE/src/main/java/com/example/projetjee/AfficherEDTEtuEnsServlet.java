@@ -46,6 +46,12 @@ public class AfficherEDTEtuEnsServlet extends HttpServlet {
             emploiParJourEtHeure.get(jour).put(heure, contenu);
         }
 
+        // Ajouter la pause de 12h à 14h
+        for (String jour : List.of("Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi")) {
+            emploiParJourEtHeure.putIfAbsent(jour, new HashMap<>());
+            emploiParJourEtHeure.get(jour).put("12h-14h", "Pause");
+        }
+
         // Ajouter les données à la requête pour la JSP
         request.setAttribute("emploiParJourEtHeure", emploiParJourEtHeure);
         request.setAttribute("semaine", semaine); // Pour réutiliser dans la JSP

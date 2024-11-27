@@ -108,3 +108,20 @@ table .btn-primary:hover {
     background-color: #0056b3;
     color: white;
 }
+
+/*noinspection DuplicatedCode*/
+a.return-home{
+    display: inline-block; /* Permet de simuler l'apparence d'un bouton */
+    height: 38px; /* Hauteur uniforme avec les boutons */
+    padding: 0 12px; /* Espacement interne horizontal */
+    background-color: #4CAF50; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    border: none; /* Pas de bordure */
+    border-radius: 4px; /* Coins arrondis */
+    font-size: 14px; /* Taille de police */
+    cursor: pointer; /* Curseur en forme de main */
+    line-height: 38px; /* Aligne verticalement le texte */
+    text-align: center; /* Centre le texte */
+    text-decoration: none; /* Supprime le soulignement */
+    margin-bottom: 20px;
+}

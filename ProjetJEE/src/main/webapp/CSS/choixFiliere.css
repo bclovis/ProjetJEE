@@ -1,0 +1,55 @@
+/* Style général du formulaire */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px; /* Espace entre les éléments */
+}
+
+/* Style des labels */
+form label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-family: Arial, sans-serif;
+}
+
+/* Champs texte et sélection */
+form select {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Bouton de soumission */
+form button {
+    padding: 8px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+.return-home {
+    display: inline-block; /* Permet de simuler l'apparence d'un bouton */
+    height: 38px; /* Hauteur uniforme avec les boutons */
+    padding: 0 12px; /* Espacement interne horizontal */
+    background-color: #4CAF50; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    border: none; /* Pas de bordure */
+    border-radius: 4px; /* Coins arrondis */
+    font-size: 14px; /* Taille de police */
+    cursor: pointer; /* Curseur en forme de main */
+    line-height: 38px; /* Aligne verticalement le texte */
+    text-align: center; /* Centre le texte */
+    text-decoration: none; /* Supprime le soulignement */
+    margin-top: 20px;
+}

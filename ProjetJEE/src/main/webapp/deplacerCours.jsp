@@ -3,11 +3,12 @@
 <html>
 <head>
     <title>Déplacer un Cours</title>
+    <link rel="stylesheet" href="CSS/deplacerCours.css">
 </head>
 <body>
 <h1>Déplacer un Cours</h1>
 
-<form action="DeplacerCoursServlet" method="post">
+<form action="DeplacerCoursServlet" class="deplace-form" method="post">
     <input type="hidden" name="coursId" value="${cours.id}" />
     <label for="jour">Nouveau Jour :</label>
     <select id="jour" name="jour">
@@ -31,6 +32,8 @@
     <input type="number" id="semaine" name="semaine" min="1" max="36" value="1" /><br>
 
     <button type="submit">Déplacer</button>
+    <br><br>
+    <a href="admin.jsp" class="return-home">Retour à l'accueil</a>
 </form>
 </body>
 </html>

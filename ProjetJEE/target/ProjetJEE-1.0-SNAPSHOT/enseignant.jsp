@@ -26,8 +26,7 @@
         <nav class="sidebar">
             <ul>
                 <li><a href="ajouterNote.jsp">Ajouter une note</a></li>
-                <li><a href="voirEmploiDuTemps.jsp">Voir mon emploi du temps</a></li>
-                <li><a href="voirMesClasses.jsp">Voir mes classes</a></li>
+                <li><a href="AfficherEDTEtuEnsServlet">Voir mon emploi du temps</a></li>
             </ul>
         </nav>
 
