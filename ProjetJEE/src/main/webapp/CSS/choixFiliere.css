@@ -47,6 +47,7 @@ form button:hover {
     border: none; /* Pas de bordure */
     border-radius: 4px; /* Coins arrondis */
     font-size: 14px; /* Taille de police */
+    font-family: arial;
     cursor: pointer; /* Curseur en forme de main */
     line-height: 38px; /* Aligne verticalement le texte */
     text-align: center; /* Centre le texte */

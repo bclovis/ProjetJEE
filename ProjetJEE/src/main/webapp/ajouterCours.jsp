@@ -67,6 +67,8 @@
   </select><br>
 
   <button type="submit">Ajouter</button>
+  <br><br>
+  <a href="admin.jsp" class="return-home">Retour à l'accueil</a>
 </form>
 </body>
 </html>

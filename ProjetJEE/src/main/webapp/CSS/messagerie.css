@@ -74,6 +74,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     margin-bottom: 10px;
+    font-size: 14px;
 }
 button:hover {
     background-color: #45a049;
