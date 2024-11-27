@@ -9,7 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee1cf5c7-fc3d-4b3a-b22b-bc8843babee7" name="Changes" comment="emploi du temps pour étudiant et enseignant fini (correction bug)">
+    <list default="true" id="ee1cf5c7-fc3d-4b3a-b22b-bc8843babee7" name="Changes" comment=".">
+      <change beforePath="$PROJECT_DIR$/.idea/ProjetJEE.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ProjetJEE.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -384,7 +385,14 @@
       <option name="project" value="LOCAL" />
       <updated>1732396170620</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary=".">
+      <created>1732651123251</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1732651123251</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -425,6 +433,7 @@
     <MESSAGE value="Ajouter un cours à partir de l'emploi du temps" />
     <MESSAGE value="emploi du temps pour étudiant et enseignant fini" />
     <MESSAGE value="emploi du temps pour étudiant et enseignant fini (correction bug)" />
-    <option name="LAST_COMMIT_MESSAGE" value="emploi du temps pour étudiant et enseignant fini (correction bug)" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
 </project>
