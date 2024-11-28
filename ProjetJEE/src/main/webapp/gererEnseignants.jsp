@@ -13,11 +13,11 @@
 <!-- Barre de recherche -->
 <div class="search-bar">
   <form id="gerer-enseignant-form" method="get">
-    <input type="text" id="search-input" name="keyword" value="${param.keyword}" placeholder="Rechercher un étudiant...">
+    <input type="text" id="search-input" name="keyword" value="${param.keyword}" placeholder="Rechercher un enseignant...">
     <button type="submit">Rechercher</button>
   </form>
 </div>
-
+s
 <!-- Affichage des enseignants -->
 <table>
   <thead>
